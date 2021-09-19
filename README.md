@@ -1,6 +1,8 @@
 <h1 align="center">Hi 👋, I'm Sourav Sadhukhan</h1>
 <h3 align="center">A passionate frontend developer from India</h3>
 
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=souravfrank&label=Profile%20views&color=0e0ba2&style=plastic" alt="souravfrank" /> </p>
+
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=souravfrank" alt="souravfrank" /></a> </p>
 
 - 🌱 I’m currently learning **Data Structures & Algorithms**
