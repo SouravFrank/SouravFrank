@@ -1,7 +1,6 @@
 <!-- FUTURISTIC HEADER BANNER -->
 <p align="center">
-  <img src="https://via.placeholder.com/1200x300.png?text=Sourav+Sadhukhan+-+Front-End+Wizard" alt="Futuristic Banner" style="max-width:100%;">
-  <!-- Replace with a cyberpunk/neon-themed banner featuring your name and title -->
+  <img src="./assets/Sourav.gif" alt="Futuristic Banner" style="max-width:100%;">
 </p>
 
 <h1 align="center">Greetings, Earthlings! 👋 I’m Sourav Sadhukhan</h1>
@@ -13,8 +12,7 @@
 
 <!-- NEON DIVIDER -->
 <p align="center">
-  <img src="./assets/neon_devider.png" alt="Neon Divider" style="max-width:80%;">
-  <!-- Replace with a neon glowing line graphic -->
+  <img src="./assets/neon_devider.png" alt="Neon Divider" style="max-width:70%;">
 </p>
 
 ## 🌌 About This Galactic Coder
@@ -26,28 +24,48 @@
 
 <!-- NEON DIVIDER -->
 <p align="center">
-  <img src="./assets/neon_devider.png" alt="Neon Divider" style="max-width:80%;">
+  <img src="./assets/neon_devider.png" alt="Neon Divider" style="max-width:70%;">
 </p>
 
 ## 🛠️ Tech Arsenal
 
 <p align="center">
-  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" style="padding: 10px;">
-  <img src="https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React Native" style="padding: 10px;">
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" style="padding: 10px;">
-  <img src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white" alt="Redux" style="padding: 10px;">
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" style="padding: 10px;">
-  <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express" style="padding: 10px;">
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" style="padding: 10px;">
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" style="padding: 10px;">
-  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" style="padding: 10px;">
-  <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" alt="Firebase" style="padding: 10px;">
+  <a href="https://www.google.com/search?q=React" target="_blank">
+    <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" style="padding: 10px;">
+  </a>
+  <a href="https://www.google.com/search?q=React+Native" target="_blank">
+    <img src="https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React Native" style="padding: 10px;">
+  </a>
+  <a href="https://www.google.com/search?q=JavaScript" target="_blank">
+    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" style="padding: 10px;">
+  </a>
+  <a href="https://www.google.com/search?q=Redux" target="_blank">
+    <img src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white" alt="Redux" style="padding: 10px;">
+  </a>
+  <a href="https://www.google.com/search?q=Node.js" target="_blank">
+    <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" style="padding: 10px;">
+  </a>
+  <a href="https://www.google.com/search?q=Express" target="_blank">
+    <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express" style="padding: 10px;">
+  </a>
+  <a href="https://www.google.com/search?q=HTML5" target="_blank">
+    <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" style="padding: 10px;">
+  </a>
+  <a href="https://www.google.com/search?q=CSS3" target="_blank">
+    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" style="padding: 10px;">
+  </a>
+  <a href="https://www.google.com/search?q=Git" target="_blank">
+    <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" style="padding: 10px;">
+  </a>
+  <a href="https://www.google.com/search?q=Firebase" target="_blank">
+    <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" alt="Firebase" style="padding: 10px;">
+  </a>
 </p>
 <!-- Consider a custom graphic (e.g., radar chart) showing proficiency levels -->
 
 <!-- NEON DIVIDER -->
 <p align="center">
-  <img src="./assets/neon_devider.png" alt="Neon Divider" style="max-width:80%;">
+  <img src="./assets/neon_devider.png" alt="Neon Divider" style="max-width:70%;">
 </p>
 
 ## 🚀 Professional Odyssey
@@ -79,7 +97,7 @@
 
 <!-- NEON DIVIDER -->
 <p align="center">
-  <img src="./assets/neon_devider.png" alt="Neon Divider" style="max-width:80%;">
+  <img src="./assets/neon_devider.png" alt="Neon Divider" style="max-width:70%;">
 </p>
 
 ## 🏆 Galactic Honors & Accolades
@@ -94,7 +112,7 @@
 
 <!-- NEON DIVIDER -->
 <p align="center">
-  <img src="./assets/neon_devider.png" alt="Neon Divider" style="max-width:80%;">
+  <img src="./assets/neon_devider.png" alt="Neon Divider" style="max-width:70%;">
 </p>
 
 ## 📜 Certifications
@@ -105,7 +123,7 @@
 
 <!-- NEON DIVIDER -->
 <p align="center">
-  <img src="./assets/neon_devider.png" alt="Neon Divider" style="max-width:80%;">
+  <img src="./assets/neon_devider.png" alt="Neon Divider" style="max-width:70%;">
 </p>
 
 ## 🎓 Education
@@ -116,41 +134,39 @@
 
 <!-- NEON DIVIDER -->
 <p align="center">
-  <img src="./assets/neon_devider.png" alt="Neon Divider" style="max-width:80%;">
+  <img src="./assets/neon_devider.png" alt="Neon Divider" style="max-width:70%;">
 </p>
 
 ## 🔗 Teleport to My Digital Realms
 
 <p align="center">
   <a href="https://souravfrank.github.io/about-me/" target="_blank">
-    <img src="https://img.shields.io/badge/Portfolio-0e0ba2?style=for-the-badge&logo=about.me&logoColor=white" alt="Portfolio" style="padding: 10px;">
+    <img src="https://img.shields.io/badge/Portfolio-0e0ba2?style=for-the-badge&logo=about.me&logoColor=white" alt="Portfolio" style="padding: 30px;">
   </a>
   <a href="https://linkedin.com/in/souravsadhukhan" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" style="padding: 10px;">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" style="padding: 30px;">
   </a>
   <a href="https://instagram.com/frank_2282" target="_blank">
-    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" style="padding: 10px;">
+    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" style="padding: 30px;">
   </a>
 </p>
 
 <!-- NEON DIVIDER -->
 <p align="center">
-  <img src="./assets/neon_devider.png" alt="Neon Divider" style="max-width:80%;">
+  <img src="./assets/neon_devider.png" alt="Neon Divider" style="max-width:70%;">
 </p>
 
 ## 📊 GitHub Cosmic Metrics
 
-<p align="left">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=souravfrank&show_icons=true&theme=dark&locale=en&layout=compact" alt="souravfrank" />
-</p>
-
 <p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=souravfrank&show_icons=true&theme=dark&locale=en&layout=compact" alt="souravfrank" />
+
   <img src="https://github-readme-stats.vercel.app/api?username=souravfrank&show_icons=true&theme=dark&locale=en" alt="GitHub Stats" />
 </p>
 
 <!-- FUTURISTIC FOOTER -->
 <p align="center">
-  <img src="./assets/neon_devider.png" alt="Neon Divider" style="max-width:80%;">
+  <img src="./assets/neon_devider.png" alt="Neon Divider" style="max-width:70%;">
 </p>
 
 <p align="center">
