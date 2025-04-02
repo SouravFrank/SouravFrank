@@ -1,109 +1,138 @@
-
-<!-- FUTURISTIC HEADER -->
+<!-- FUTURISTIC HEADER BANNER -->
 <p align="center">
-  <img src="https://raw.githubusercontent.com/souravfrank/futuristic-readme-assets/main/futuristic-banner.png" alt="Futuristic Banner" style="max-width:100%;">
+  <img src="https://via.placeholder.com/1200x300.png?text=Sourav+Sadhukhan+-+Front-End+Wizard" alt="Futuristic Banner" style="max-width:100%;">
+  <!-- Replace with a cyberpunk/neon-themed banner featuring your name and title -->
 </p>
 
-<h1 align="center">Hi 👋, I'm Sourav Sadhukhan</h1>
-<h3 align="center">A Passionate Frontend Developer from India</h3>
+<h1 align="center">Greetings, Earthlings! 👋 I’m Sourav Sadhukhan</h1>
+<h3 align="center">A Front-End Wizard from India, Conjuring Pixel-Perfect Magic in the Digital Cosmos</h3>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=souravfrank&label=Profile%20views&color=0e0ba2&style=plastic" alt="Profile Views" />
+  <img src="https://komarev.com/ghpvc/?username=souravfrank&label=Profile%20Views&color=0e0ba2&style=plastic" alt="Profile Views" />
 </p>
 
-<!-- ASCII Art Section -->
-```
-   ________  ________  ___  ___  ________  _________   
-  |\   ____\|\   __  \|\  \|\  \|\   __  \|\___   ___\ 
-  \ \  \___|\ \  \|\  \ \  \\\  \ \  \|\  \|___ \  \_| 
-   \ \_____  \ \   __  \ \  \\\  \ \   _  _\   \ \  \  
-    \|____|\  \ \  \ \  \ \  \\\  \ \  \\  \|   \ \  \ 
-      ____\_\  \ \__\ \__\ \_______\ \__\\ _\    \ \__\
-     |\_________\|__|\|__|\|_______|\|__|\|__|    \|__|
-     \|_________|
-```
-
-<!-- ABOUT & CONNECT -->
+<!-- NEON DIVIDER -->
 <p align="center">
-  <strong>Currently learning:</strong> Data Structures & Algorithms<br>
-  <strong>Ask me about:</strong> React, JavaScript, React Native<br>
-  <strong>Reach me:</strong> [ssadhukhan990@gmail.com](mailto:ssadhukhan990@gmail.com)
+  <img src="https://via.placeholder.com/800x10.png?text=Neon+Divider" alt="Neon Divider" style="max-width:80%;">
+  <!-- Replace with a neon glowing line graphic -->
 </p>
 
+## 🌌 About This Galactic Coder
+<p align="center">
+  <strong>Current Mission:</strong> Conquering Data Structures & Algorithms like a Space Invader<br>
+  <strong>Interrogate Me About:</strong> React, JavaScript, React Native<br>
+  <strong>Transmit Signal:</strong> <a href="mailto:ssadhukhan990@gmail.com">ssadhukhan990@gmail.com</a>
+</p>
+
+<!-- NEON DIVIDER -->
+<p align="center">
+  <img src="https://via.placeholder.com/800x10.png?text=Neon+Divider" alt="Neon Divider" style="max-width:80%;">
+</p>
+
+## 🛠️ Tech Arsenal
+<p align="center">
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React">
+  <img src="https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React Native">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+  <img src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white" alt="Redux">
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js">
+  <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git">
+  <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" alt="Firebase">
+</p>
+<!-- Consider a custom graphic (e.g., radar chart) showing proficiency levels -->
+
+<!-- NEON DIVIDER -->
+<p align="center">
+  <img src="https://via.placeholder.com/800x10.png?text=Neon+Divider" alt="Neon Divider" style="max-width:80%;">
+</p>
+
+## 🚀 Professional Odyssey
+- **🚀 Senior Mobile Application Developer @ Fareportal (Remote)**  
+  *Apr 2023 – Present*  
+  - Built a dynamic bundle system for React Native apps—because who needs delays in 3023?  
+  - Led code reviews and mentored rookies to galactic greatness.  
+  - Wired up native modules (iOS/Android) and Firebase SDKs like a tech sorcerer.
+
+- **📱 Mobile Application Developer @ Fareportal (Remote)**  
+  *Nov 2021 – Mar 2023*  
+  - Boosted user engagement with slick in-app features.  
+  - Added Apple Pay and Venmo—because cash is so 21st century.  
+  - Upgraded React Native and crafted UI components with Lottie flair.
+
+- **🖥️ System Engineer @ Tata Consultancy Services (Kolkata, India)**  
+  *Jul 2020 – Oct 2021*  
+  - Engineered 3 inventory apps for a UK client—retail’s never been so sexy.  
+  - Optimized APIs and logs like a digital janitor on steroids.
+
+- **💻 Assistant System Engineer @ Tata Consultancy Services**  
+  - Deployed shopping apps to app stores faster than you can say "bug fix."  
+  - Tweaked backend services for peak performance.
+<!-- Replace with a timeline graphic for a futuristic vibe -->
+
+<!-- NEON DIVIDER -->
+<p align="center">
+  <img src="https://via.placeholder.com/800x10.png?text=Neon+Divider" alt="Neon Divider" style="max-width:80%;">
+</p>
+
+## 🏆 Galactic Honors & Accolades
+- 🏅 **Employee of the Year Award** (Fareportal) - Q4 2024  
+- 🏅 **Ownership and Accountability Award** (Fareportal) - Q1 2024  
+- 🏅 **Fast Execution Awards** (Fareportal) - Q2 2023 & Q2 2022  
+- 🏅 **Passion For Customers Award** (Fareportal) - Q4 2021  
+- 🏅 **Technical Excellence Award** (TCS) - June 2020  
+- 🏅 **Technical Finesse Award** (Narula Institute) - 2019  
+<!-- Replace with a trophy/medal graphic showcasing all awards -->
+
+<!-- NEON DIVIDER -->
+<p align="center">
+  <img src="https://via.placeholder.com/800x10.png?text=Neon+Divider" alt="Neon Divider" style="max-width:80%;">
+</p>
+
+## 📜 Certifications
+- **Prompt Engineering for ChatGPT**  
+  Vanderbilt University - Coursera (Sep 2023)  
+  <!-- Add a badge or certificate icon -->
+
+<!-- NEON DIVIDER -->
+<p align="center">
+  <img src="https://via.placeholder.com/800x10.png?text=Neon+Divider" alt="Neon Divider" style="max-width:80%;">
+</p>
+
+## 🎓 Education
+- **Bachelor of Technology in Electronics and Communication Engineering**  
+  Narula Institute of Technology, Maulana Abul Kalam Azad University of Technology (2019)  
+  <!-- Add a diploma icon -->
+
+<!-- NEON DIVIDER -->
+<p align="center">
+  <img src="https://via.placeholder.com/800x10.png?text=Neon+Divider" alt="Neon Divider" style="max-width:80%;">
+</p>
+
+## 🔗 Teleport to My Digital Realms
 <p align="center">
   <a href="https://souravfrank.github.io/about-me/" target="_blank">
-    <img src="https://img.shields.io/badge/Experience-Discover%20More-0e0ba2?style=for-the-badge&logo=about.me&logoColor=white" alt="About Me"/>
+    <img src="https://img.shields.io/badge/Portfolio-0e0ba2?style=for-the-badge&logo=about.me&logoColor=white" alt="Portfolio">
   </a>
-</p>
-
-<!-- SOCIAL ICONS -->
-<p align="center">
   <a href="https://linkedin.com/in/souravsadhukhan" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
   </a>
-  <a href="https://fb.com/ssadhukhan990" target="_blank">
-    <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook">
+  <a href="https://github.com/SouravFrank" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
   </a>
   <a href="https://instagram.com/frank_2282" target="_blank">
     <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram">
   </a>
-  <a href="https://www.hackerrank.com/frank2282" target="_blank">
-    <img src="https://img.shields.io/badge/HackerRank-2EC866?style=for-the-badge&logo=hackerrank&logoColor=white" alt="HackerRank">
-  </a>
-  <a href="https://codeforces.com/profile/sourav_sadhukhan" target="_blank">
-    <img src="https://img.shields.io/badge/Codeforces-FC8D20?style=for-the-badge&logo=codeforces&logoColor=white" alt="Codeforces">
-  </a>
-  <a href="https://www.leetcode.com/souravsadhukhan" target="_blank">
-    <img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=white" alt="LeetCode">
-  </a>
-  <a href="https://www.hackerearth.com/@ssadhukhan990" target="_blank">
-    <img src="https://img.shields.io/badge/HackerEarth-323754?style=for-the-badge&logo=hackerearth&logoColor=white" alt="HackerEarth">
-  </a>
 </p>
 
-<!-- LANGUAGES & TOOLS -->
-## 🛠️ Languages and Tools
+<!-- NEON DIVIDER -->
 <p align="center">
-  <a href="https://www.w3schools.com/css/" target="_blank">
-    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
-  </a>
-  <a href="https://expressjs.com" target="_blank">
-    <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express">
-  </a>
-  <a href="https://git-scm.com/" target="_blank">
-    <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git">
-  </a>
-  <a href="https://www.w3.org/html/" target="_blank">
-    <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
-  </a>
-  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
-  </a>
-  <a href="https://www.linux.org/" target="_blank">
-    <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
-  </a>
-  <a href="https://nodejs.org" target="_blank">
-    <img src="https://img.shields.io/badge/NodeJS-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="NodeJS">
-  </a>
-  <a href="https://www.photoshop.com/en" target="_blank">
-    <img src="https://img.shields.io/badge/Photoshop-31A8FF?style=for-the-badge&logo=adobe-photoshop&logoColor=white" alt="Photoshop">
-  </a>
-  <a href="https://postman.com" target="_blank">
-    <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white" alt="Postman">
-  </a>
-  <a href="https://reactjs.org/" target="_blank">
-    <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React">
-  </a>
-  <a href="https://reactnative.dev/" target="_blank">
-    <img src="https://img.shields.io/badge/ReactNative-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React Native">
-  </a>
-  <a href="https://redux.js.org" target="_blank">
-    <img src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white" alt="Redux">
-  </a>
+  <img src="https://via.placeholder.com/800x10.png?text=Neon+Divider" alt="Neon Divider" style="max-width:80%;">
 </p>
 
-<!-- GITHUB STATS -->
-## 📊 GitHub Stats
+## 📊 GitHub Cosmic Metrics
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=souravfrank&show_icons=true&theme=dark&locale=en" alt="GitHub Stats" />
 </p>
@@ -112,11 +141,11 @@
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=souravfrank&theme=dark" alt="GitHub Streak" />
 </p>
 
-<!-- FOOTER -->
+<!-- FUTURISTIC FOOTER -->
 <p align="center">
-  <img src="https://raw.githubusercontent.com/souravfrank/futuristic-readme-assets/main/neon-line.gif" alt="Neon Divider" style="max-width:80%;">
+  <img src="https://via.placeholder.com/800x10.png?text=Neon+Divider" alt="Neon Divider" style="max-width:80%;">
 </p>
 
 <p align="center">
-  <em>Crafted with passion and futuristic flair by Sourav Sadhukhan 🚀</em>
+  <em>Engineered with Passion, Sarcasm, and a Dash of Cosmic Dust by Sourav Sadhukhan 🚀</em>
 </p>
