@@ -60,6 +60,15 @@
   <a href="https://www.google.com/search?q=Firebase" target="_blank">
     <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" alt="Firebase" style="padding: 10px;">
   </a>
+  <a href="https://www.google.com/search?q=TypeScript" target="_blank">
+    <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" style="padding: 10px;">
+  </a>
+  <a href="https://www.google.com/search?q=Lottie" target="_blank">
+    <img src="https://img.shields.io/badge/Lottie-000000?style=for-the-badge&logo=lottie&logoColor=white" alt="Lottie" style="padding: 10px;">
+  </a>
+  <a href="https://www.google.com/search?q=Tailwind CSS" target="_blank">
+    <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" style="padding: 10px;">
+  </a>
 </p>
 <!-- Consider a custom graphic (e.g., radar chart) showing proficiency levels -->
 
@@ -128,9 +137,32 @@
 
 ## 🎓 Education
 
-- **Bachelor of Technology in Electronics and Communication Engineering**  
-  Narula Institute of Technology, Maulana Abul Kalam Azad University of Technology (2019)
-  <!-- Add a diploma icon -->
+### 🎓 Bachelor of Technology in Electronics and Communication Engineering
+Narula Institute of Technology, Maulana Abul Kalam Azad University of Technology (2019)
+<!-- Add a diploma icon -->
+
+<details>
+<summary>10th Grade @ Shibpur Dinobandhu Institution (Branch)</summary>
+<b>General</b><br>
+<i>March 2013</i>
+
+**Highlights**
+- Early exposure to computers sparked lasting fascination
+- Learned basic programming concepts
+- Demonstrated natural aptitude for logical problem-solving
+</details>
+
+<details>
+<summary>12th Grade @ Shibpur Dinobandhu Institution (Branch)</summary>
+<b>Science with Computer Science</b><br>
+<i>June 2013 - July 2015</i>
+
+**Highlights**
+- Chose Computer Science major
+- Developed first C++ applications
+- Active in technical activities
+- Discovered software development passion
+</details>
 
 <!-- NEON DIVIDER -->
 <p align="center">
@@ -149,6 +181,9 @@
   <a href="https://instagram.com/frank_2282" target="_blank">
     <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" style="padding: 30px;">
   </a>
+  <a href="https://www.facebook.com/ssadhukhan990/" target="_blank">
+    <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook" style="padding: 30px;">
+  </a>
 </p>
 
 <!-- NEON DIVIDER -->
@@ -158,11 +193,14 @@
 
 ## 📊 GitHub Cosmic Metrics
 
-<p align="center">
+<p align="center" justify="center">
   <img src="https://github-readme-stats.vercel.app/api/top-langs?username=souravfrank&show_icons=true&theme=dark&locale=en&layout=compact" alt="souravfrank" />
 
   <img src="https://github-readme-stats.vercel.app/api?username=souravfrank&show_icons=true&theme=dark&locale=en" alt="GitHub Stats" />
 </p>
+
+## 📜 [Resume](https://souravfrank.github.io/about-me/#cv)
+## ✍️ [Technical Article Writer](https://souravfrank.github.io/about-me/#articles)
 
 <!-- FUTURISTIC FOOTER -->
 <p align="center">
