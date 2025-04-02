@@ -1,4 +1,28 @@
 
+<!-- FUTURISTIC HEADER -->
+<p align="center">
+  <img src="https://raw.githubusercontent.com/souravfrank/futuristic-readme-assets/main/futuristic-banner.png" alt="Futuristic Banner" style="max-width:100%;">
+</p>
+
+<h1 align="center">Hi 👋, I'm Sourav Sadhukhan</h1>
+<h3 align="center">A Passionate Frontend Developer from India</h3>
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=souravfrank&label=Profile%20views&color=0e0ba2&style=plastic" alt="Profile Views" />
+</p>
+
+<!-- ASCII Art Section -->
+```
+   ________  ________  ___  ___  ________  _________   
+  |\   ____\|\   __  \|\  \|\  \|\   __  \|\___   ___\ 
+  \ \  \___|\ \  \|\  \ \  \\\  \ \  \|\  \|___ \  \_| 
+   \ \_____  \ \   __  \ \  \\\  \ \   _  _\   \ \  \  
+    \|____|\  \ \  \ \  \ \  \\\  \ \  \\  \|   \ \  \ 
+      ____\_\  \ \__\ \__\ \_______\ \__\\ _\    \ \__\
+     |\_________\|__|\|__|\|_______|\|__|\|__|    \|__|
+     \|_________|
+```
+
 <!-- ABOUT & CONNECT -->
 <p align="center">
   <strong>Currently learning:</strong> Data Structures & Algorithms<br>
