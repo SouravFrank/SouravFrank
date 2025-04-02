@@ -154,17 +154,17 @@
 
 ## 🎓 Education
 
-### Bachelor of Technology in Electronics & Communication Engineering  
+### Bachelor of Technology
 **Narula Institute of Technology** | *2015-2019*  
-⌨️ Relevant Coursework: Embedded Systems, Digital Signal Processing, OOPs  
+📚 Stream: Electronics & Communication Engineering
 
 ### Higher Secondary Education  
-**Shibpur Dinobandhu Institution** | *2013-2015*  
+**Shibpur Dinobandhu Institution (Branch)** | *2013-2015*  
 📚 Stream: Computer Science  
 💡 Early Programming Exposure: C++ fundamentals
 
 ### Secondary Education  
-**Shibpur Dinobandhu Institution** | *2013*  
+**Shibpur Dinobandhu Institution (Branch)** | *2013*  
 🚀 Initiated Tech Journey: Basic computer literacy & logical thinking
 
 <!-- NEON DIVIDER -->
