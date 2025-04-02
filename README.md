@@ -77,6 +77,23 @@
   <img src="./assets/neon_devider.png" alt="Neon Divider" style="max-width:70%;">
 </p>
 
+## 📚 Technical Insights
+
+<p align="center">
+  <strong>Galactic Thought Leader</strong> on LinkedIn, sharing deep insights into web and mobile development, React Native, and modern JavaScript patterns. 🚀
+</p>
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/sourav-sadhukhan-913180197/" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" style="padding: 10px;">
+  </a>
+</p>
+
+<!-- NEON DIVIDER -->
+<p align="center">
+  <img src="./assets/neon_devider.png" alt="Neon Divider" style="max-width:70%;">
+</p>
+
 ## 🚀 Professional Odyssey
 
 - **🚀 Senior Mobile Application Developer @ Fareportal (Remote)**  
@@ -137,32 +154,32 @@
 
 ## 🎓 Education
 
-### 🎓 Bachelor of Technology in Electronics and Communication Engineering
-Narula Institute of Technology, Maulana Abul Kalam Azad University of Technology (2019)
-<!-- Add a diploma icon -->
+### Bachelor of Technology in Electronics & Communication Engineering  
+**Narula Institute of Technology** | *2015-2019*  
+⌨️ Relevant Coursework: Embedded Systems, Digital Signal Processing, OOPs  
 
-<details>
-<summary>10th Grade @ Shibpur Dinobandhu Institution (Branch)</summary>
-<b>General</b><br>
-<i>March 2013</i>
+### Higher Secondary Education  
+**Shibpur Dinobandhu Institution** | *2013-2015*  
+📚 Stream: Computer Science  
+💡 Early Programming Exposure: C++ fundamentals
 
-**Highlights**
-- Early exposure to computers sparked lasting fascination
-- Learned basic programming concepts
-- Demonstrated natural aptitude for logical problem-solving
-</details>
+### Secondary Education  
+**Shibpur Dinobandhu Institution** | *2013*  
+🚀 Initiated Tech Journey: Basic computer literacy & logical thinking
 
-<details>
-<summary>12th Grade @ Shibpur Dinobandhu Institution (Branch)</summary>
-<b>Science with Computer Science</b><br>
-<i>June 2013 - July 2015</i>
+<!-- NEON DIVIDER -->
+<p align="center">
+  <img src="./assets/neon_devider.png" alt="Neon Divider" style="max-width:70%;">
+</p>
 
-**Highlights**
-- Chose Computer Science major
-- Developed first C++ applications
-- Active in technical activities
-- Discovered software development passion
-</details>
+## 📄 Professional Documents
+
+<div align="center">
+
+[![Resume](https://img.shields.io/badge/Download_Resume-4285F4?style=for-the-badge&logo=adobe-acrobat-reader&logoColor=white)](https://souravfrank.github.io/about-me/#cv)
+[![Technical Articles](https://img.shields.io/badge/Technical_Writing-FF6C37?style=for-the-badge&logo=medium&logoColor=white)](https://souravfrank.github.io/about-me/#articles)
+
+</div>
 
 <!-- NEON DIVIDER -->
 <p align="center">
@@ -198,9 +215,6 @@ Narula Institute of Technology, Maulana Abul Kalam Azad University of Technology
 
   <img src="https://github-readme-stats.vercel.app/api?username=souravfrank&show_icons=true&theme=dark&locale=en" alt="GitHub Stats" />
 </p>
-
-## 📜 [Resume](https://souravfrank.github.io/about-me/#cv)
-## ✍️ [Technical Article Writer](https://souravfrank.github.io/about-me/#articles)
 
 <!-- FUTURISTIC FOOTER -->
 <p align="center">
