@@ -232,9 +232,9 @@
 ## 📊 GitHub Cosmic Metrics
 
 <p align="center" justify="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=souravfrank&show_icons=true&theme=dark&locale=en&layout=compact" alt="souravfrank" />
+  <img src="https://github-readme-stats-bice-two.vercel.app/api/top-langs?username=souravfrank&show_icons=true&theme=dark&locale=en&layout=compact" alt="souravfrank" />
 
-  <img src="https://github-readme-stats.vercel.app/api?username=souravfrank&show_icons=true&theme=dark&locale=en" alt="GitHub Stats" />
+  <img src="https://github-readme-stats-bice-two.vercel.app/api?username=souravfrank&show_icons=true&theme=dark&locale=en" alt="GitHub Stats" />
 </p>
 
 <!-- FUTURISTIC FOOTER -->
