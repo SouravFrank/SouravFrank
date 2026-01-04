@@ -96,51 +96,30 @@
 
 ## 🚀 Professional Odyssey
 
-- **🚀 Senior Mobile Engineer @ PwC India (Kolkata, India)**  
-  _Jul 2025 – Present_
-
-  - Building internal mobile POCs using React Native + TypeScript with a strong focus on scalability and clean abstractions.
-  - Designed modular, reusable component patterns aligned with enterprise-grade standards.
-  - Improved internal component library consistency, reducing duplication and speeding up team onboarding.
-  - Collaborating across teams to define architecture best practices for long-term maintainability.
-
 - **🚀 Senior Mobile Application Developer @ Fareportal (Remote)**  
-  _Apr 2023 – Jun 2025_
+  _Apr 2023 – Present_
 
-  - Owned App Store & Play Store release management end-to-end — signing, approvals, rollout strategy, and hotfixes.
-  - Built a custom OTA update system (CodePush-style delta updates) reducing bug-fix rollout time from 5 days → 24 hours.
-  - Led React Native upgrades (0.71 → 0.78), adopting Fabric, Turbo Modules, and Hermes for better performance and lower JS thread load.
-  - Developed native modules (iOS & Android) to unlock device-level APIs and performance-critical flows.
-  - Improved crash-free sessions from 96.8% → 99.2% using Firebase Crashlytics.
-  - Contributed to a micro-frontend, modular architecture enabling independent feature shipping across teams.
-  - Delivered promotional features driving a 10% increase in user engagement.
-  - Mentored developers, led code reviews, and enforced maintainable React Native patterns.
+  - Built a dynamic bundle system for React Native apps—because who needs delays in 3023?
+  - Led code reviews and mentored rookies to galactic greatness.
+  - Wired up native modules (iOS/Android) and Firebase SDKs like a tech sorcerer.
 
 - **📱 Mobile Application Developer @ Fareportal (Remote)**  
   _Nov 2021 – Mar 2023_
 
-  - Upgraded React Native 0.64 → 0.71, resolving major dependency conflicts and improving startup performance.
-  - Integrated Apple Pay and native payment flows, reducing checkout friction.
-  - Implemented Google Play In-App Updates to improve feature adoption and reduce outdated builds.
-  - Built reusable UI components and Lottie animations for high-traffic booking flows.
-  - Added in-app rating prompts, increasing daily ratings by 4×.
-  - Owned Node.js + Express APIs supporting mobile promotions and campaign rollouts.
+  - Boosted user engagement with slick in-app features.
+  - Added Apple Pay and Venmo—because cash is so 21st century.
+  - Upgraded React Native and crafted UI components with Lottie flair.
 
 - **🖥️ System Engineer @ Tata Consultancy Services (Kolkata, India)**  
   _Jul 2020 – Oct 2021_
 
-  - Delivered features across React Native and React Web applications in collaboration with UX, QA, and client teams.
-  - Built 3 internal inventory management apps, improving store operations by ~40%.
-  - Abstracted Redux and business logic into a shared internal package reused across multiple apps.
-  - Served as production SPOC, leading a team of 5 to resolve live incidents.
-  - Actively participated in Agile ceremonies to improve delivery efficiency.
+  - Engineered 3 inventory apps for a UK client—retail’s never been so sexy.
+  - Optimized APIs and logs like a digital janitor on steroids.
 
-- **💻 Assistant System Engineer @ Tata Consultancy Services**  
-  _Jul 2019 – Jun 2020_
-
-  - Published React Native e-commerce apps to App Store & Play Store with 1M+ total downloads.
-  - Optimized Node.js backends using PM2 (clustering, log rotation).
-  - Implemented proactive failure alerts, reducing production incident response time.
+- **💻 Assistant System Engineer @ Tata Consultancy Services**
+  - Deployed shopping apps to app stores faster than you can say "bug fix."
+  - Tweaked backend services for peak performance.
+  <!-- Replace with a timeline graphic for a futuristic vibe -->
 
 <!-- NEON DIVIDER -->
 <p align="center">
