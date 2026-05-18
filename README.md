@@ -227,7 +227,3 @@
 <p align="center">
   <img src="./assets/neon_devider.png" alt="Neon Divider" style="max-width:70%;">
 </p>
-
-<p align="center">
-  <em>Refactored with passion, sarcasm, and zero console warnings.</em>
-</p>
