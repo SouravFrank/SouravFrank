@@ -1,15 +1,12 @@
-<p align="center">
-  <img src="./assets/Sourav.gif" alt="Developer Banner" style="max-width:100%;">
-</p>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0e0ba2,50:3b3bd6,100:61DAFB&height=200&section=header&text=Sourav%20Sadhukhan&fontSize=44&fontColor=ffffff&fontAlignY=32&desc=Senior%20Frontend%20Engineer&descSize=18&descAlignY=55&animation=fadeIn" width="100%" alt="Header Banner" />
 
-<h1 align="center">Hello, World! 👋 I’m Sourav Sadhukhan</h1>
-<h3 align="center">Senior Frontend Engineer compiling pixel-perfect UIs and squashing bugs in production.</h3>
+<div align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=61DAFB&center=true&vCenter=true&width=640&height=50&lines=Senior+Frontend+Engineer;React+%26+React+Native+Specialist;Compiling+pixel-perfect+UIs;Squashing+bugs+in+production" alt="Typing SVG" />
+</div>
 
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=souravfrank&label=Profile%20Views&color=0e0ba2&style=plastic" alt="Profile Views" />
-</p>
-
-<p align="center">
+  <br/>
   <em>Powered by cold coffee, fueled by momos, and currently executing builds on a Mac Mini M4.</em>
 </p>
 
@@ -19,10 +16,24 @@
 
 ## 👨‍💻 `<About Me />`
 
-<p align="center">
-  <strong>Query Me About:</strong> React Native, React, JavaScript, Typescript, Architecture <br>
-  <strong>POST /contact:</strong> <a href="mailto:ssadhukhan990@gmail.com">ssadhukhan990@gmail.com</a>
-</p>
+<table>
+<tr>
+<td valign="top">
+
+**Query Me About:** React Native, React, JavaScript, Typescript, Architecture
+**POST /contact:** [ssadhukhan990@gmail.com](mailto:ssadhukhan990@gmail.com)
+
+- 🏗️ Primary Technical Decision Maker on a US retail logistics portal serving web + mobile
+- 📱 Owns App Store & Play Store release management end-to-end
+- 🛡️ Final approver for production PRs & feature flag rollouts
+- 🤖 Ships faster with Cursor, Claude Code & Copilot
+
+</td>
+<td valign="middle">
+  <img src="./assets/Sourav.gif" alt="Developer Banner" width="220" />
+</td>
+</tr>
+</table>
 
 <p align="center">
   <img src="./assets/neon_devider.png" alt="Neon Divider" style="max-width:70%;">
@@ -31,22 +42,30 @@
 ## 🛠️ `package.json` (Tech Stack)
 
 ### ⚙️ Core Dependencies
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black) ![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) ![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-764ABC?style=for-the-badge&logo=redux&logoColor=white) ![Redux-Saga](https://img.shields.io/badge/Redux--Saga-999999?style=for-the-badge&logo=redux-saga&logoColor=white) ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) ![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white) ![Expo](https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=expo&logoColor=white)
 
-### 🖥️ Frontend & UI
-![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white) ![Webpack](https://img.shields.io/badge/Webpack-8DD6F9?style=for-the-badge&logo=webpack&logoColor=black) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) ![Material UI](https://img.shields.io/badge/Material_UI-007FFF?style=for-the-badge&logo=mui&logoColor=white) ![Storybook](https://img.shields.io/badge/Storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) ![Lottie](https://img.shields.io/badge/Lottie-000000?style=for-the-badge&logo=lottie&logoColor=white)
+<img src="https://skillicons.dev/icons?i=react,ts,js,redux,nodejs,express,vite,webpack,tailwind,materialui,html,css&perline=12" alt="Core stack icons" />
 
 ### 📱 Mobile & Native
-![iOS](https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=apple&logoColor=white) ![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white) ![Hermes](https://img.shields.io/badge/Hermes-5B4BC4?style=for-the-badge&logo=hermes&logoColor=white) ![Turbo Modules](https://img.shields.io/badge/Turbo_Modules-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![Objective-C](https://img.shields.io/badge/Objective--C-438EFF?style=for-the-badge&logo=apple&logoColor=white)
+
+![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![Expo](https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=expo&logoColor=white) ![iOS](https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=apple&logoColor=white) ![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white) ![Hermes](https://img.shields.io/badge/Hermes-5B4BC4?style=for-the-badge&logo=hermes&logoColor=white) ![Turbo Modules](https://img.shields.io/badge/Turbo_Modules-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![Objective-C](https://img.shields.io/badge/Objective--C-438EFF?style=for-the-badge&logo=apple&logoColor=white)
+
+### 🎨 Frontend & UI
+
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) ![Storybook](https://img.shields.io/badge/Storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white) ![Lottie](https://img.shields.io/badge/Lottie-000000?style=for-the-badge&logo=lottie&logoColor=white)
 
 ### 🏗️ Architecture & Data
+
 ![Micro-Frontends](https://img.shields.io/badge/Micro--Frontends-FF6C37?style=for-the-badge) ![Modular Architecture](https://img.shields.io/badge/Modular_Architecture-0e0ba2?style=for-the-badge) ![IndexedDB](https://img.shields.io/badge/IndexedDB-003B57?style=for-the-badge) ![REST APIs](https://img.shields.io/badge/REST_APIs-009688?style=for-the-badge) ![SOLID](https://img.shields.io/badge/SOLID_Principles-000000?style=for-the-badge)
 
 ### 🤖 AI-Assisted Development
+
 ![Cursor](https://img.shields.io/badge/Cursor-000000?style=for-the-badge&logo=cursor&logoColor=white) ![Claude Code](https://img.shields.io/badge/Claude_Code-D4A574?style=for-the-badge&logo=anthropic&logoColor=white) ![GitHub Copilot](https://img.shields.io/badge/GitHub_Copilot-000000?style=for-the-badge&logo=github&logoColor=white) ![OpenAI Codex](https://img.shields.io/badge/OpenAI_Codex-412991?style=for-the-badge&logo=openai&logoColor=white)
 
 ### 🛠️ DevOps & Tools
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white) ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black) ![Xcode](https://img.shields.io/badge/Xcode-147EFB?style=for-the-badge&logo=xcode&logoColor=white) ![Android Studio](https://img.shields.io/badge/Android_Studio-3DDC84?style=for-the-badge&logo=android-studio&logoColor=white) ![Azure DevOps](https://img.shields.io/badge/Azure_DevOps-0078D7?style=for-the-badge&logo=azure-devops&logoColor=white) ![SonarQube](https://img.shields.io/badge/SonarQube-4E9BCD?style=for-the-badge&logo=sonarqube&logoColor=white) ![JIRA](https://img.shields.io/badge/JIRA-0052CC?style=for-the-badge&logo=jira&logoColor=white) ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
+
+<img src="https://skillicons.dev/icons?i=git,firebase,figma&perline=12" alt="Tool icons" />
+
+![Xcode](https://img.shields.io/badge/Xcode-147EFB?style=for-the-badge&logo=xcode&logoColor=white) ![Android Studio](https://img.shields.io/badge/Android_Studio-3DDC84?style=for-the-badge&logo=android-studio&logoColor=white) ![Azure DevOps](https://img.shields.io/badge/Azure_DevOps-0078D7?style=for-the-badge&logo=azure-devops&logoColor=white) ![SonarQube](https://img.shields.io/badge/SonarQube-4E9BCD?style=for-the-badge&logo=sonarqube&logoColor=white) ![JIRA](https://img.shields.io/badge/JIRA-0052CC?style=for-the-badge&logo=jira&logoColor=white)
 
 <p align="center">
   <img src="./assets/neon_devider.png" alt="Neon Divider" style="max-width:70%;">
@@ -208,22 +227,26 @@
 ## 📊 `Telemetry_Data` (GitHub Stats)
 
 <div align="center">
-  <img src="https://github-readme-stats-bice-two.vercel.app/api?username=souravfrank&show_icons=true&theme=dark&locale=en" alt="GitHub Stats" />
-  <img src="https://github-readme-stats-bice-two.vercel.app/api/top-langs?username=souravfrank&show_icons=true&theme=dark&locale=en&layout=compact" alt="Top Languages" />
+  <img height="165" src="https://github-readme-stats-eight-theta.vercel.app/api?username=souravfrank&show_icons=true&theme=tokyonight&locale=en&hide_border=true" alt="GitHub Stats" />
+  <img height="165" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs?username=souravfrank&theme=tokyonight&locale=en&layout=compact&hide_border=true" alt="Top Languages" />
 </div>
 
 <br />
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=souravfrank&theme=dark&hide_border=true" alt="GitHub Streak" />
+  <img height="165" src="https://streak-stats.demolab.com?user=souravfrank&theme=tokyonight&hide_border=true&locale=en" alt="GitHub Streak" />
 </div>
 
 <br />
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=souravfrank&theme=react-dark&hide_border=true&area=true" alt="Activity Graph" />
+  <img src="https://ghchart.rshah.org/61DAFB/souravfrank" alt="Contribution Calendar" style="max-width:100%;" />
 </div>
 
-<p align="center">
-  <img src="./assets/neon_devider.png" alt="Neon Divider" style="max-width:70%;">
-</p>
+<br />
+
+<div align="center">
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight" alt="Dev Quote" />
+</div>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:61DAFB,50:3b3bd6,100:0e0ba2&height=120&section=footer" width="100%" alt="Footer Banner" />
