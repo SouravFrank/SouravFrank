@@ -208,20 +208,20 @@
 ## 📊 `Telemetry_Data` (GitHub Stats)
 
 <div align="center">
-  <img src="https://github-readme-stats-bice-two.vercel.app/api?username=souravfrank&show_icons=true&theme=dark&locale=en" alt="GitHub Stats" />
-  <img src="https://github-readme-stats-bice-two.vercel.app/api/top-langs?username=souravfrank&show_icons=true&theme=dark&locale=en&layout=compact" alt="Top Languages" />
+  <img src="https://github-readme-stats-eight-theta.vercel.app/api?username=souravfrank&show_icons=true&theme=dark&locale=en" alt="GitHub Stats" />
+  <img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs?username=souravfrank&theme=dark&locale=en&layout=compact" alt="Top Languages" />
 </div>
 
 <br />
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=souravfrank&theme=dark&hide_border=true" alt="GitHub Streak" />
+  <img src="https://streak-stats.demolab.com?user=souravfrank&theme=dark&hide_border=true&locale=en" alt="GitHub Streak" />
 </div>
 
 <br />
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=souravfrank&theme=react-dark&hide_border=true&area=true" alt="Activity Graph" />
+  <img src="https://ghchart.rshah.org/souravfrank" alt="Contribution Calendar" style="max-width:100%;" />
 </div>
 
 <p align="center">
