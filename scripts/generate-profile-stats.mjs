@@ -14,13 +14,14 @@
  *   GH_LOGIN=souravfrank GH_TOKEN=<token> node scripts/generate-profile-stats.mjs
  */
 
-import { writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = join(HERE, '..');
 const OUT_DIR = join(REPO_ROOT, 'assets', 'stats');
+const README_PATH = join(REPO_ROOT, 'README.md');
 
 const LOGIN = process.env.GH_LOGIN || 'souravfrank';
 const TOKEN = process.env.GH_TOKEN || '';
@@ -76,6 +77,21 @@ const CALENDAR_QUERY = `
     }
   }
 `;
+
+const YEARS_QUERY = `
+  query ($login: String!) {
+    user(login: $login) {
+      contributionsCollection {
+        contributionYears
+      }
+    }
+  }
+`;
+
+async function fetchContributionYears() {
+  const data = await graphql(YEARS_QUERY, { login: LOGIN });
+  return data.user.contributionsCollection.contributionYears;
+}
 
 async function fetchCalendar(from, to) {
   const data = await graphql(CALENDAR_QUERY, { login: LOGIN, from, to });
@@ -584,16 +600,16 @@ const FUT_PALETTES = {
 
 function renderTelemetry(data, p) {
   const W = 1060;
-  const H = 652;
-  const { weeks, stats, accountStats, langs, year } = data;
+  const H = 430;
+  const { stats, accountStats, langs, year } = data;
   const gid = 'tgrad';
   const parts = [];
 
   // Background + ambient radial orbs + subtle engineering grid (clipped to rounded frame)
   parts.push(`<g clip-path="url(#outerClip)">`);
   parts.push(`<rect width="${W}" height="${H}" fill="url(#bg)"/>`);
-  parts.push(`<circle cx="140" cy="80" r="280" fill="url(#orbA)"/>`);
-  parts.push(`<circle cx="940" cy="560" r="300" fill="url(#orbB)"/>`);
+  parts.push(`<circle cx="140" cy="70" r="260" fill="url(#orbA)"/>`);
+  parts.push(`<circle cx="940" cy="360" r="280" fill="url(#orbB)"/>`);
   for (let x = 28; x <= 1032; x += 64) {
     parts.push(`<line x1="${x}" y1="84" x2="${x}" y2="${H - 18}" stroke="${p.hairline}" stroke-width="1"/>`);
   }
@@ -622,79 +638,18 @@ function renderTelemetry(data, p) {
     return s;
   };
 
-  // Row 1: Full-width ACTIVITY MATRIX (1004 x 208) with daily numbers in every active cell
-  const ax = 28;
-  const ay = 100;
-  const aw = 1004;
-  const ah = 208;
-  parts.push(hudPanel(ax, ay, aw, ah, 'ACTIVITY MATRIX'));
-
-  // Heatmap legend in top-right of Activity Matrix card
-  parts.push(`<text x="890" y="${ay + 25}" text-anchor="end" font-family="${p.font}" font-size="9" fill="${p.faint}">Less</text>`);
-  p.heat.forEach((c, i) => {
-    parts.push(`<rect x="${898 + i * 16}" y="${ay + 16}" width="11" height="11" rx="2.5" fill="${c}"/>`);
-  });
-  parts.push(`<text x="984" y="${ay + 25}" font-family="${p.font}" font-size="9" fill="${p.faint}">More</text>`);
-
-  const CELL = 16;
-  const GAP = 2;
-  const STEP = CELL + GAP;
-  const X0 = 62;
-  const Y0 = 152;
-  let cells = '';
-  weeks.forEach((week, wi) => {
-    week.contributionDays.forEach((day, di) => {
-      const count = day.contributionCount;
-      const lvl = level(count);
-      const fill = p.heat[lvl];
-      const cx = X0 + wi * STEP;
-      const cy = Y0 + di * STEP;
-      cells += `<rect x="${cx}" y="${cy}" width="${CELL}" height="${CELL}" rx="3" fill="${fill}"><title>${day.date}: ${count}</title></rect>`;
-      if (count > 0) {
-        const label = String(count);
-        const fz = label.length >= 3 ? '6.2' : label.length === 2 ? '7.5' : '8.8';
-        const dy = label.length >= 3 ? 2.2 : label.length === 2 ? 2.7 : 3.1;
-        cells += `<text x="${cx + CELL / 2}" y="${cy + CELL / 2 + dy}" text-anchor="middle" font-family="${p.font}" font-size="${fz}" font-weight="700" fill="${p.heatText[lvl]}">${label}</text>`;
-      }
-    });
-  });
-
-  let prevMonth = -1;
-  let lastMonthX = -999;
-  let months = '';
-  weeks.forEach((week, wi) => {
-    const d = parseDate(week.contributionDays[0].date);
-    if (d.getUTCMonth() !== prevMonth) {
-      prevMonth = d.getUTCMonth();
-      const mx = X0 + wi * STEP + 1;
-        if (mx - lastMonthX >= 36) {
-          months += `<text x="${mx}" y="${Y0 - 8}" font-family="${p.font}" font-size="9.5" fill="${p.faint}">${MONTHS[prevMonth]}</text>`;
-          lastMonthX = mx;
-        }
-      }
-    });
-  let wd = '';
-  [0, 3, 5].forEach((di) => {
-    wd += `<text x="${X0 - 7}" y="${Y0 + di * STEP + 11}" text-anchor="end" font-family="${p.font}" font-size="8.5" fill="${p.faint}">${WEEKDAYS[di]}</text>`;
-  });
-  parts.push(months, wd, cells);
-  parts.push(
-    `<text x="${ax + 20}" y="${ay + ah - 14}" font-family="${p.font}" font-size="9" letter-spacing="0.8" fill="${p.faint}">${stats.activeDays} ACTIVE DAYS · PEAK ${stats.peakDay}/DAY · AVG ${stats.dailyAvg}/DAY</text>`,
-    `<text x="${ax + aw - 20}" y="${ay + ah - 14}" text-anchor="end" font-family="${p.font}" font-size="9" font-weight="600" letter-spacing="0.8" fill="${p.subtext}">${year}: ${stats.yearTotal.toLocaleString('en-US')}  ·  30D: ${stats.last30.toLocaleString('en-US')}</text>`,
-  );
-
-  // Row 2 Left: MONTHLY VELOCITY (352 x 178)
+  // Row 1 Left: MONTHLY VELOCITY (352 x 184) — value labels above every month bar
   const vx = 28;
-  const vy = 324;
+  const vy = 100;
   const vw = 352;
-  const vh = 178;
+  const vh = 184;
   const monthsData = stats.monthlyTotals;
   const peakMonth = monthsData.reduce((best, cur) => (cur.total > best.total ? cur : best), { label: '-', total: 0 });
   const maxM = Math.max(...monthsData.map((m) => m.total), 1);
   parts.push(hudPanel(vx, vy, vw, vh, 'MONTHLY VELOCITY', `PEAK ${peakMonth.label.toUpperCase()} (${peakMonth.total})`));
 
-  const chartTop = vy + 52;
-  const chartBase = vy + 142;
+  const chartTop = vy + 58;
+  const chartBase = vy + 148;
   const chartMaxH = chartBase - chartTop;
   parts.push(
     `<line x1="${vx + 20}" y1="${chartTop}" x2="${vx + vw - 20}" y2="${chartTop}" stroke="${p.track}" stroke-width="1" stroke-dasharray="3 3"/>`,
@@ -708,20 +663,19 @@ function renderTelemetry(data, p) {
     const bh = m.total > 0 ? Math.max(4, Math.round((m.total / maxM) * chartMaxH)) : 3;
     const by = chartBase - bh;
     const isPeak = m.ym === peakMonth.ym && m.total > 0;
+    const valColor = isPeak ? p.accentFrom : m.total > 0 ? p.subtext : p.faint;
     parts.push(
       `<rect x="${bx}" y="${by}" width="14" height="${bh}" rx="3" fill="${m.total > 0 ? 'url(#' + gid + ')' : p.track}" opacity="${isPeak ? '1' : '0.78'}"><title>${m.ym}: ${m.total} contributions</title></rect>`,
+      `<text x="${bx + 7}" y="${by - 5}" text-anchor="middle" font-family="${p.font}" font-size="8" font-weight="${isPeak ? '800' : '600'}" fill="${valColor}">${m.total}</text>`,
+      `<text x="${bx + 7}" y="${chartBase + 16}" text-anchor="middle" font-family="${p.font}" font-size="8.5" fill="${isPeak ? p.text : p.faint}">${m.label}</text>`,
     );
-    if (isPeak) {
-      parts.push(`<text x="${bx + 7}" y="${by - 5}" text-anchor="middle" font-family="${p.font}" font-size="8.5" font-weight="700" fill="${p.accentFrom}">${m.total}</text>`);
-    }
-    parts.push(`<text x="${bx + 7}" y="${chartBase + 16}" text-anchor="middle" font-family="${p.font}" font-size="8.5" fill="${isPeak ? p.text : p.faint}">${m.label}</text>`);
   });
 
-  // Row 2 Middle: METRICS (352 x 178)
+  // Row 1 Middle: METRICS (352 x 184)
   const mx = 396;
-  const my = 324;
+  const my = 100;
   const mw = 352;
-  const mh = 178;
+  const mh = 184;
   parts.push(hudPanel(mx, my, mw, mh, 'METRICS', 'PUBLIC PROFILE'));
   const tiles = [
     ['COMMITS', fmtCompact(accountStats.commitsOwn)],
@@ -730,30 +684,30 @@ function renderTelemetry(data, p) {
     ['ISSUES', fmtCompact(accountStats.issues)],
   ];
   const tileW = 148;
-  const tileH = 55;
+  const tileH = 57;
   const colX = [mx + 20, mx + 184];
-  const rowY = [my + 42, my + 108];
+  const rowY = [my + 44, my + 111];
   tiles.forEach((t, i) => {
     const tx = colX[i % 2];
     const ty = rowY[Math.floor(i / 2)];
     parts.push(
       `<rect x="${tx}" y="${ty}" width="${tileW}" height="${tileH}" rx="10" fill="${p.panelInner}" stroke="${p.panelStroke}" stroke-width="0.75"/>`,
-      `<rect x="${tx + 12}" y="${ty + 13}" width="3.5" height="29" rx="1.75" fill="url(#${gid})"/>`,
-      `<text x="${tx + 24}" y="${ty + 31}" font-family="${p.font}" font-size="20" font-weight="800" fill="${p.text}">${t[1]}</text>`,
-      `<text x="${tx + 24}" y="${ty + 45}" font-family="${p.font}" font-size="8.5" font-weight="600" letter-spacing="1.2" fill="${p.subtext}">${t[0]}</text>`,
+      `<rect x="${tx + 12}" y="${ty + 14}" width="3.5" height="29" rx="1.75" fill="url(#${gid})"/>`,
+      `<text x="${tx + 24}" y="${ty + 32}" font-family="${p.font}" font-size="20" font-weight="800" fill="${p.text}">${t[1]}</text>`,
+      `<text x="${tx + 24}" y="${ty + 46}" font-family="${p.font}" font-size="8.5" font-weight="600" letter-spacing="1.2" fill="${p.subtext}">${t[0]}</text>`,
     );
   });
 
-  // Row 2 Right: LANGUAGES (268 x 178)
+  // Row 1 Right: LANGUAGES (268 x 184)
   const lpx = 764;
   const lpw = 268;
-  const lpy = 324;
-  const lph = 178;
+  const lpy = 100;
+  const lph = 184;
   parts.push(hudPanel(lpx, lpy, lpw, lph, 'LANGUAGES', 'BY REPO SIZE'));
   const maxKb = Math.max(...langs.map((l) => l.kb), 1);
   const langBarW = 94;
   langs.slice(0, 4).forEach((l, i) => {
-    const y = lpy + 52 + i * 33;
+    const y = lpy + 54 + i * 34;
     const bwL = Math.max(6, Math.round((l.kb / maxKb) * langBarW));
     const lc = langColor(l.name);
     parts.push(
@@ -765,9 +719,9 @@ function renderTelemetry(data, p) {
     );
   });
 
-  // Row 3 Left: STREAK & CADENCE (494 x 112)
+  // Row 2 Left: STREAK & CADENCE (494 x 112)
   const sx = 28;
-  const sy = 518;
+  const sy = 300;
   const sw = 494;
   const sh = 112;
   parts.push(hudPanel(sx, sy, sw, sh, 'STREAK & CADENCE', `LAST 30D: ${stats.last30}`));
@@ -799,9 +753,9 @@ function renderTelemetry(data, p) {
     `<text x="${spX}" y="${sy + 52}" font-family="${p.font}" font-size="8" font-weight="600" letter-spacing="1" fill="${p.faint}">30-DAY ACTIVITY SPARKLINE</text>`,
   );
 
-  // Row 3 Right: TOP PUBLIC REPOS (494 x 112)
+  // Row 2 Right: TOP PUBLIC REPOS (494 x 112)
   const fx = 538;
-  const fy = 518;
+  const fy = 300;
   const fw = 494;
   const fh = 112;
   parts.push(hudPanel(fx, fy, fw, fh, 'TOP PUBLIC REPOS', `${accountStats.publicOwnCount || accountStats.topRepos.length} REPOS`));
@@ -840,33 +794,200 @@ function renderTelemetry(data, p) {
 `;
 }
 
+function renderActivityMatrix(yearData, p) {
+  const { year, weeks, stats, isCurrent } = yearData;
+  const W = 1060;
+  const H = 238;
+  const gid = 'agrad';
+  const parts = [];
+
+  parts.push(`<g clip-path="url(#outerClip)">`);
+  parts.push(`<rect width="${W}" height="${H}" fill="url(#bg)"/>`);
+  parts.push(`<circle cx="140" cy="40" r="220" fill="url(#orbA)"/>`);
+  parts.push(`<circle cx="940" cy="200" r="240" fill="url(#orbB)"/>`);
+  for (let x = 28; x <= 1032; x += 64) {
+    parts.push(`<line x1="${x}" y1="0" x2="${x}" y2="${H}" stroke="${p.hairline}" stroke-width="1"/>`);
+  }
+  for (let y = 40; y <= H; y += 64) {
+    parts.push(`<line x1="0" y1="${y}" x2="${W}" y2="${y}" stroke="${p.hairline}" stroke-width="1"/>`);
+  }
+  parts.push(`</g>`);
+  parts.push(`<rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="16" fill="none" stroke="${p.outerStroke}" stroke-width="1"/>`);
+  parts.push(`<line x1="24" y1="1" x2="136" y2="1" stroke="url(#${gid})" stroke-width="2.5" stroke-linecap="round"/>`);
+
+  // Header
+  const titleX = isCurrent ? 40 : 24;
+  if (isCurrent) {
+    parts.push(`<circle cx="28" cy="26" r="3.5" fill="${p.liveDot}"/><circle cx="28" cy="26" r="7" fill="none" stroke="${p.liveDot}" stroke-width="1" opacity="0.4"/>`);
+  }
+  parts.push(`<text x="${titleX}" y="30" font-family="${p.font}" font-size="11" font-weight="800" letter-spacing="2.2" fill="${p.text}">ACTIVITY MATRIX · ${year}</text>`);
+
+  // Legend
+  parts.push(`<text x="914" y="30" text-anchor="end" font-family="${p.font}" font-size="9" fill="${p.faint}">Less</text>`);
+  p.heat.forEach((c, i) => {
+    parts.push(`<rect x="${922 + i * 16}" y="21" width="11" height="11" rx="2.5" fill="${c}"/>`);
+  });
+  parts.push(`<text x="1008" y="30" font-family="${p.font}" font-size="9" fill="${p.faint}">More</text>`);
+
+  // Grid centered dynamically for 52-54 weeks
+  const CELL = 16;
+  const GAP = 2;
+  const STEP = CELL + GAP;
+  const gridW = weeks.length * STEP - GAP;
+  const X0 = Math.round((W - gridW) / 2) + 12;
+  const Y0 = 64;
+
+  let cells = '';
+  weeks.forEach((week, wi) => {
+    week.contributionDays.forEach((day, di) => {
+      const count = day.contributionCount;
+      const lvl = level(count);
+      const cx = X0 + wi * STEP;
+      const cy = Y0 + di * STEP;
+      cells += `<rect x="${cx}" y="${cy}" width="${CELL}" height="${CELL}" rx="3" fill="${p.heat[lvl]}"><title>${day.date}: ${count}</title></rect>`;
+      if (count > 0) {
+        const label = String(count);
+        const fz = label.length >= 3 ? '6.2' : label.length === 2 ? '7.5' : '8.8';
+        const dy = label.length >= 3 ? 2.2 : label.length === 2 ? 2.7 : 3.1;
+        cells += `<text x="${cx + CELL / 2}" y="${cy + CELL / 2 + dy}" text-anchor="middle" font-family="${p.font}" font-size="${fz}" font-weight="700" fill="${p.heatText[lvl]}">${label}</text>`;
+      }
+    });
+  });
+
+  let prevMonth = -1;
+  let lastMonthX = -999;
+  let months = '';
+  weeks.forEach((week, wi) => {
+    const d = parseDate(week.contributionDays[0].date);
+    if (d.getUTCMonth() !== prevMonth) {
+      prevMonth = d.getUTCMonth();
+      const mx = X0 + wi * STEP + 1;
+      if (mx - lastMonthX >= 36) {
+        months += `<text x="${mx}" y="${Y0 - 9}" font-family="${p.font}" font-size="9.5" fill="${p.faint}">${MONTHS[prevMonth]}</text>`;
+        lastMonthX = mx;
+      }
+    }
+  });
+  let wd = '';
+  [0, 3, 5].forEach((di) => {
+    wd += `<text x="${X0 - 8}" y="${Y0 + di * STEP + 11}" text-anchor="end" font-family="${p.font}" font-size="8.5" fill="${p.faint}">${WEEKDAYS[di]}</text>`;
+  });
+  parts.push(months, wd, cells);
+
+  // Footer summary
+  parts.push(
+    `<text x="24" y="${H - 18}" font-family="${p.font}" font-size="9.5" letter-spacing="0.8" fill="${p.faint}">${stats.total.toLocaleString('en-US')} CONTRIBUTIONS · ${stats.activeDays} ACTIVE DAYS · PEAK ${stats.peakDay}/DAY · AVG ${stats.dailyAvg}/DAY</text>`,
+    `<text x="${W - 24}" y="${H - 18}" text-anchor="end" font-family="${p.font}" font-size="9.5" font-weight="600" letter-spacing="0.8" fill="${p.subtext}">LONGEST STREAK: ${stats.longestStreak}d</text>`,
+  );
+
+  const body = parts.join('\n  ');
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Activity matrix for ${year}: ${stats.total.toLocaleString('en-US')} contributions across ${stats.activeDays} active days, peak ${stats.peakDay} per day, longest streak ${stats.longestStreak} days.">
+  <defs>
+    <clipPath id="outerClip"><rect width="${W}" height="${H}" rx="16"/></clipPath>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="${p.bg0}"/><stop offset="100%" stop-color="${p.bg1}"/>
+    </linearGradient>
+    <linearGradient id="${gid}" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="${p.accentFrom}"/><stop offset="100%" stop-color="${p.accentTo}"/>
+    </linearGradient>
+    <radialGradient id="orbA" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="${p.ambientA}"/><stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <radialGradient id="orbB" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="${p.ambientB}"/><stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+  </defs>
+  ${body}
+</svg>
+`;
+}
+
+function updateReadme(teleData, yearEntries) {
+  let md;
+  try {
+    md = readFileSync(README_PATH, 'utf8');
+  } catch {
+    return;
+  }
+  const { stats, accountStats, langs } = teleData;
+  const langSummary = langs.map((l) => `${l.name} ${l.pct}%`).join(', ');
+  const altText = `Telemetry dashboard: ${stats.total.toLocaleString('en-US')} contributions in the last 12 months, current streak ${stats.currentStreak} days, longest streak ${stats.longestStreak} days. Languages: ${langSummary}. Metrics: ${fmtCompact(accountStats.stars)} stars, ${fmtCompact(accountStats.commitsOwn)} commits, ${fmtCompact(accountStats.prs)} pull requests, ${fmtCompact(accountStats.issues)} issues.`;
+  md = md.replace(/alt="Telemetry dashboard:[^"]*"/g, `alt="${altText}"`);
+
+  const startMarker = '<!-- ACTIVITY-MATRIX:START -->';
+  const endMarker = '<!-- ACTIVITY-MATRIX:END -->';
+  const sIdx = md.indexOf(startMarker);
+  const eIdx = md.indexOf(endMarker);
+  if (sIdx !== -1 && eIdx !== -1 && eIdx > sIdx) {
+    const blocks = yearEntries.map(({ year, stats: ys, isCurrent }) => {
+      const tag = isCurrent ? '<details open>' : '<details>';
+      const summary = `${ys.total.toLocaleString('en-US')} contributions · ${ys.activeDays} active days · peak ${ys.peakDay}/day`;
+      const alt = `Activity matrix for ${year}: ${ys.total.toLocaleString('en-US')} contributions across ${ys.activeDays} active days, peak ${ys.peakDay} per day, longest streak ${ys.longestStreak} days.`;
+      return `${tag}
+<summary><b>📅 ${year}</b> — <i>${summary}</i></summary>
+<br>
+
+<div align="center">
+  <a href="./assets/stats/activity-${year}-light.svg#gh-light-mode-only">
+    <img src="./assets/stats/activity-${year}-light.svg#gh-light-mode-only" width="100%" style="max-width:1060px;" alt="${alt}" />
+  </a>
+  <a href="./assets/stats/activity-${year}-dark.svg#gh-dark-mode-only">
+    <img src="./assets/stats/activity-${year}-dark.svg#gh-dark-mode-only" width="100%" style="max-width:1060px;" alt="${alt}" />
+  </a>
+</div>
+
+</details>`;
+    }).join('\n\n');
+
+    md = `${md.slice(0, sIdx + startMarker.length)}\n${blocks}\n${md.slice(eIdx)}`;
+  }
+
+  writeFileSync(README_PATH, md, 'utf8');
+  console.log('updated README.md');
+}
+
 // ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
 
 async function main() {
   const now = new Date();
-  const from = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() - 364));
-  const to = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1));
+  const currentYear = now.getUTCFullYear();
+  const from = new Date(Date.UTC(currentYear, now.getUTCMonth(), now.getUTCDate() - 364));
+  const to = new Date(Date.UTC(currentYear, now.getUTCMonth(), now.getUTCDate() + 1));
 
-  const weeks = await fetchCalendar(from.toISOString(), to.toISOString());
+  const [weeks, contributionYears] = await Promise.all([
+    fetchCalendar(from.toISOString(), to.toISOString()),
+    fetchContributionYears(),
+  ]);
   const stats = summarizeCalendar(weeks);
 
-  const yearStart = new Date(Date.UTC(now.getUTCFullYear(), 0, 1));
-  const yearWeeks = await fetchCalendar(yearStart.toISOString(), to.toISOString());
-  stats.yearTotal = yearWeeks.reduce(
-    (s, w) => s + w.contributionDays.reduce((a, d) => a + d.contributionCount, 0),
-    0,
+  const years = [...new Set([currentYear, ...contributionYears])].sort((a, b) => b - a);
+  const yearEntries = await Promise.all(
+    years.map(async (year) => {
+      const yFrom = `${year}-01-01T00:00:00Z`;
+      const yTo = year === currentYear ? to.toISOString() : `${year}-12-31T23:59:59Z`;
+      const yWeeks = await fetchCalendar(yFrom, yTo);
+      const yStats = summarizeCalendar(yWeeks);
+      return { year, weeks: yWeeks, stats: yStats, isCurrent: year === currentYear };
+    }),
   );
+  const currentEntry = yearEntries.find((e) => e.year === currentYear);
+  stats.yearTotal = currentEntry ? currentEntry.stats.total : 0;
 
   const repos = await fetchRepos();
   const langs = languageBreakdown(repos);
   const accountStats = await computeAccountStats(repos);
 
   mkdirSync(OUT_DIR, { recursive: true });
-  const teleData = { weeks, stats, accountStats, langs, year: now.getUTCFullYear() };
+  const teleData = { weeks, stats, accountStats, langs, year: currentYear };
   const outputs = [
     ['telemetry', renderTelemetry(teleData, FUT_PALETTES.light), renderTelemetry(teleData, FUT_PALETTES.dark)],
+    ...yearEntries.map((entry) => [
+      `activity-${entry.year}`,
+      renderActivityMatrix(entry, FUT_PALETTES.light),
+      renderActivityMatrix(entry, FUT_PALETTES.dark),
+    ]),
   ];
 
   for (const [base, light, dark] of outputs) {
@@ -875,12 +996,15 @@ async function main() {
     console.log(`wrote ${base}-{light,dark}.svg (${light.length}/${dark.length} bytes)`);
   }
 
+  updateReadme(teleData, yearEntries);
+
   console.log(JSON.stringify({
     total: stats.total,
     currentStreak: stats.currentStreak,
     longestStreak: stats.longestStreak,
     yearTotal: stats.yearTotal,
     last30: stats.last30,
+    years: yearEntries.map((e) => ({ year: e.year, total: e.stats.total, activeDays: e.stats.activeDays })),
     languages: langs.map((l) => `${l.name} ${l.pct}%`),
     stars: accountStats.stars,
     commitsOwn: accountStats.commitsOwn,
