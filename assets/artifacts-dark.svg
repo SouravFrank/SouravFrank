@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="192" viewBox="0 0 1060 192" role="img" aria-label="Artifacts: Senior Frontend Engineer CV — Experience, architecture impact &amp; release leadership; Technical Writing &amp; Deep Dives — React Native, mobile architecture &amp; modern JS patterns">
+  <defs>
+    <clipPath id="outerClip"><rect width="1060" height="192" rx="16"/></clipPath>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060a14"/><stop offset="100%" stop-color="#0c1326"/>
+    </linearGradient>
+    <linearGradient id="fgrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <radialGradient id="orbA" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(56,189,248,0.13)"/><stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <radialGradient id="orbB" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(139,92,246,0.15)"/><stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+  </defs>
+  <g clip-path="url(#outerClip)">
+  <rect width="1060" height="192" fill="url(#bg)"/>
+  <circle cx="140" cy="60" r="240" fill="url(#orbA)"/>
+  <circle cx="940" cy="152" r="260" fill="url(#orbB)"/>
+  <line x1="28" y1="54" x2="28" y2="176" stroke="rgba(120,160,255,0.045)" stroke-width="1"/>
+  <line x1="92" y1="54" x2="92" y2="176" stroke="rgba(120,160,255,0.045)" stroke-width="1"/>
+  <line x1="156" y1="54" x2="156" y2="176" stroke="rgba(120,160,255,0.045)" stroke-width="1"/>
+  <line x1="220" y1="54" x2="220" y2="176" stroke="rgba(120,160,255,0.045)" stroke-width="1"/>
+  <line x1="284" y1="54" x2="284" y2="176" stroke="rgba(120,160,255,0.045)" stroke-width="1"/>
+  <line x1="348" y1="54" x2="348" y2="176" stroke="rgba(120,160,255,0.045)" stroke-width="1"/>
+  <line x1="412" y1="54" x2="412" y2="176" stroke="rgba(120,160,255,0.045)" stroke-width="1"/>
+  <line x1="476" y1="54" x2="476" y2="176" stroke="rgba(120,160,255,0.045)" stroke-width="1"/>
+  <line x1="540" y1="54" x2="540" y2="176" stroke="rgba(120,160,255,0.045)" stroke-width="1"/>
+  <line x1="604" y1="54" x2="604" y2="176" stroke="rgba(120,160,255,0.045)" stroke-width="1"/>
+  <line x1="668" y1="54" x2="668" y2="176" stroke="rgba(120,160,255,0.045)" stroke-width="1"/>
+  <line x1="732" y1="54" x2="732" y2="176" stroke="rgba(120,160,255,0.045)" stroke-width="1"/>
+  <line x1="796" y1="54" x2="796" y2="176" stroke="rgba(120,160,255,0.045)" stroke-width="1"/>
+  <line x1="860" y1="54" x2="860" y2="176" stroke="rgba(120,160,255,0.045)" stroke-width="1"/>
+  <line x1="924" y1="54" x2="924" y2="176" stroke="rgba(120,160,255,0.045)" stroke-width="1"/>
+  <line x1="988" y1="54" x2="988" y2="176" stroke="rgba(120,160,255,0.045)" stroke-width="1"/>
+  <line x1="28" y1="70" x2="1032" y2="70" stroke="rgba(120,160,255,0.045)" stroke-width="1"/>
+  <line x1="28" y1="134" x2="1032" y2="134" stroke="rgba(120,160,255,0.045)" stroke-width="1"/>
+  </g>
+  <rect x="0.5" y="0.5" width="1059" height="191" rx="16" fill="none" stroke="rgba(97,218,251,0.22)" stroke-width="1"/>
+  <circle cx="34" cy="31" r="3.5" fill="#22d3ee"/><circle cx="34" cy="31" r="7" fill="none" stroke="#22d3ee" stroke-width="1" opacity="0.4"/>
+  <text x="49" y="35" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="700" letter-spacing="2.2" fill="#eef4ff">DOCUMENTS &amp; PUBLICATIONS · ABOUT-ME</text>
+  <text x="1032" y="35" text-anchor="end" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" letter-spacing="1.2" fill="#8ba2cf">2 ARTIFACTS</text>
+  <line x1="28" y1="50" x2="1032" y2="50" stroke="url(#fgrad)" stroke-width="1.5" opacity="0.65"/>
+  <rect x="28" y="66" width="494" height="108" rx="14" fill="rgba(13,21,42,0.78)" stroke="rgba(97,218,251,0.20)" stroke-width="1"/>
+  <line x1="46" y1="66.75" x2="144" y2="66.75" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round"/>
+  <circle cx="64" cy="120" r="20" fill="#38bdf8" opacity="0.14"/>
+  <circle cx="64" cy="120" r="20" fill="none" stroke="#38bdf8" stroke-width="1.2" opacity="0.5"/>
+  <path d="M57 111 h9 l5 5 v13 a1.5 1.5 0 0 1 -1.5 1.5 h-12.5 a1.5 1.5 0 0 1 -1.5 -1.5 v-15.5 a1.5 1.5 0 0 1 1.5 -1.5 z" fill="none" stroke="#38bdf8" stroke-width="1.7" stroke-linejoin="round"/>
+  <path d="M66 111 v5 h5" fill="none" stroke="#38bdf8" stroke-width="1.7" stroke-linejoin="round"/>
+  <line x1="60" y1="121" x2="68" y2="121" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="60" y1="125" x2="66" y2="125" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="100" y="93" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="8.5" font-weight="800" letter-spacing="1.4" fill="#38bdf8">RESUME · PDF / WEB</text>
+  <text x="100" y="115" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="15.5" font-weight="800" fill="#eef4ff">Senior Frontend Engineer CV</text>
+  <text x="100" y="135" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11.5" fill="#8ba2cf">Experience, architecture impact &amp; release leadership</text>
+  <text x="100" y="156" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#5d719c">souravfrank.github.io/about-me/#cv ↗</text>
+  <rect x="538" y="66" width="494" height="108" rx="14" fill="rgba(13,21,42,0.78)" stroke="rgba(97,218,251,0.20)" stroke-width="1"/>
+  <line x1="556" y1="66.75" x2="654" y2="66.75" stroke="#a855f7" stroke-width="2.2" stroke-linecap="round"/>
+  <circle cx="574" cy="120" r="20" fill="#a855f7" opacity="0.14"/>
+  <circle cx="574" cy="120" r="20" fill="none" stroke="#a855f7" stroke-width="1.2" opacity="0.5"/>
+  <path d="M567 127 l1.5 -5 l9 -9 a2 2 0 0 1 2.8 2.8 l-9 9 z" fill="none" stroke="#a855f7" stroke-width="1.7" stroke-linejoin="round"/>
+  <line x1="567" y1="130" x2="581" y2="130" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="610" y="93" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="8.5" font-weight="800" letter-spacing="1.4" fill="#a855f7">ARTICLES · ENGINEERING NOTES</text>
+  <text x="610" y="115" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="15.5" font-weight="800" fill="#eef4ff">Technical Writing &amp; Deep Dives</text>
+  <text x="610" y="135" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11.5" fill="#8ba2cf">React Native, mobile architecture &amp; modern JS patterns</text>
+  <text x="610" y="156" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#5d719c">souravfrank.github.io/about-me/#articles ↗</text>
+</svg>

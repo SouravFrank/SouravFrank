@@ -1,84 +1,98 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600" role="img" aria-label="Honors: Employee of the Year Award, Fareportal, 2024; Ownership and Accountability Award, Fareportal, 2024; Fast Execution Award, Fareportal, 2023; Fast Execution Award, Fareportal, 2022; Passion For Customers Award, Fareportal, 2021; Technical Excellence Award, TCS, 2020; Technical Finesse Award, Narula Institute of Technology, 2019">
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="394" viewBox="0 0 1060 394" role="img" aria-label="Honors: Employee of the Year Award (Fareportal, Q4 2024); Ownership and Accountability Award (Fareportal, Q1 2024); Technical Excellence Award (Tata Consultancy Services, Jun 2020); Passion For Customers Award (Fareportal, Q4 2021); Fast Execution Award (Fareportal, Q2 2023); Fast Execution Award (Fareportal, Q2 2022); Technical Finesse Award (Narula Institute of Technology, 2019)">
   <defs>
+    <clipPath id="outerClip"><rect width="1060" height="394" rx="16"/></clipPath>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f6f7ff"/><stop offset="100%" stop-color="#e9edfb"/>
+      <stop offset="0%" stop-color="#f5f7ff"/><stop offset="100%" stop-color="#e8eefc"/>
     </linearGradient>
-    <linearGradient id="hgrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#3b3bd6"/><stop offset="100%" stop-color="#61DAFB"/>
+    <linearGradient id="hgrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563eb"/><stop offset="100%" stop-color="#7c3aed"/>
     </linearGradient>
+    <radialGradient id="orbA" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(56,189,248,0.16)"/><stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <radialGradient id="orbB" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(99,102,241,0.12)"/><stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
   </defs>
-  <rect width="1000" height="600" fill="url(#bg)"/>
-  <line x1="28" y1="118" x2="28" y2="576" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
-  <line x1="108" y1="118" x2="108" y2="576" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
-  <line x1="188" y1="118" x2="188" y2="576" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
-  <line x1="268" y1="118" x2="268" y2="576" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
-  <line x1="348" y1="118" x2="348" y2="576" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
-  <line x1="428" y1="118" x2="428" y2="576" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
-  <line x1="508" y1="118" x2="508" y2="576" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
-  <line x1="588" y1="118" x2="588" y2="576" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
-  <line x1="668" y1="118" x2="668" y2="576" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
-  <line x1="748" y1="118" x2="748" y2="576" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
-  <line x1="828" y1="118" x2="828" y2="576" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
-  <line x1="908" y1="118" x2="908" y2="576" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
-  <line x1="28" y1="118" x2="972" y2="118" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
-  <line x1="28" y1="178" x2="972" y2="178" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
-  <line x1="28" y1="238" x2="972" y2="238" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
-  <line x1="28" y1="298" x2="972" y2="298" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
-  <line x1="28" y1="358" x2="972" y2="358" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
-  <line x1="28" y1="418" x2="972" y2="418" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
-  <line x1="28" y1="478" x2="972" y2="478" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
-  <line x1="28" y1="538" x2="972" y2="538" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
-  <text x="70" y="88" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="34" font-weight="800" fill="#1b2240">🏆</text>
-  <text x="132" y="66" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="26" font-weight="800" letter-spacing="5" fill="#1b2240">HALL OF FAME</text>
-  <text x="134" y="88" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="12" fill="#5a6a96">Honors &amp; Accolades · 2019 – 2024</text>
-  <line x1="28" y1="112" x2="972" y2="112" stroke="url(#hgrad)" stroke-width="2" opacity="0.8"/>
-  <rect x="88" y="126" width="58" height="26" rx="13" fill="rgba(201,151,31,0.14)" stroke="#c9971f" stroke-width="1.2"/>
-  <text x="117" y="144" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#c9971f">2024</text>
-  <g transform="translate(180 142) rotate(45)"><rect x="-11" y="-11" width="22" height="22" rx="5" fill="#c9971f" opacity="0.95"/><rect x="-5" y="-5" width="10" height="10" rx="2.5" fill="rgba(255,255,255,0.78)"/></g>
-  <text x="212" y="146" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#1b2240">Employee of the Year Award</text>
-  <text x="212" y="166" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11.5" fill="#5a6a96">Fareportal · Q4 2024</text>
-  <polygon points="820.0,126.0 823.0,135.0 832.0,135.0 825.0,141.0 827.0,147.0 820.0,142.0 813.0,147.0 815.0,141.0 808.0,135.0 817.0,135.0 820.0,126.0" fill="#c9971f"/><polygon points="846.0,126.0 849.0,135.0 858.0,135.0 851.0,141.0 853.0,147.0 846.0,142.0 839.0,147.0 841.0,141.0 834.0,135.0 843.0,135.0 846.0,126.0" fill="#c9971f"/><polygon points="872.0,126.0 875.0,135.0 884.0,135.0 877.0,141.0 879.0,147.0 872.0,142.0 865.0,147.0 867.0,141.0 860.0,135.0 869.0,135.0 872.0,126.0" fill="#c9971f"/>
-  <line x1="88" y1="180" x2="912" y2="180" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
-  <rect x="88" y="188" width="58" height="26" rx="13" fill="rgba(124,138,160,0.14)" stroke="#7c8aa0" stroke-width="1.2"/>
-  <text x="117" y="206" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#7c8aa0">2024</text>
-  <g transform="translate(180 204) rotate(45)"><rect x="-11" y="-11" width="22" height="22" rx="5" fill="#7c8aa0" opacity="0.95"/><rect x="-5" y="-5" width="10" height="10" rx="2.5" fill="rgba(255,255,255,0.78)"/></g>
-  <text x="212" y="208" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#1b2240">Ownership and Accountability Award</text>
-  <text x="212" y="228" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11.5" fill="#5a6a96">Fareportal · Q1 2024</text>
-  <polygon points="820.0,188.0 823.0,197.0 832.0,197.0 825.0,203.0 827.0,209.0 820.0,204.0 813.0,209.0 815.0,203.0 808.0,197.0 817.0,197.0 820.0,188.0" fill="#7c8aa0"/><polygon points="846.0,188.0 849.0,197.0 858.0,197.0 851.0,203.0 853.0,209.0 846.0,204.0 839.0,209.0 841.0,203.0 834.0,197.0 843.0,197.0 846.0,188.0" fill="#7c8aa0"/><polygon points="872.0,188.0 875.0,197.0 884.0,197.0 877.0,203.0 879.0,209.0 872.0,204.0 865.0,209.0 867.0,203.0 860.0,197.0 869.0,197.0 872.0,188.0" fill="rgba(20,30,80,0.07)"/>
-  <line x1="88" y1="242" x2="912" y2="242" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
-  <rect x="88" y="250" width="58" height="26" rx="13" fill="rgba(192,127,74,0.14)" stroke="#c07f4a" stroke-width="1.2"/>
-  <text x="117" y="268" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#c07f4a">2023</text>
-  <g transform="translate(180 266) rotate(45)"><rect x="-11" y="-11" width="22" height="22" rx="5" fill="#c07f4a" opacity="0.95"/><rect x="-5" y="-5" width="10" height="10" rx="2.5" fill="rgba(255,255,255,0.78)"/></g>
-  <text x="212" y="270" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#1b2240">Fast Execution Award</text>
-  <text x="212" y="290" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11.5" fill="#5a6a96">Fareportal · Q2 2023</text>
-  <polygon points="820.0,250.0 823.0,259.0 832.0,259.0 825.0,265.0 827.0,271.0 820.0,266.0 813.0,271.0 815.0,265.0 808.0,259.0 817.0,259.0 820.0,250.0" fill="#c07f4a"/><polygon points="846.0,250.0 849.0,259.0 858.0,259.0 851.0,265.0 853.0,271.0 846.0,266.0 839.0,271.0 841.0,265.0 834.0,259.0 843.0,259.0 846.0,250.0" fill="rgba(20,30,80,0.07)"/><polygon points="872.0,250.0 875.0,259.0 884.0,259.0 877.0,265.0 879.0,271.0 872.0,266.0 865.0,271.0 867.0,265.0 860.0,259.0 869.0,259.0 872.0,250.0" fill="rgba(20,30,80,0.07)"/>
-  <line x1="88" y1="304" x2="912" y2="304" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
-  <rect x="88" y="312" width="58" height="26" rx="13" fill="rgba(192,127,74,0.14)" stroke="#c07f4a" stroke-width="1.2"/>
-  <text x="117" y="330" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#c07f4a">2022</text>
-  <g transform="translate(180 328) rotate(45)"><rect x="-11" y="-11" width="22" height="22" rx="5" fill="#c07f4a" opacity="0.95"/><rect x="-5" y="-5" width="10" height="10" rx="2.5" fill="rgba(255,255,255,0.78)"/></g>
-  <text x="212" y="332" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#1b2240">Fast Execution Award</text>
-  <text x="212" y="352" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11.5" fill="#5a6a96">Fareportal · Q2 2022</text>
-  <polygon points="820.0,312.0 823.0,321.0 832.0,321.0 825.0,327.0 827.0,333.0 820.0,328.0 813.0,333.0 815.0,327.0 808.0,321.0 817.0,321.0 820.0,312.0" fill="#c07f4a"/><polygon points="846.0,312.0 849.0,321.0 858.0,321.0 851.0,327.0 853.0,333.0 846.0,328.0 839.0,333.0 841.0,327.0 834.0,321.0 843.0,321.0 846.0,312.0" fill="rgba(20,30,80,0.07)"/><polygon points="872.0,312.0 875.0,321.0 884.0,321.0 877.0,327.0 879.0,333.0 872.0,328.0 865.0,333.0 867.0,327.0 860.0,321.0 869.0,321.0 872.0,312.0" fill="rgba(20,30,80,0.07)"/>
-  <line x1="88" y1="366" x2="912" y2="366" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
-  <rect x="88" y="374" width="58" height="26" rx="13" fill="rgba(124,138,160,0.14)" stroke="#7c8aa0" stroke-width="1.2"/>
-  <text x="117" y="392" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#7c8aa0">2021</text>
-  <g transform="translate(180 390) rotate(45)"><rect x="-11" y="-11" width="22" height="22" rx="5" fill="#7c8aa0" opacity="0.95"/><rect x="-5" y="-5" width="10" height="10" rx="2.5" fill="rgba(255,255,255,0.78)"/></g>
-  <text x="212" y="394" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#1b2240">Passion For Customers Award</text>
-  <text x="212" y="414" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11.5" fill="#5a6a96">Fareportal · Q4 2021</text>
-  <polygon points="820.0,374.0 823.0,383.0 832.0,383.0 825.0,389.0 827.0,395.0 820.0,390.0 813.0,395.0 815.0,389.0 808.0,383.0 817.0,383.0 820.0,374.0" fill="#7c8aa0"/><polygon points="846.0,374.0 849.0,383.0 858.0,383.0 851.0,389.0 853.0,395.0 846.0,390.0 839.0,395.0 841.0,389.0 834.0,383.0 843.0,383.0 846.0,374.0" fill="#7c8aa0"/><polygon points="872.0,374.0 875.0,383.0 884.0,383.0 877.0,389.0 879.0,395.0 872.0,390.0 865.0,395.0 867.0,389.0 860.0,383.0 869.0,383.0 872.0,374.0" fill="rgba(20,30,80,0.07)"/>
-  <line x1="88" y1="428" x2="912" y2="428" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
-  <rect x="88" y="436" width="58" height="26" rx="13" fill="rgba(201,151,31,0.14)" stroke="#c9971f" stroke-width="1.2"/>
-  <text x="117" y="454" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#c9971f">2020</text>
-  <g transform="translate(180 452) rotate(45)"><rect x="-11" y="-11" width="22" height="22" rx="5" fill="#c9971f" opacity="0.95"/><rect x="-5" y="-5" width="10" height="10" rx="2.5" fill="rgba(255,255,255,0.78)"/></g>
-  <text x="212" y="456" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#1b2240">Technical Excellence Award</text>
-  <text x="212" y="476" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11.5" fill="#5a6a96">TCS · June 2020</text>
-  <polygon points="820.0,436.0 823.0,445.0 832.0,445.0 825.0,451.0 827.0,457.0 820.0,452.0 813.0,457.0 815.0,451.0 808.0,445.0 817.0,445.0 820.0,436.0" fill="#c9971f"/><polygon points="846.0,436.0 849.0,445.0 858.0,445.0 851.0,451.0 853.0,457.0 846.0,452.0 839.0,457.0 841.0,451.0 834.0,445.0 843.0,445.0 846.0,436.0" fill="#c9971f"/><polygon points="872.0,436.0 875.0,445.0 884.0,445.0 877.0,451.0 879.0,457.0 872.0,452.0 865.0,457.0 867.0,451.0 860.0,445.0 869.0,445.0 872.0,436.0" fill="#c9971f"/>
-  <line x1="88" y1="490" x2="912" y2="490" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
-  <rect x="88" y="498" width="58" height="26" rx="13" fill="rgba(192,127,74,0.14)" stroke="#c07f4a" stroke-width="1.2"/>
-  <text x="117" y="516" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#c07f4a">2019</text>
-  <g transform="translate(180 514) rotate(45)"><rect x="-11" y="-11" width="22" height="22" rx="5" fill="#c07f4a" opacity="0.95"/><rect x="-5" y="-5" width="10" height="10" rx="2.5" fill="rgba(255,255,255,0.78)"/></g>
-  <text x="212" y="518" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#1b2240">Technical Finesse Award</text>
-  <text x="212" y="538" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11.5" fill="#5a6a96">Narula Institute of Technology · 2019</text>
-  <polygon points="820.0,498.0 823.0,507.0 832.0,507.0 825.0,513.0 827.0,519.0 820.0,514.0 813.0,519.0 815.0,513.0 808.0,507.0 817.0,507.0 820.0,498.0" fill="#c07f4a"/><polygon points="846.0,498.0 849.0,507.0 858.0,507.0 851.0,513.0 853.0,519.0 846.0,514.0 839.0,519.0 841.0,513.0 834.0,507.0 843.0,507.0 846.0,498.0" fill="rgba(20,30,80,0.07)"/><polygon points="872.0,498.0 875.0,507.0 884.0,507.0 877.0,513.0 879.0,519.0 872.0,514.0 865.0,519.0 867.0,513.0 860.0,507.0 869.0,507.0 872.0,498.0" fill="rgba(20,30,80,0.07)"/>
-  <polygon points="950.0,65.0 951.3,68.7 955.0,70.0 951.3,71.3 950.0,75.0 948.7,71.3 945.0,70.0 948.7,68.7" fill="#61DAFB" opacity="0.8"/><polygon points="50.0,556.0 51.1,558.9 54.0,560.0 51.1,561.1 50.0,564.0 48.9,561.1 46.0,560.0 48.9,558.9" fill="#61DAFB" opacity="0.8"/><polygon points="958.0,534.0 959.6,538.4 964.0,540.0 959.6,541.6 958.0,546.0 956.4,541.6 952.0,540.0 956.4,538.4" fill="#61DAFB" opacity="0.8"/>
+  <g clip-path="url(#outerClip)">
+  <rect width="1060" height="394" fill="url(#bg)"/>
+  <circle cx="140" cy="60" r="240" fill="url(#orbA)"/>
+  <circle cx="940" cy="354" r="260" fill="url(#orbB)"/>
+  <line x1="28" y1="54" x2="28" y2="378" stroke="rgba(30,41,99,0.045)" stroke-width="1"/>
+  <line x1="92" y1="54" x2="92" y2="378" stroke="rgba(30,41,99,0.045)" stroke-width="1"/>
+  <line x1="156" y1="54" x2="156" y2="378" stroke="rgba(30,41,99,0.045)" stroke-width="1"/>
+  <line x1="220" y1="54" x2="220" y2="378" stroke="rgba(30,41,99,0.045)" stroke-width="1"/>
+  <line x1="284" y1="54" x2="284" y2="378" stroke="rgba(30,41,99,0.045)" stroke-width="1"/>
+  <line x1="348" y1="54" x2="348" y2="378" stroke="rgba(30,41,99,0.045)" stroke-width="1"/>
+  <line x1="412" y1="54" x2="412" y2="378" stroke="rgba(30,41,99,0.045)" stroke-width="1"/>
+  <line x1="476" y1="54" x2="476" y2="378" stroke="rgba(30,41,99,0.045)" stroke-width="1"/>
+  <line x1="540" y1="54" x2="540" y2="378" stroke="rgba(30,41,99,0.045)" stroke-width="1"/>
+  <line x1="604" y1="54" x2="604" y2="378" stroke="rgba(30,41,99,0.045)" stroke-width="1"/>
+  <line x1="668" y1="54" x2="668" y2="378" stroke="rgba(30,41,99,0.045)" stroke-width="1"/>
+  <line x1="732" y1="54" x2="732" y2="378" stroke="rgba(30,41,99,0.045)" stroke-width="1"/>
+  <line x1="796" y1="54" x2="796" y2="378" stroke="rgba(30,41,99,0.045)" stroke-width="1"/>
+  <line x1="860" y1="54" x2="860" y2="378" stroke="rgba(30,41,99,0.045)" stroke-width="1"/>
+  <line x1="924" y1="54" x2="924" y2="378" stroke="rgba(30,41,99,0.045)" stroke-width="1"/>
+  <line x1="988" y1="54" x2="988" y2="378" stroke="rgba(30,41,99,0.045)" stroke-width="1"/>
+  <line x1="28" y1="70" x2="1032" y2="70" stroke="rgba(30,41,99,0.045)" stroke-width="1"/>
+  <line x1="28" y1="134" x2="1032" y2="134" stroke="rgba(30,41,99,0.045)" stroke-width="1"/>
+  <line x1="28" y1="198" x2="1032" y2="198" stroke="rgba(30,41,99,0.045)" stroke-width="1"/>
+  <line x1="28" y1="262" x2="1032" y2="262" stroke="rgba(30,41,99,0.045)" stroke-width="1"/>
+  <line x1="28" y1="326" x2="1032" y2="326" stroke="rgba(30,41,99,0.045)" stroke-width="1"/>
+  </g>
+  <rect x="0.5" y="0.5" width="1059" height="393" rx="16" fill="none" stroke="rgba(59,59,214,0.18)" stroke-width="1"/>
+  <circle cx="34" cy="31" r="3.5" fill="#0284c7"/><circle cx="34" cy="31" r="7" fill="none" stroke="#0284c7" stroke-width="1" opacity="0.4"/>
+  <text x="49" y="35" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="700" letter-spacing="2.2" fill="#0f172a">RECOGNITION TIMELINE · 2019 – 2024</text>
+  <text x="1032" y="35" text-anchor="end" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" letter-spacing="1.2" fill="#475569">7 HONORS · 2 GOLD · 2 SILVER · 3 BRONZE</text>
+  <line x1="28" y1="50" x2="1032" y2="50" stroke="url(#hgrad)" stroke-width="1.5" opacity="0.65"/>
+  <rect x="28" y="66" width="1004" height="74" rx="14" fill="rgba(255,255,255,0.88)" stroke="rgba(217,119,6,0.38)" stroke-width="1.1"/>
+  <line x1="46" y1="66.75" x2="168" y2="66.75" stroke="#b45309" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="64" cy="103" r="16" fill="rgba(217,119,6,0.12)" stroke="rgba(217,119,6,0.38)" stroke-width="1"/>
+  <g transform="translate(64 103) rotate(45)"><rect x="-6.5" y="-6.5" width="13" height="13" rx="2.5" fill="#b45309"/><rect x="-2.5" y="-2.5" width="5" height="5" rx="1" fill="rgba(255,255,255,0.88)"/></g>
+  <text x="94" y="98" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="16" font-weight="800" fill="#0f172a">Employee of the Year Award</text>
+  <text x="94" y="118" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11.5" fill="#475569">Fareportal · Q4 2024</text>
+  <rect x="914" y="89" width="98" height="28" rx="14" fill="rgba(217,119,6,0.12)" stroke="rgba(217,119,6,0.38)" stroke-width="1"/>
+  <text x="963" y="107" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="10" font-weight="800" letter-spacing="1.2" fill="#b45309">2024 · GOLD</text>
+  <rect x="28" y="156" width="494" height="64" rx="13" fill="rgba(255,255,255,0.88)" stroke="rgba(59,59,214,0.16)" stroke-width="1"/>
+  <line x1="46" y1="156.75" x2="112" y2="156.75" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+  <g transform="translate(56 188) rotate(45)"><rect x="-8" y="-8" width="16" height="16" rx="3.5" fill="rgba(100,116,139,0.12)" stroke="rgba(100,116,139,0.34)" stroke-width="1.2"/><rect x="-3.5" y="-3.5" width="7" height="7" rx="1.5" fill="#475569"/></g>
+  <text x="78" y="184" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#0f172a">Ownership and Accountability Award</text>
+  <text x="78" y="202" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11" fill="#475569">Fareportal · Q1 2024</text>
+  <rect x="420" y="176" width="84" height="24" rx="12" fill="rgba(100,116,139,0.12)" stroke="rgba(100,116,139,0.34)" stroke-width="1"/>
+  <text x="462" y="191.5" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.8" fill="#475569">2024 · SILVER</text>
+  <rect x="538" y="156" width="494" height="64" rx="13" fill="rgba(255,255,255,0.88)" stroke="rgba(59,59,214,0.16)" stroke-width="1"/>
+  <line x1="556" y1="156.75" x2="622" y2="156.75" stroke="#b45309" stroke-width="2" stroke-linecap="round"/>
+  <g transform="translate(566 188) rotate(45)"><rect x="-8" y="-8" width="16" height="16" rx="3.5" fill="rgba(217,119,6,0.12)" stroke="rgba(217,119,6,0.38)" stroke-width="1.2"/><rect x="-3.5" y="-3.5" width="7" height="7" rx="1.5" fill="#b45309"/></g>
+  <text x="588" y="184" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#0f172a">Technical Excellence Award</text>
+  <text x="588" y="202" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11" fill="#475569">Tata Consultancy Services · Jun 2020</text>
+  <rect x="930" y="176" width="84" height="24" rx="12" fill="rgba(217,119,6,0.12)" stroke="rgba(217,119,6,0.38)" stroke-width="1"/>
+  <text x="972" y="191.5" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.8" fill="#b45309">2020 · GOLD</text>
+  <rect x="28" y="232" width="494" height="64" rx="13" fill="rgba(255,255,255,0.88)" stroke="rgba(59,59,214,0.16)" stroke-width="1"/>
+  <line x1="46" y1="232.75" x2="112" y2="232.75" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+  <g transform="translate(56 264) rotate(45)"><rect x="-8" y="-8" width="16" height="16" rx="3.5" fill="rgba(100,116,139,0.12)" stroke="rgba(100,116,139,0.34)" stroke-width="1.2"/><rect x="-3.5" y="-3.5" width="7" height="7" rx="1.5" fill="#475569"/></g>
+  <text x="78" y="260" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#0f172a">Passion For Customers Award</text>
+  <text x="78" y="278" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11" fill="#475569">Fareportal · Q4 2021</text>
+  <rect x="420" y="252" width="84" height="24" rx="12" fill="rgba(100,116,139,0.12)" stroke="rgba(100,116,139,0.34)" stroke-width="1"/>
+  <text x="462" y="267.5" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.8" fill="#475569">2021 · SILVER</text>
+  <rect x="538" y="232" width="494" height="64" rx="13" fill="rgba(255,255,255,0.88)" stroke="rgba(59,59,214,0.16)" stroke-width="1"/>
+  <line x1="556" y1="232.75" x2="622" y2="232.75" stroke="#9a3412" stroke-width="2" stroke-linecap="round"/>
+  <g transform="translate(566 264) rotate(45)"><rect x="-8" y="-8" width="16" height="16" rx="3.5" fill="rgba(194,65,12,0.11)" stroke="rgba(194,65,12,0.34)" stroke-width="1.2"/><rect x="-3.5" y="-3.5" width="7" height="7" rx="1.5" fill="#9a3412"/></g>
+  <text x="588" y="260" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#0f172a">Fast Execution Award</text>
+  <text x="588" y="278" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11" fill="#475569">Fareportal · Q2 2023</text>
+  <rect x="930" y="252" width="84" height="24" rx="12" fill="rgba(194,65,12,0.11)" stroke="rgba(194,65,12,0.34)" stroke-width="1"/>
+  <text x="972" y="267.5" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.8" fill="#9a3412">2023 · BRONZE</text>
+  <rect x="28" y="308" width="494" height="64" rx="13" fill="rgba(255,255,255,0.88)" stroke="rgba(59,59,214,0.16)" stroke-width="1"/>
+  <line x1="46" y1="308.75" x2="112" y2="308.75" stroke="#9a3412" stroke-width="2" stroke-linecap="round"/>
+  <g transform="translate(56 340) rotate(45)"><rect x="-8" y="-8" width="16" height="16" rx="3.5" fill="rgba(194,65,12,0.11)" stroke="rgba(194,65,12,0.34)" stroke-width="1.2"/><rect x="-3.5" y="-3.5" width="7" height="7" rx="1.5" fill="#9a3412"/></g>
+  <text x="78" y="336" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#0f172a">Fast Execution Award</text>
+  <text x="78" y="354" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11" fill="#475569">Fareportal · Q2 2022</text>
+  <rect x="420" y="328" width="84" height="24" rx="12" fill="rgba(194,65,12,0.11)" stroke="rgba(194,65,12,0.34)" stroke-width="1"/>
+  <text x="462" y="343.5" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.8" fill="#9a3412">2022 · BRONZE</text>
+  <rect x="538" y="308" width="494" height="64" rx="13" fill="rgba(255,255,255,0.88)" stroke="rgba(59,59,214,0.16)" stroke-width="1"/>
+  <line x1="556" y1="308.75" x2="622" y2="308.75" stroke="#9a3412" stroke-width="2" stroke-linecap="round"/>
+  <g transform="translate(566 340) rotate(45)"><rect x="-8" y="-8" width="16" height="16" rx="3.5" fill="rgba(194,65,12,0.11)" stroke="rgba(194,65,12,0.34)" stroke-width="1.2"/><rect x="-3.5" y="-3.5" width="7" height="7" rx="1.5" fill="#9a3412"/></g>
+  <text x="588" y="336" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#0f172a">Technical Finesse Award</text>
+  <text x="588" y="354" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11" fill="#475569">Narula Institute of Technology · 2019</text>
+  <rect x="930" y="328" width="84" height="24" rx="12" fill="rgba(194,65,12,0.11)" stroke="rgba(194,65,12,0.34)" stroke-width="1"/>
+  <text x="972" y="343.5" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.8" fill="#9a3412">2019 · BRONZE</text>
 </svg>
