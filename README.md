@@ -162,10 +162,12 @@
 ## 🏆 `exit 0` (Honors & Accolades)
 
 <div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/honors-dark.svg">
-    <img src="./assets/honors-light.svg" width="100%" style="max-width:1000px;" alt="Honors: Employee of the Year Award (Fareportal, Q4 2024); Ownership and Accountability Award (Fareportal, Q1 2024); Fast Execution Award (Fareportal, Q2 2023 & Q2 2022); Passion For Customers Award (Fareportal, Q4 2021); Technical Excellence Award (TCS, June 2020); Technical Finesse Award (Narula Institute of Technology, 2019)" />
-  </picture>
+  <a href="./assets/honors-light.svg#gh-light-mode-only">
+    <img src="./assets/honors-light.svg#gh-light-mode-only" width="100%" style="max-width:1060px;" alt="Honors: Employee of the Year Award (Fareportal, Q4 2024); Ownership and Accountability Award (Fareportal, Q1 2024); Technical Excellence Award (Tata Consultancy Services, Jun 2020); Passion For Customers Award (Fareportal, Q4 2021); Fast Execution Award (Fareportal, Q2 2023 & Q2 2022); Technical Finesse Award (Narula Institute of Technology, 2019)" />
+  </a>
+  <a href="./assets/honors-dark.svg#gh-dark-mode-only">
+    <img src="./assets/honors-dark.svg#gh-dark-mode-only" width="100%" style="max-width:1060px;" alt="Honors: Employee of the Year Award (Fareportal, Q4 2024); Ownership and Accountability Award (Fareportal, Q1 2024); Technical Excellence Award (Tata Consultancy Services, Jun 2020); Passion For Customers Award (Fareportal, Q4 2021); Fast Execution Award (Fareportal, Q2 2023 & Q2 2022); Technical Finesse Award (Narula Institute of Technology, 2019)" />
+  </a>
 </div>
 
 <p align="center">
@@ -175,10 +177,12 @@
 ## 📜 `Verified_Tokens` (Certifications)
 
 <div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/certifications-dark.svg">
-    <img src="./assets/certifications-light.svg" width="100%" style="max-width:1000px;" alt="Certifications: Claude Certified Architect — Foundations (Anthropic); Claude Certified Developer — Foundations (Anthropic); OpenAI Consultative Solutions Practitioner; OpenAI Technical Practitioner; OpenAI Foundational Knowledge; Prompt Engineering for ChatGPT (Vanderbilt University, Coursera, Sep 2023)" />
-  </picture>
+  <a href="./assets/certifications-light.svg#gh-light-mode-only">
+    <img src="./assets/certifications-light.svg#gh-light-mode-only" width="100%" style="max-width:1060px;" alt="Certifications: Claude Certified Architect — Foundations (Anthropic); Claude Certified Developer — Foundations (Anthropic); OpenAI Consultative Solutions Practitioner (OpenAI); OpenAI Technical Practitioner (OpenAI); OpenAI Foundational Knowledge (OpenAI); Prompt Engineering for ChatGPT (Vanderbilt University, Coursera, Sep 2023)" />
+  </a>
+  <a href="./assets/certifications-dark.svg#gh-dark-mode-only">
+    <img src="./assets/certifications-dark.svg#gh-dark-mode-only" width="100%" style="max-width:1060px;" alt="Certifications: Claude Certified Architect — Foundations (Anthropic); Claude Certified Developer — Foundations (Anthropic); OpenAI Consultative Solutions Practitioner (OpenAI); OpenAI Technical Practitioner (OpenAI); OpenAI Foundational Knowledge (OpenAI); Prompt Engineering for ChatGPT (Vanderbilt University, Coursera, Sep 2023)" />
+  </a>
 </div>
 
 <p align="center">
@@ -187,14 +191,14 @@
 
 ## 🎓 `git init` (Education)
 
-### Bachelor of Technology
-**Narula Institute of Technology** | *2015-2019* 📚 Stream: Electronics & Communication Engineering
-
-### Higher Secondary Education  
-**Shibpur Dinobandhu Institution (Branch)** | *2013-2015* 📚 Stream: Computer Science
-
-### Secondary Education  
-**Shibpur Dinobandhu Institution (Branch)** | *2013* 🚀 Initiated Tech Journey: Basic computer literacy & logical thinking
+<div align="center">
+  <a href="./assets/education-light.svg#gh-light-mode-only">
+    <img src="./assets/education-light.svg#gh-light-mode-only" width="100%" style="max-width:1060px;" alt="Education: Bachelor of Technology, Narula Institute of Technology (2015–2019) — Electronics & Communication Engineering; Higher Secondary Education, Shibpur Dinobandhu Institution (Branch) (2013–2015) — Computer Science; Secondary Education, Shibpur Dinobandhu Institution (Branch) (2013) — Basic computer literacy & logical thinking" />
+  </a>
+  <a href="./assets/education-dark.svg#gh-dark-mode-only">
+    <img src="./assets/education-dark.svg#gh-dark-mode-only" width="100%" style="max-width:1060px;" alt="Education: Bachelor of Technology, Narula Institute of Technology (2015–2019) — Electronics & Communication Engineering; Higher Secondary Education, Shibpur Dinobandhu Institution (Branch) (2013–2015) — Computer Science; Secondary Education, Shibpur Dinobandhu Institution (Branch) (2013) — Basic computer literacy & logical thinking" />
+  </a>
+</div>
 
 <p align="center">
   <img src="./assets/neon_devider.png" alt="Neon Divider" style="max-width:70%;">
@@ -203,9 +207,20 @@
 ## 📄 `Artifacts` (Documents)
 
 <div align="center">
+  <a href="./assets/artifacts-light.svg#gh-light-mode-only">
+    <img src="./assets/artifacts-light.svg#gh-light-mode-only" width="100%" style="max-width:1060px;" alt="Artifacts: Senior Frontend Engineer CV (souravfrank.github.io/about-me/#cv) and Technical Writing & Deep Dives (souravfrank.github.io/about-me/#articles)" />
+  </a>
+  <a href="./assets/artifacts-dark.svg#gh-dark-mode-only">
+    <img src="./assets/artifacts-dark.svg#gh-dark-mode-only" width="100%" style="max-width:1060px;" alt="Artifacts: Senior Frontend Engineer CV (souravfrank.github.io/about-me/#cv) and Technical Writing & Deep Dives (souravfrank.github.io/about-me/#articles)" />
+  </a>
+</div>
 
-[![Resume](https://img.shields.io/badge/Download_Resume-4285F4?style=for-the-badge&logo=adobe-acrobat-reader&logoColor=white)](https://souravfrank.github.io/about-me/#cv)
-[![Technical Articles](https://img.shields.io/badge/Technical_Writing-FF6C37?style=for-the-badge&logo=medium&logoColor=white)](https://souravfrank.github.io/about-me/#articles)
+<br />
+
+<div align="center">
+
+[![Download Resume](https://img.shields.io/badge/Download_Resume-2563EB?style=for-the-badge&logo=adobe-acrobat-reader&logoColor=white)](https://souravfrank.github.io/about-me/#cv)
+[![Technical Writing](https://img.shields.io/badge/Technical_Writing-7C3AED?style=for-the-badge&logo=medium&logoColor=white)](https://souravfrank.github.io/about-me/#articles)
 
 </div>
 
