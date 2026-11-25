@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" role="img" aria-label="Certifications: Claude Certified Architect — Foundations, Anthropic; Claude Certified Developer — Foundations, Anthropic; OpenAI Consultative Solutions Practitioner, OpenAI; OpenAI Technical Practitioner, OpenAI; OpenAI Foundational Knowledge, OpenAI; Prompt Engineering for ChatGPT, Vanderbilt University · Coursera · Sep 2023">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f6f7ff"/><stop offset="100%" stop-color="#e9edfb"/>
+    </linearGradient>
+    <linearGradient id="cgrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b3bd6"/><stop offset="100%" stop-color="#61DAFB"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="520" fill="url(#bg)"/>
+  <rect x="28" y="24" width="944" height="472" rx="18" fill="rgba(255,255,255,0.78)" stroke="rgba(59,59,214,0.22)" stroke-width="1"/>
+  <rect x="40" y="36" width="920" height="448" rx="14" fill="none" stroke="url(#cgrad)" stroke-width="1.4" stroke-dasharray="6 6" opacity="0.65"/>
+  <path d="M28 24 l0 -14 l14 0 M972 24 l0 -14 l-14 0 M28 496 l0 14 l14 0 M972 496 l0 14 l-14 0" fill="none" stroke="#61DAFB" stroke-width="1.5" opacity="0.7"/>
+  <text x="500" y="320" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="180" font-weight="800" fill="#3b3bd6" opacity="0.045">VU</text>
+  <text x="76" y="82" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="3" fill="#61DAFB">VERIFIED CREDENTIALS</text>
+  <text x="76" y="112" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="24" font-weight="800" fill="#1b2240">Certifications</text>
+  <line x1="76" y1="126" x2="260" y2="126" stroke="url(#cgrad)" stroke-width="2.5"/>
+  <rect x="76" y="148" width="8" height="8" rx="2" fill="url(#cgrad)"/>
+  <text x="96" y="160" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="600" fill="#1b2240">Claude Certified Architect — Foundations</text>
+  <text x="96" y="178" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11" fill="#5a6a96">Anthropic</text>
+  <line x1="96" y1="188" x2="924" y2="188" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
+  <rect x="76" y="196" width="8" height="8" rx="2" fill="url(#cgrad)"/>
+  <text x="96" y="208" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="600" fill="#1b2240">Claude Certified Developer — Foundations</text>
+  <text x="96" y="226" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11" fill="#5a6a96">Anthropic</text>
+  <line x1="96" y1="236" x2="924" y2="236" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
+  <rect x="76" y="244" width="8" height="8" rx="2" fill="url(#cgrad)"/>
+  <text x="96" y="256" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="600" fill="#1b2240">OpenAI Consultative Solutions Practitioner</text>
+  <text x="96" y="274" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11" fill="#5a6a96">OpenAI</text>
+  <line x1="96" y1="284" x2="924" y2="284" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
+  <rect x="76" y="292" width="8" height="8" rx="2" fill="url(#cgrad)"/>
+  <text x="96" y="304" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="600" fill="#1b2240">OpenAI Technical Practitioner</text>
+  <text x="96" y="322" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11" fill="#5a6a96">OpenAI</text>
+  <line x1="96" y1="332" x2="924" y2="332" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
+  <rect x="76" y="340" width="8" height="8" rx="2" fill="url(#cgrad)"/>
+  <text x="96" y="352" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="600" fill="#1b2240">OpenAI Foundational Knowledge</text>
+  <text x="96" y="370" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11" fill="#5a6a96">OpenAI</text>
+  <line x1="96" y1="380" x2="924" y2="380" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
+  <rect x="76" y="388" width="8" height="8" rx="2" fill="url(#cgrad)"/>
+  <text x="96" y="400" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="600" fill="#1b2240">Prompt Engineering for ChatGPT</text>
+  <text x="96" y="418" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11" fill="#5a6a96">Vanderbilt University · Coursera · Sep 2023</text>
+  <circle cx="780" cy="260" r="62" fill="rgba(255,255,255,0.78)" stroke="url(#cgrad)" stroke-width="1.6"/>
+  <circle cx="780" cy="260" r="54" fill="none" stroke="#61DAFB" stroke-width="1" stroke-dasharray="4 3" opacity="0.8"/>
+  <defs><path id="sealarc" d="M 734 260 a 46 46 0 1 1 92 0 a 46 46 0 1 1 -92 0"/></defs>
+  <text font-size="10" letter-spacing="2.5" fill="#5a6a96"><textPath href="#sealarc">CERTIFIED · VERIFIED · CERTIFIED ·</textPath></text>
+  <path d="M 766 262 l 10 10 l 24 -26" fill="none" stroke="url(#cgrad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <g transform="translate(780 326)"><rect x="-42" y="-8" width="84" height="16" rx="5" fill="url(#cgrad)" opacity="0.92" transform="rotate(12)"/><rect x="-42" y="-8" width="84" height="16" rx="5" fill="url(#cgrad)" opacity="0.92" transform="rotate(-12)"/></g>
+  <polygon points="702.0,185.0 703.3,188.7 707.0,190.0 703.3,191.3 702.0,195.0 700.7,191.3 697.0,190.0 700.7,188.7" fill="#61DAFB" opacity="0.8"/><polygon points="856.0,334.0 857.1,336.9 860.0,338.0 857.1,339.1 856.0,342.0 854.9,339.1 852.0,338.0 854.9,336.9" fill="#61DAFB" opacity="0.8"/><polygon points="906.0,76.0 907.1,78.9 910.0,80.0 907.1,81.1 906.0,84.0 904.9,81.1 902.0,80.0 904.9,78.9" fill="#61DAFB" opacity="0.8"/>
+  <text x="924" y="472" text-anchor="end" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="10" letter-spacing="2" fill="#8b96b8">ISSUED · GITHUB PROFILE</text>
+</svg>

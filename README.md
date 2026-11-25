@@ -161,12 +161,12 @@
 
 ## 🏆 `exit 0` (Honors & Accolades)
 
-- 🏅 **Employee of the Year Award** (Fareportal) - Q4 2024
-- 🏅 **Ownership and Accountability Award** (Fareportal) - Q1 2024
-- 🏅 **Fast Execution Awards** (Fareportal) - Q2 2023 & Q2 2022
-- 🏅 **Passion For Customers Award** (Fareportal) - Q4 2021
-- 🏅 **Technical Excellence Award** (TCS) - June 2020
-- 🏅 **Technical Finesse Award** (Narula Institute of Technology) - 2019
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/honors-dark.svg">
+    <img src="./assets/honors-light.svg" width="100%" style="max-width:1000px;" alt="Honors: Employee of the Year Award (Fareportal, Q4 2024); Ownership and Accountability Award (Fareportal, Q1 2024); Fast Execution Award (Fareportal, Q2 2023 & Q2 2022); Passion For Customers Award (Fareportal, Q4 2021); Technical Excellence Award (TCS, June 2020); Technical Finesse Award (Narula Institute of Technology, 2019)" />
+  </picture>
+</div>
 
 <p align="center">
   <img src="./assets/neon_devider.png" alt="Neon Divider" style="max-width:70%;">
@@ -174,12 +174,12 @@
 
 ## 📜 `Verified_Tokens` (Certifications)
 
-- **Claude Certified Architect - Foundations** — Anthropic
-- **Claude Certified Developer - Foundations** — Anthropic
-- **OpenAI Consultative Solutions Practitioner** — OpenAI
-- **OpenAI Technical Practitioner** — OpenAI
-- **OpenAI Foundational Knowledge** — OpenAI
-- **Prompt Engineering for ChatGPT** — Vanderbilt University - Coursera (Sep 2023)
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/certifications-dark.svg">
+    <img src="./assets/certifications-light.svg" width="100%" style="max-width:1000px;" alt="Certifications: Claude Certified Architect — Foundations (Anthropic); Claude Certified Developer — Foundations (Anthropic); OpenAI Consultative Solutions Practitioner; OpenAI Technical Practitioner; OpenAI Foundational Knowledge; Prompt Engineering for ChatGPT (Vanderbilt University, Coursera, Sep 2023)" />
+  </picture>
+</div>
 
 <p align="center">
   <img src="./assets/neon_devider.png" alt="Neon Divider" style="max-width:70%;">
