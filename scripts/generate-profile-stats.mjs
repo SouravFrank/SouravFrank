@@ -135,20 +135,63 @@ async function searchCount(type) {
   return data.total_count || 0;
 }
 
+async function fetchRepoViews(repos) {
+  let count = 0;
+  let uniques = 0;
+  let topRepo = null;
+  let topCount = 0;
+  for (const repo of repos) {
+    if (repo.fork) continue;
+    try {
+      const data = await restJson(`${REST_API}/repos/${repo.full_name}/traffic/views`);
+      const c = data.count || 0;
+      const u = data.uniques || 0;
+      count += c;
+      uniques += u;
+      if (c > topCount) {
+        topCount = c;
+        topRepo = repo.name;
+      }
+    } catch {
+      // private repos may not expose traffic — skip
+    }
+  }
+  return { count, uniques, topRepo };
+}
+
+/** Parse the live hit count out of the komarev counter badge SVG. */
+async function fetchKomarevHits() {
+  try {
+    const res = await fetch(`https://komarev.com/ghpvc/?username=${LOGIN}`, {
+      headers: { 'user-agent': 'profile-stats-generator' },
+    });
+    if (!res.ok) return null;
+    const svg = await res.text();
+    const m = svg.match(/PROFILE VIEWS:\s*([\d,]+)/i);
+    if (m) return Number(m[1].replace(/,/g, ''));
+    const n = svg.match(/>([\d,]+)</);
+    return n ? Number(n[1].replace(/,/g, '')) : null;
+  } catch {
+    return null;
+  }
+}
+
 async function computeAccountStats(repos) {
   const stars = repos.reduce((s, r) => s + (r.stargazers_count || 0), 0);
+  const forks = repos.reduce((s, r) => s + (r.forks_count || 0), 0);
   const publicOwnCount = repos.filter((r) => !r.fork).length;
   const topRepos = repos
     .filter((r) => !r.fork)
     .sort((a, b) => (b.stargazers_count || 0) - (a.stargazers_count || 0))
     .slice(0, 3)
     .map((r) => ({ name: r.name, stars: r.stargazers_count || 0, language: r.language || null }));
-  const [commitsOwn, prs, issues] = await Promise.all([
+  const [commitsOwn, prs, issues, views] = await Promise.all([
     fetchOwnCommits(repos),
     searchCount('pr'),
     searchCount('issue'),
+    fetchRepoViews(repos),
   ]);
-  return { stars, commitsOwn, prs, issues, topRepos, publicOwnCount };
+  return { stars, forks, commitsOwn, prs, issues, views, topRepos, publicOwnCount };
 }
 
 // ---------------------------------------------------------------------------
@@ -947,6 +990,46 @@ function updateReadme(teleData, yearEntries) {
 }
 
 // ---------------------------------------------------------------------------
+// Widget: official repo views badge (top of README, beside komarev)
+// ---------------------------------------------------------------------------
+
+function renderViewsStatusCard(hits, views, p) {
+  const W = 1000;
+  const H = 92;
+  const gid = 'sg';
+  const pieces = [];
+
+  pieces.push(`<rect width="${W}" height="${H}" rx="16" fill="${p.panel}" stroke="${p.panelStroke}" stroke-width="1"/>`);
+  pieces.push(`<path d="M8 8 v-8 h8 M${W - 8} 8 v-8 h-8 M8 ${H - 8} v8 h8 M${W - 8} ${H - 8} v8 h-8" fill="none" stroke="${p.accentTo}" stroke-width="1.5" opacity="0.7"/>`);
+  pieces.push(`<line x1="500" y1="16" x2="500" y2="${H - 16}" stroke="${p.panelStroke}" stroke-width="1"/>`);
+  pieces.push(`<rect x="40" y="${H - 3}" width="920" height="3" rx="1.5" fill="url(#${gid})"/>`);
+
+  // left: third-party all-time hits
+  pieces.push(`<circle cx="126" cy="27" r="3.5" fill="${p.accentTo}"/><circle cx="126" cy="27" r="7" fill="none" stroke="${p.accentTo}" stroke-width="1" opacity="0.5"/>`);
+  pieces.push(`<text x="142" y="31" font-family="${p.font}" font-size="9.5" font-weight="700" letter-spacing="1.6" fill="${p.subtext}">PROFILE VIEWS · ALL-TIME</text>`);
+  pieces.push(`<text x="250" y="66" text-anchor="middle" font-family="${p.font}" font-size="34" font-weight="800" fill="${p.text}">${hits == null ? '—' : fmtCompact(hits)}</text>`);
+  pieces.push(`<text x="250" y="82" text-anchor="middle" font-family="${p.font}" font-size="9" fill="${p.faint}">third-party counter · every badge load</text>`);
+
+  // right: official 14-day repo traffic
+  pieces.push(`<text x="742" y="31" font-family="${p.font}" font-size="9.5" font-weight="700" letter-spacing="1.6" fill="${p.subtext}">REPO VIEWS · 14 DAYS</text>`);
+  pieces.push(`<text x="750" y="66" text-anchor="middle" font-family="${p.font}" font-size="34" font-weight="800" fill="${p.text}">${fmtCompact(views.count)}</text>`);
+  const sub = `${fmtCompact(views.uniques)} unique${views.topRepo ? ` · top: ${views.topRepo}` : ''}`;
+  pieces.push(`<text x="750" y="82" text-anchor="middle" font-family="${p.font}" font-size="9" fill="${p.faint}">${esc(sub)}</text>`);
+
+  const body = pieces.join('\n  ');
+  const hitsLabel = hits == null ? 'n/a' : fmtCompact(hits);
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Profile views status: ${hitsLabel} all-time hits from third-party counter, ${fmtCompact(views.count)} official repo views in the last 14 days (${fmtCompact(views.uniques)} unique).">
+  <defs>
+    <linearGradient id="${gid}" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="${p.accentFrom}"/><stop offset="100%" stop-color="${p.accentTo}"/>
+    </linearGradient>
+  </defs>
+  ${body}
+</svg>
+`;
+}
+
+// ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
 
@@ -978,11 +1061,13 @@ async function main() {
   const repos = await fetchRepos();
   const langs = languageBreakdown(repos);
   const accountStats = await computeAccountStats(repos);
+  const hits = await fetchKomarevHits();
 
   mkdirSync(OUT_DIR, { recursive: true });
   const teleData = { weeks, stats, accountStats, langs, year: currentYear };
   const outputs = [
     ['telemetry', renderTelemetry(teleData, FUT_PALETTES.light), renderTelemetry(teleData, FUT_PALETTES.dark)],
+    ['views-status', renderViewsStatusCard(hits, accountStats.views, FUT_PALETTES.light), renderViewsStatusCard(hits, accountStats.views, FUT_PALETTES.dark)],
     ...yearEntries.map((entry) => [
       `activity-${entry.year}`,
       renderActivityMatrix(entry, FUT_PALETTES.light),
@@ -1010,6 +1095,8 @@ async function main() {
     commitsOwn: accountStats.commitsOwn,
     prs: accountStats.prs,
     issues: accountStats.issues,
+    hits,
+    views: accountStats.views,
     topRepos: accountStats.topRepos,
   }, null, 2));
 }
