@@ -94,6 +94,46 @@ async function fetchRepos() {
   return repos;
 }
 
+/** Commits by this user across their own non-fork public repos (contributors endpoint). */
+async function fetchOwnCommits(repos) {
+  let total = 0;
+  for (const repo of repos) {
+    if (repo.fork) continue;
+    try {
+      const contributors = await restJson(
+        `${REST_API}/repos/${repo.full_name}/contributors?anon=true&per_page=100`,
+      );
+      const me = contributors.find((c) => c.login && c.login.toLowerCase() === LOGIN.toLowerCase());
+      if (me) total += me.contributions;
+    } catch {
+      // private/empty repos may not expose contributors — count as 0
+    }
+  }
+  return total;
+}
+
+/** Total count of PRs / issues authored by this user (search API). */
+async function searchCount(type) {
+  const q = encodeURIComponent(`author:${LOGIN} type:${type}`);
+  const data = await restJson(`${REST_API}/search/issues?q=${q}&per_page=1`);
+  return data.total_count || 0;
+}
+
+async function computeAccountStats(repos) {
+  const stars = repos.reduce((s, r) => s + (r.stargazers_count || 0), 0);
+  const topRepos = repos
+    .filter((r) => !r.fork)
+    .sort((a, b) => (b.stargazers_count || 0) - (a.stargazers_count || 0))
+    .slice(0, 3)
+    .map((r) => ({ name: r.name, stars: r.stargazers_count || 0 }));
+  const [commitsOwn, prs, issues] = await Promise.all([
+    fetchOwnCommits(repos),
+    searchCount('pr'),
+    searchCount('issue'),
+  ]);
+  return { stars, commitsOwn, prs, issues, topRepos };
+}
+
 // ---------------------------------------------------------------------------
 // Data analysis
 // ---------------------------------------------------------------------------
@@ -409,6 +449,59 @@ function renderStreak(stats, p) {
 }
 
 // ---------------------------------------------------------------------------
+// Widget: GitHub stats
+// ---------------------------------------------------------------------------
+
+function fmtCompact(n) {
+  if (n >= 1000) return (n / 1000).toFixed(1).replace(/\.0$/, '') + 'k';
+  return String(n);
+}
+
+function truncate(s, max) {
+  return s.length > max ? s.slice(0, max - 1) + '…' : s;
+}
+
+function renderStats(account, p) {
+  const W = 560;
+  const H = 330;
+  const f = cardFrame(W, H, p, 'GitHub Stats', 'across public repositories', '');
+
+  const tiles = [
+    { label: 'Stars earned', value: fmtCompact(account.stars) },
+    { label: 'Commits · own repos', value: fmtCompact(account.commitsOwn) },
+    { label: 'Pull requests', value: fmtCompact(account.prs) },
+    { label: 'Issues opened', value: fmtCompact(account.issues) },
+  ];
+  const tileX = [24, 292];
+  const tileY = [84, 148];
+  let grid = '';
+  tiles.forEach((t, i) => {
+    const x = tileX[i % 2];
+    const y = tileY[Math.floor(i / 2)];
+    grid += `
+    <text x="${x}" y="${y + 26}" font-family="${p.font}" font-size="26" font-weight="700" fill="url(#${f.gid})">${t.value}</text>
+    <text x="${x}" y="${y + 44}" font-family="${p.font}" font-size="11" fill="${p.subtext}">${esc(t.label)}</text>`;
+  });
+
+  let reposRows = '';
+  if (account.topRepos.length > 0) {
+    account.topRepos.forEach((r, i) => {
+      const y = 226 + i * 32;
+      reposRows += `
+    <text x="24" y="${y}" font-family="${p.font}" font-size="10" fill="${p.faint}">${String(i + 1).padStart(2, '0')}</text>
+    <text x="48" y="${y}" font-family="${p.font}" font-size="12" font-weight="600" fill="${p.text}">${esc(truncate(r.name, 34))}</text>
+    <text x="${W - 24}" y="${y}" text-anchor="end" font-family="${p.font}" font-size="12" fill="${p.subtext}">★ ${fmtCompact(r.stars)}</text>`;
+    });
+  } else {
+    reposRows = `<text x="24" y="240" font-family="${p.font}" font-size="12" fill="${p.subtext}">No starred public repos yet</text>`;
+  }
+
+  const sectionLabel = `<text x="24" y="212" font-family="${p.font}" font-size="11" font-weight="600" fill="${p.subtext}">Top public repos</text>`;
+
+  return `${f.top}${grid}${sectionLabel}${reposRows}${f.bottom}`;
+}
+
+// ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
 
@@ -429,12 +522,14 @@ async function main() {
 
   const repos = await fetchRepos();
   const langs = languageBreakdown(repos);
+  const accountStats = await computeAccountStats(repos);
 
   mkdirSync(OUT_DIR, { recursive: true });
   const outputs = [
     ['contribution-graph', renderGraph(weeks, stats, PALETTES.light), renderGraph(weeks, stats, PALETTES.dark)],
     ['top-languages', renderLanguages(langs, PALETTES.light), renderLanguages(langs, PALETTES.dark)],
     ['streak-stats', renderStreak(stats, PALETTES.light), renderStreak(stats, PALETTES.dark)],
+    ['github-stats', renderStats(accountStats, PALETTES.light), renderStats(accountStats, PALETTES.dark)],
   ];
 
   for (const [base, light, dark] of outputs) {
@@ -450,6 +545,11 @@ async function main() {
     yearTotal: stats.yearTotal,
     last30: stats.last30,
     languages: langs.map((l) => `${l.name} ${l.pct}%`),
+    stars: accountStats.stars,
+    commitsOwn: accountStats.commitsOwn,
+    prs: accountStats.prs,
+    issues: accountStats.issues,
+    topRepos: accountStats.topRepos,
   }, null, 2));
 }
 

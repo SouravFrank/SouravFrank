@@ -227,7 +227,10 @@
 ## 📊 `Telemetry_Data` (GitHub Stats)
 
 <div align="center">
-  <img height="165" src="https://github-readme-stats-eight-theta.vercel.app/api?username=souravfrank&show_icons=true&theme=tokyonight&locale=en&hide_border=true" alt="GitHub Stats" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/stats/github-stats-dark.svg">
+    <img src="./assets/stats/github-stats-light.svg" width="100%" style="max-width:560px;" alt="GitHub stats: 0 stars earned, 609 commits in own repos, 286 pull requests, 0 issues opened" />
+  </picture>
 </div>
 
 <br />
