@@ -89,7 +89,7 @@
 
 ## 🚀 `CI/CD Pipeline` (Experience)
 
-<details open>
+<details>
 <summary><b>💼 Senior Frontend Engineer @ PwC India (Kolkata, India)</b> — <i>Jul 2025 – Present</i></summary>
 <br>
 
@@ -106,7 +106,7 @@
 
 </details>
 
-<details open>
+<details>
 <summary><b>📱 Senior Mobile Application Developer @ Fareportal (Remote)</b> — <i>Apr 2023 – Jun 2025</i></summary>
 <br>
 
@@ -174,7 +174,12 @@
 
 ## 📜 `Verified_Tokens` (Certifications)
 
-- **Prompt Engineering for ChatGPT** Vanderbilt University - Coursera (Sep 2023)
+- **Claude Certified Architect - Foundations** — Anthropic
+- **Claude Certified Developer - Foundations** — Anthropic
+- **OpenAI Consultative Solutions Practitioner** — OpenAI
+- **OpenAI Technical Practitioner** — OpenAI
+- **OpenAI Foundational Knowledge** — OpenAI
+- **Prompt Engineering for ChatGPT** — Vanderbilt University - Coursera (Sep 2023)
 
 <p align="center">
   <img src="./assets/neon_devider.png" alt="Neon Divider" style="max-width:70%;">
@@ -227,10 +232,12 @@
 ## 📊 `Telemetry_Data` (GitHub Stats)
 
 <div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/stats/telemetry-dark.svg">
-    <img src="./assets/stats/telemetry-light.svg" width="100%" style="max-width:1060px;" alt="Telemetry dashboard: 1,756 contributions in the last 12 months, current streak 6 days, longest streak 14 days. Languages: HTML 42%, TypeScript 37%, JavaScript 18%, Python 3%. Metrics: 0 stars, 609 commits, 287 pull requests, 0 issues." />
-  </picture>
+  <a href="./assets/stats/telemetry-light.svg#gh-light-mode-only">
+    <img src="./assets/stats/telemetry-light.svg#gh-light-mode-only" width="100%" style="max-width:1060px;" alt="Telemetry dashboard: 1,760 contributions in the last 12 months, current streak 6 days, longest streak 14 days. Languages: HTML 42%, TypeScript 37%, JavaScript 18%, Python 3%. Metrics: 0 stars, 609 commits, 287 pull requests, 0 issues." />
+  </a>
+  <a href="./assets/stats/telemetry-dark.svg#gh-dark-mode-only">
+    <img src="./assets/stats/telemetry-dark.svg#gh-dark-mode-only" width="100%" style="max-width:1060px;" alt="Telemetry dashboard: 1,760 contributions in the last 12 months, current streak 6 days, longest streak 14 days. Languages: HTML 42%, TypeScript 37%, JavaScript 18%, Python 3%. Metrics: 0 stars, 609 commits, 287 pull requests, 0 issues." />
+  </a>
 </div>
 
 <br />
