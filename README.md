@@ -4,12 +4,16 @@
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=61DAFB&center=true&vCenter=true&width=640&height=50&lines=Senior+Frontend+Engineer;React+%26+React+Native+Specialist;Compiling+pixel-perfect+UIs;Squashing+bugs+in+production" alt="Typing SVG" />
 </div>
 
+<div align="center">
+  <a href="./assets/stats/views-status-light.svg#gh-light-mode-only">
+    <img src="./assets/stats/views-status-light.svg#gh-light-mode-only" width="100%" style="max-width:1060px;" alt="Profile views status: total profile views and 14-day public repository views" />
+  </a>
+  <a href="./assets/stats/views-status-dark.svg#gh-dark-mode-only">
+    <img src="./assets/stats/views-status-dark.svg#gh-dark-mode-only" width="100%" style="max-width:1060px;" alt="Profile views status: total profile views and 14-day public repository views" />
+  </a>
+</div>
+
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/stats/views-status-dark.svg">
-    <img src="./assets/stats/views-status-light.svg" width="100%" style="max-width:1000px;" alt="Profile views status: all-time hits from third-party counter, official repo views in the last 14 days" />
-  </picture>
-  <br/>
   <em>Powered by cold coffee, fueled by momos, and currently executing builds on a Mac Mini M4.</em>
 </p>
 
@@ -251,33 +255,48 @@
 
 <div align="center">
   <a href="./assets/stats/telemetry-light.svg#gh-light-mode-only">
-    <img src="./assets/stats/telemetry-light.svg#gh-light-mode-only" width="100%" style="max-width:1060px;" alt="Telemetry dashboard: 1,769 contributions in the last 12 months, current streak 6 days, longest streak 14 days. Languages: HTML 42%, TypeScript 37%, JavaScript 18%, Python 3%. Metrics: 0 stars, 609 commits, 290 pull requests, 0 issues." />
+    <img src="./assets/stats/telemetry-light.svg#gh-light-mode-only" width="100%" style="max-width:1060px;" alt="Telemetry dashboard: 1,775 contributions in the last 12 months, current streak 6 days, longest streak 14 days. Languages: HTML 42%, TypeScript 37%, JavaScript 18%, Python 3%. Metrics: 0 stars, 609 commits, 290 pull requests, 0 issues." />
   </a>
   <a href="./assets/stats/telemetry-dark.svg#gh-dark-mode-only">
-    <img src="./assets/stats/telemetry-dark.svg#gh-dark-mode-only" width="100%" style="max-width:1060px;" alt="Telemetry dashboard: 1,769 contributions in the last 12 months, current streak 6 days, longest streak 14 days. Languages: HTML 42%, TypeScript 37%, JavaScript 18%, Python 3%. Metrics: 0 stars, 609 commits, 290 pull requests, 0 issues." />
+    <img src="./assets/stats/telemetry-dark.svg#gh-dark-mode-only" width="100%" style="max-width:1060px;" alt="Telemetry dashboard: 1,775 contributions in the last 12 months, current streak 6 days, longest streak 14 days. Languages: HTML 42%, TypeScript 37%, JavaScript 18%, Python 3%. Metrics: 0 stars, 609 commits, 290 pull requests, 0 issues." />
   </a>
 </div>
 
-### 📅 `Activity_Matrix` (By Year)
+<p align="center">
+  <img src="./assets/neon_devider.png" alt="Neon Divider" style="max-width:70%;">
+</p>
+
+## 📅 `Activity_Matrix` (Yearly History)
+
+<div align="center">
+  <a href="./assets/stats/activity-overview-light.svg#gh-light-mode-only">
+    <img src="./assets/stats/activity-overview-light.svg#gh-light-mode-only" width="100%" style="max-width:1060px;" alt="Yearly contribution history overview (2019–2026)" />
+  </a>
+  <a href="./assets/stats/activity-overview-dark.svg#gh-dark-mode-only">
+    <img src="./assets/stats/activity-overview-dark.svg#gh-dark-mode-only" width="100%" style="max-width:1060px;" alt="Yearly contribution history overview (2019–2026)" />
+  </a>
+</div>
+
+<br />
 
 <!-- ACTIVITY-MATRIX:START -->
 <details open>
-<summary><b>📅 2026</b> — <i>1,703 contributions · 173 active days · peak 62/day</i></summary>
+<summary><b>2026 · Current Year</b> — <i>1,709 contributions · 173 active days · 62 peak/day</i></summary>
 <br>
 
 <div align="center">
   <a href="./assets/stats/activity-2026-light.svg#gh-light-mode-only">
-    <img src="./assets/stats/activity-2026-light.svg#gh-light-mode-only" width="100%" style="max-width:1060px;" alt="Activity matrix for 2026: 1,703 contributions across 173 active days, peak 62 per day, longest streak 14 days." />
+    <img src="./assets/stats/activity-2026-light.svg#gh-light-mode-only" width="100%" style="max-width:1060px;" alt="Activity matrix for 2026: 1,709 contributions across 173 active days, peak 62 per day, longest streak 14 days." />
   </a>
   <a href="./assets/stats/activity-2026-dark.svg#gh-dark-mode-only">
-    <img src="./assets/stats/activity-2026-dark.svg#gh-dark-mode-only" width="100%" style="max-width:1060px;" alt="Activity matrix for 2026: 1,703 contributions across 173 active days, peak 62 per day, longest streak 14 days." />
+    <img src="./assets/stats/activity-2026-dark.svg#gh-dark-mode-only" width="100%" style="max-width:1060px;" alt="Activity matrix for 2026: 1,709 contributions across 173 active days, peak 62 per day, longest streak 14 days." />
   </a>
 </div>
 
 </details>
 
 <details>
-<summary><b>📅 2025</b> — <i>476 contributions · 89 active days · peak 28/day</i></summary>
+<summary><b>2025</b> — <i>476 contributions · 89 active days · 28 peak/day</i></summary>
 <br>
 
 <div align="center">
@@ -292,7 +311,7 @@
 </details>
 
 <details>
-<summary><b>📅 2024</b> — <i>136 contributions · 28 active days · peak 16/day</i></summary>
+<summary><b>2024</b> — <i>136 contributions · 28 active days · 16 peak/day</i></summary>
 <br>
 
 <div align="center">
@@ -307,7 +326,7 @@
 </details>
 
 <details>
-<summary><b>📅 2023</b> — <i>6 contributions · 3 active days · peak 3/day</i></summary>
+<summary><b>2023</b> — <i>6 contributions · 3 active days · 3 peak/day</i></summary>
 <br>
 
 <div align="center">
@@ -322,7 +341,7 @@
 </details>
 
 <details>
-<summary><b>📅 2022</b> — <i>0 contributions · 0 active days · peak 0/day</i></summary>
+<summary><b>2022</b> — <i>0 contributions · 0 active days · 0 peak/day</i></summary>
 <br>
 
 <div align="center">
@@ -337,7 +356,7 @@
 </details>
 
 <details>
-<summary><b>📅 2021</b> — <i>87 contributions · 24 active days · peak 8/day</i></summary>
+<summary><b>2021</b> — <i>87 contributions · 24 active days · 8 peak/day</i></summary>
 <br>
 
 <div align="center">
@@ -352,7 +371,7 @@
 </details>
 
 <details>
-<summary><b>📅 2020</b> — <i>23 contributions · 12 active days · peak 3/day</i></summary>
+<summary><b>2020</b> — <i>23 contributions · 12 active days · 3 peak/day</i></summary>
 <br>
 
 <div align="center">
@@ -367,7 +386,7 @@
 </details>
 
 <details>
-<summary><b>📅 2019</b> — <i>4 contributions · 2 active days · peak 2/day</i></summary>
+<summary><b>2019</b> — <i>4 contributions · 2 active days · 2 peak/day</i></summary>
 <br>
 
 <div align="center">

@@ -945,6 +945,104 @@ function renderActivityMatrix(yearData, p) {
 `;
 }
 
+function renderActivityOverview(yearEntries, p) {
+  const W = 1060;
+  const H = 160;
+  const gid = 'ograd';
+  const sorted = [...yearEntries].sort((a, b) => a.year - b.year);
+  const lifetimeTotal = sorted.reduce((s, e) => s + e.stats.total, 0);
+  const totalActiveDays = sorted.reduce((s, e) => s + e.stats.activeDays, 0);
+  const peakEntry = sorted.reduce((best, cur) => (cur.stats.total > best.stats.total ? cur : best), sorted[0]);
+  const maxTotal = Math.max(...sorted.map((e) => e.stats.total), 1);
+  const firstYear = sorted[0]?.year || '';
+  const lastYear = sorted[sorted.length - 1]?.year || '';
+
+  const parts = [];
+  parts.push(`<g clip-path="url(#outerClip)">`);
+  parts.push(`<rect width="${W}" height="${H}" fill="url(#bg)"/>`);
+  parts.push(`<circle cx="140" cy="40" r="220" fill="url(#orbA)"/>`);
+  parts.push(`<circle cx="920" cy="130" r="240" fill="url(#orbB)"/>`);
+  for (let x = 28; x <= 1032; x += 64) {
+    parts.push(`<line x1="${x}" y1="0" x2="${x}" y2="${H}" stroke="${p.hairline}" stroke-width="1"/>`);
+  }
+  for (let y = 32; y <= H; y += 64) {
+    parts.push(`<line x1="0" y1="${y}" x2="${W}" y2="${y}" stroke="${p.hairline}" stroke-width="1"/>`);
+  }
+  parts.push(`</g>`);
+  parts.push(`<rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="16" fill="none" stroke="${p.outerStroke}" stroke-width="1"/>`);
+
+  // Left Summary Panel (356 x 124)
+  const lx = 24;
+  const ly = 18;
+  const lw = 356;
+  const lh = 124;
+  parts.push(
+    `<rect x="${lx}" y="${ly}" width="${lw}" height="${lh}" rx="14" fill="${p.panel}" stroke="${p.panelStroke}" stroke-width="1"/>`,
+    `<line x1="${lx + 18}" y1="${ly + 0.75}" x2="${lx + 104}" y2="${ly + 0.75}" stroke="url(#${gid})" stroke-width="2.2" stroke-linecap="round"/>`,
+    `<circle cx="${lx + 24}" cy="${ly + 23}" r="3.5" fill="${p.liveDot}"/><circle cx="${lx + 24}" cy="${ly + 23}" r="7" fill="none" stroke="${p.liveDot}" stroke-width="1" opacity="0.4"/>`,
+    `<text x="${lx + 38}" y="${ly + 27}" font-family="${p.font}" font-size="9.5" font-weight="800" letter-spacing="1.8" fill="${p.subtext}">YEARLY HISTORY · ${firstYear}–${lastYear}</text>`,
+    `<text x="${lx + 20}" y="${ly + 68}" font-family="${p.font}" font-size="34" font-weight="800" fill="url(#${gid})">${lifetimeTotal.toLocaleString('en-US')}</text>`,
+    `<text x="${lx + 20}" y="${ly + 86}" font-family="${p.font}" font-size="9.5" font-weight="700" letter-spacing="1.3" fill="${p.faint}">LIFETIME CONTRIBUTIONS</text>`,
+    `<text x="${lx + 20}" y="${ly + 109}" font-family="${p.font}" font-size="10" font-weight="600" fill="${p.subtext}">${totalActiveDays} active days · peak ${peakEntry.year} (${peakEntry.stats.total.toLocaleString('en-US')})</text>`,
+  );
+
+  // Right Yearly Growth Chart Panel (640 x 124)
+  const rx = 396;
+  const ry = 18;
+  const rw = 640;
+  const rh = 124;
+  parts.push(
+    `<rect x="${rx}" y="${ry}" width="${rw}" height="${rh}" rx="14" fill="${p.panel}" stroke="${p.panelStroke}" stroke-width="1"/>`,
+    `<line x1="${rx + 18}" y1="${ry + 0.75}" x2="${rx + 104}" y2="${ry + 0.75}" stroke="url(#${gid})" stroke-width="2.2" stroke-linecap="round"/>`,
+    `<text x="${rx + 20}" y="${ry + 25}" font-family="${p.font}" font-size="9.5" font-weight="800" letter-spacing="1.8" fill="${p.subtext}">ANNUAL OUTPUT</text>`,
+    `<text x="${rx + rw - 20}" y="${ry + 25}" text-anchor="end" font-family="${p.font}" font-size="9" font-weight="700" letter-spacing="1" fill="${p.faint}">${sorted.length} YEARS</text>`,
+  );
+
+  const chartTop = ry + 48;
+  const chartBase = ry + 98;
+  const maxH = chartBase - chartTop;
+  parts.push(`<line x1="${rx + 20}" y1="${chartBase}" x2="${rx + rw - 20}" y2="${chartBase}" stroke="${p.panelStroke}" stroke-width="1"/>`);
+
+  const n = sorted.length;
+  const innerW = rw - 56;
+  const step = innerW / Math.max(n, 1);
+  const barW = Math.min(34, Math.floor(step * 0.52));
+  sorted.forEach((e, i) => {
+    const cx = rx + 28 + step * (i + 0.5);
+    const bx = Math.round(cx - barW / 2);
+    const bh = e.stats.total > 0 ? Math.max(4, Math.round((e.stats.total / maxTotal) * maxH)) : 3;
+    const by = chartBase - bh;
+    const isPeak = e.year === peakEntry.year && e.stats.total > 0;
+    const valColor = isPeak ? p.accentFrom : e.stats.total > 0 ? p.subtext : p.faint;
+    parts.push(
+      `<rect x="${bx}" y="${by}" width="${barW}" height="${bh}" rx="4" fill="${e.stats.total > 0 ? 'url(#' + gid + ')' : p.track}" opacity="${isPeak ? '1' : '0.75'}"><title>${e.year}: ${e.stats.total.toLocaleString('en-US')} contributions</title></rect>`,
+      `<text x="${cx}" y="${by - 5}" text-anchor="middle" font-family="${p.font}" font-size="8.5" font-weight="${isPeak ? '800' : '600'}" fill="${valColor}">${e.stats.total.toLocaleString('en-US')}</text>`,
+      `<text x="${cx}" y="${chartBase + 15}" text-anchor="middle" font-family="${p.font}" font-size="9.5" font-weight="${isPeak || e.isCurrent ? '700' : '600'}" fill="${isPeak || e.isCurrent ? p.text : p.faint}">${e.year}</text>`,
+    );
+  });
+
+  const body = parts.join('\n  ');
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Yearly contribution history (${firstYear}–${lastYear}): ${lifetimeTotal.toLocaleString('en-US')} lifetime contributions across ${totalActiveDays} active days.">
+  <defs>
+    <clipPath id="outerClip"><rect width="${W}" height="${H}" rx="16"/></clipPath>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="${p.bg0}"/><stop offset="100%" stop-color="${p.bg1}"/>
+    </linearGradient>
+    <linearGradient id="${gid}" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="${p.accentFrom}"/><stop offset="100%" stop-color="${p.accentTo}"/>
+    </linearGradient>
+    <radialGradient id="orbA" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="${p.ambientA}"/><stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <radialGradient id="orbB" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="${p.ambientB}"/><stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+  </defs>
+  ${body}
+</svg>
+`;
+}
+
 function updateReadme(teleData, yearEntries) {
   let md;
   try {
@@ -964,10 +1062,11 @@ function updateReadme(teleData, yearEntries) {
   if (sIdx !== -1 && eIdx !== -1 && eIdx > sIdx) {
     const blocks = yearEntries.map(({ year, stats: ys, isCurrent }) => {
       const tag = isCurrent ? '<details open>' : '<details>';
-      const summary = `${ys.total.toLocaleString('en-US')} contributions · ${ys.activeDays} active days · peak ${ys.peakDay}/day`;
+      const title = isCurrent ? `${year} · Current Year` : `${year}`;
+      const summary = `${ys.total.toLocaleString('en-US')} contributions · ${ys.activeDays} active days · ${ys.peakDay} peak/day`;
       const alt = `Activity matrix for ${year}: ${ys.total.toLocaleString('en-US')} contributions across ${ys.activeDays} active days, peak ${ys.peakDay} per day, longest streak ${ys.longestStreak} days.`;
       return `${tag}
-<summary><b>📅 ${year}</b> — <i>${summary}</i></summary>
+<summary><b>${title}</b> — <i>${summary}</i></summary>
 <br>
 
 <div align="center">
@@ -990,39 +1089,106 @@ function updateReadme(teleData, yearEntries) {
 }
 
 // ---------------------------------------------------------------------------
-// Widget: official repo views badge (top of README, beside komarev)
+// Widget: profile views & repository traffic HUD
 // ---------------------------------------------------------------------------
 
 function renderViewsStatusCard(hits, views, p) {
-  const W = 1000;
-  const H = 92;
+  const W = 1060;
+  const H = 124;
   const gid = 'sg';
   const pieces = [];
 
-  pieces.push(`<rect width="${W}" height="${H}" rx="16" fill="${p.panel}" stroke="${p.panelStroke}" stroke-width="1"/>`);
-  pieces.push(`<path d="M8 8 v-8 h8 M${W - 8} 8 v-8 h-8 M8 ${H - 8} v8 h8 M${W - 8} ${H - 8} v8 h-8" fill="none" stroke="${p.accentTo}" stroke-width="1.5" opacity="0.7"/>`);
-  pieces.push(`<line x1="500" y1="16" x2="500" y2="${H - 16}" stroke="${p.panelStroke}" stroke-width="1"/>`);
-  pieces.push(`<rect x="40" y="${H - 3}" width="920" height="3" rx="1.5" fill="url(#${gid})"/>`);
+  // Rounded outer Bento frame + ambient radial glows + subtle grid
+  pieces.push(`<g clip-path="url(#outerClip)">`);
+  pieces.push(`<rect width="${W}" height="${H}" fill="url(#bg)"/>`);
+  pieces.push(`<circle cx="160" cy="40" r="190" fill="url(#orbA)"/>`);
+  pieces.push(`<circle cx="900" cy="95" r="210" fill="url(#orbB)"/>`);
+  for (let x = 28; x <= W - 28; x += 64) {
+    pieces.push(`<line x1="${x}" y1="0" x2="${x}" y2="${H}" stroke="${p.hairline}" stroke-width="1"/>`);
+  }
+  pieces.push(`</g>`);
+  pieces.push(`<rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="16" fill="none" stroke="${p.outerStroke}" stroke-width="1"/>`);
 
-  // left: third-party all-time hits
-  pieces.push(`<circle cx="126" cy="27" r="3.5" fill="${p.accentTo}"/><circle cx="126" cy="27" r="7" fill="none" stroke="${p.accentTo}" stroke-width="1" opacity="0.5"/>`);
-  pieces.push(`<text x="142" y="31" font-family="${p.font}" font-size="9.5" font-weight="700" letter-spacing="1.6" fill="${p.subtext}">PROFILE VIEWS · ALL-TIME</text>`);
-  pieces.push(`<text x="250" y="66" text-anchor="middle" font-family="${p.font}" font-size="34" font-weight="800" fill="${p.text}">${hits == null ? '—' : fmtCompact(hits)}</text>`);
-  pieces.push(`<text x="250" y="82" text-anchor="middle" font-family="${p.font}" font-size="9" fill="${p.faint}">third-party counter · every badge load</text>`);
+  const drawSignalBars = (startX, baseY, heights, color) => {
+    heights.forEach((h, i) => {
+      const op = (0.24 + (i / (heights.length - 1)) * 0.66).toFixed(2);
+      pieces.push(`<rect x="${startX + i * 10}" y="${baseY - h}" width="6" height="${h}" rx="3" fill="${color}" opacity="${op}"/>`);
+    });
+  };
 
-  // right: official 14-day repo traffic
-  pieces.push(`<text x="742" y="31" font-family="${p.font}" font-size="9.5" font-weight="700" letter-spacing="1.6" fill="${p.subtext}">REPO VIEWS · 14 DAYS</text>`);
-  pieces.push(`<text x="750" y="66" text-anchor="middle" font-family="${p.font}" font-size="34" font-weight="800" fill="${p.text}">${fmtCompact(views.count)}</text>`);
-  const sub = `${fmtCompact(views.uniques)} unique${views.topRepo ? ` · top: ${views.topRepo}` : ''}`;
-  pieces.push(`<text x="750" y="82" text-anchor="middle" font-family="${p.font}" font-size="9" fill="${p.faint}">${esc(sub)}</text>`);
+  // Left Bento Card: Profile Views (all-time)
+  const lx = 20;
+  const ly = 14;
+  const cw = 502;
+  const ch = 96;
+  pieces.push(
+    `<rect x="${lx}" y="${ly}" width="${cw}" height="${ch}" rx="14" fill="${p.panel}" stroke="${p.panelStroke}" stroke-width="1"/>`,
+    `<line x1="${lx + 18}" y1="${ly + 0.75}" x2="${lx + 114}" y2="${ly + 0.75}" stroke="${p.accentFrom}" stroke-width="2.2" stroke-linecap="round"/>`,
+  );
+  // Eye icon inside circular badge
+  const ecx = lx + 44;
+  const ecy = ly + 48;
+  pieces.push(
+    `<circle cx="${ecx}" cy="${ecy}" r="22" fill="${p.accentFrom}" opacity="0.14"/>`,
+    `<circle cx="${ecx}" cy="${ecy}" r="22" fill="none" stroke="${p.accentFrom}" stroke-width="1.2" opacity="0.5"/>`,
+    `<path d="M${ecx - 12} ${ecy} C${ecx - 7} ${ecy - 8}, ${ecx + 7} ${ecy - 8}, ${ecx + 12} ${ecy} C${ecx + 7} ${ecy + 8}, ${ecx - 7} ${ecy + 8}, ${ecx - 12} ${ecy} Z" fill="none" stroke="${p.accentFrom}" stroke-width="1.8" stroke-linejoin="round"/>`,
+    `<circle cx="${ecx}" cy="${ecy}" r="3.5" fill="${p.accentFrom}"/>`,
+  );
+  // Text & pill
+  const hitsFormatted = hits == null ? '—' : hits.toLocaleString('en-US');
+  pieces.push(
+    `<circle cx="${lx + 84}" cy="${ly + 25}" r="3.2" fill="${p.liveDot}"/><circle cx="${lx + 84}" cy="${ly + 25}" r="6.5" fill="none" stroke="${p.liveDot}" stroke-width="1" opacity="0.4"/>`,
+    `<text x="${lx + 97}" y="${ly + 28.5}" font-family="${p.font}" font-size="9.5" font-weight="800" letter-spacing="1.8" fill="${p.subtext}">PROFILE VIEWS</text>`,
+    `<rect x="${lx + cw - 92}" y="${ly + 14}" width="74" height="22" rx="11" fill="${p.accentFrom}" opacity="0.14"/>`,
+    `<rect x="${lx + cw - 92}" y="${ly + 14}" width="74" height="22" rx="11" fill="none" stroke="${p.accentFrom}" stroke-width="1" opacity="0.5"/>`,
+    `<text x="${lx + cw - 55}" y="${ly + 28.5}" text-anchor="middle" font-family="${p.font}" font-size="8.5" font-weight="800" letter-spacing="1" fill="${p.accentFrom}">ALL-TIME</text>`,
+    `<text x="${lx + 82}" y="${ly + 65}" font-family="${p.font}" font-size="31" font-weight="800" fill="url(#${gid})">${hitsFormatted}</text>`,
+    `<text x="${lx + 82}" y="${ly + 83}" font-family="${p.font}" font-size="10.5" font-weight="500" fill="${p.faint}">Total GitHub Profile Visits</text>`,
+  );
+  drawSignalBars(lx + cw - 94, ly + 82, [10, 16, 13, 22, 18, 28, 34], p.accentFrom);
+
+  // Right Bento Card: Repository Traffic (14 days)
+  const rx = 538;
+  pieces.push(
+    `<rect x="${rx}" y="${ly}" width="${cw}" height="${ch}" rx="14" fill="${p.panel}" stroke="${p.panelStroke}" stroke-width="1"/>`,
+    `<line x1="${rx + 18}" y1="${ly + 0.75}" x2="${rx + 114}" y2="${ly + 0.75}" stroke="${p.accentTo}" stroke-width="2.2" stroke-linecap="round"/>`,
+  );
+  // Activity pulse icon inside circular badge
+  const pcx = rx + 44;
+  const pcy = ly + 48;
+  pieces.push(
+    `<circle cx="${pcx}" cy="${pcy}" r="22" fill="${p.accentTo}" opacity="0.14"/>`,
+    `<circle cx="${pcx}" cy="${pcy}" r="22" fill="none" stroke="${p.accentTo}" stroke-width="1.2" opacity="0.5"/>`,
+    `<path d="M${pcx - 11} ${pcy + 1} h4 l3 -8 l4 15 l3 -9 l2 2 h4" fill="none" stroke="${p.accentTo}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>`,
+  );
+  // Text & pill
+  pieces.push(
+    `<text x="${rx + 82}" y="${ly + 28.5}" font-family="${p.font}" font-size="9.5" font-weight="800" letter-spacing="1.8" fill="${p.subtext}">REPOSITORY TRAFFIC</text>`,
+    `<rect x="${rx + cw - 92}" y="${ly + 14}" width="74" height="22" rx="11" fill="${p.accentTo}" opacity="0.14"/>`,
+    `<rect x="${rx + cw - 92}" y="${ly + 14}" width="74" height="22" rx="11" fill="none" stroke="${p.accentTo}" stroke-width="1" opacity="0.5"/>`,
+    `<text x="${rx + cw - 55}" y="${ly + 28.5}" text-anchor="middle" font-family="${p.font}" font-size="8.5" font-weight="800" letter-spacing="1" fill="${p.accentTo}">14 DAYS</text>`,
+    `<text x="${rx + 82}" y="${ly + 65}" font-family="${p.font}" font-size="31" font-weight="800" fill="${p.text}">${views.count.toLocaleString('en-US')}</text>`,
+    `<text x="${rx + 82}" y="${ly + 83}" font-family="${p.font}" font-size="10.5" font-weight="500" fill="${p.faint}">Public Repository Views</text>`,
+  );
+  drawSignalBars(rx + cw - 94, ly + 82, [14, 24, 18, 28, 20, 32, 26], p.accentTo);
 
   const body = pieces.join('\n  ');
-  const hitsLabel = hits == null ? 'n/a' : fmtCompact(hits);
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Profile views status: ${hitsLabel} all-time hits from third-party counter, ${fmtCompact(views.count)} official repo views in the last 14 days (${fmtCompact(views.uniques)} unique).">
+  const hitsLabel = hits == null ? 'n/a' : hits.toLocaleString('en-US');
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Profile views status: ${hitsLabel} total profile views, ${views.count.toLocaleString('en-US')} public repository views in the last 14 days.">
   <defs>
+    <clipPath id="outerClip"><rect width="${W}" height="${H}" rx="16"/></clipPath>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="${p.bg0}"/><stop offset="100%" stop-color="${p.bg1}"/>
+    </linearGradient>
     <linearGradient id="${gid}" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="${p.accentFrom}"/><stop offset="100%" stop-color="${p.accentTo}"/>
     </linearGradient>
+    <radialGradient id="orbA" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="${p.ambientA}"/><stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <radialGradient id="orbB" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="${p.ambientB}"/><stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
   </defs>
   ${body}
 </svg>
@@ -1068,6 +1234,7 @@ async function main() {
   const outputs = [
     ['telemetry', renderTelemetry(teleData, FUT_PALETTES.light), renderTelemetry(teleData, FUT_PALETTES.dark)],
     ['views-status', renderViewsStatusCard(hits, accountStats.views, FUT_PALETTES.light), renderViewsStatusCard(hits, accountStats.views, FUT_PALETTES.dark)],
+    ['activity-overview', renderActivityOverview(yearEntries, FUT_PALETTES.light), renderActivityOverview(yearEntries, FUT_PALETTES.dark)],
     ...yearEntries.map((entry) => [
       `activity-${entry.year}`,
       renderActivityMatrix(entry, FUT_PALETTES.light),
