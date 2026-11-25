@@ -5,7 +5,9 @@
 </div>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=souravfrank&label=Profile%20Views&color=0e0ba2&style=plastic" alt="Profile Views" />
+  <a href="https://github.com/SouravFrank">
+    <img src="https://komarev.com/ghpvc/?username=souravfrank&label=Profile%20Views&color=3b3bd6&labelColor=0e0ba2&style=for-the-badge&logo=github&logoColor=white" alt="Profile Views" />
+  </a>
   <br/>
   <em>Powered by cold coffee, fueled by momos, and currently executing builds on a Mac Mini M4.</em>
 </p>
@@ -233,10 +235,10 @@
 
 <div align="center">
   <a href="./assets/stats/telemetry-light.svg#gh-light-mode-only">
-    <img src="./assets/stats/telemetry-light.svg#gh-light-mode-only" width="100%" style="max-width:1060px;" alt="Telemetry dashboard: 1,763 contributions in the last 12 months, current streak 6 days, longest streak 14 days. Languages: HTML 42%, TypeScript 37%, JavaScript 18%, Python 3%. Metrics: 0 stars, 609 commits, 287 pull requests, 0 issues." />
+    <img src="./assets/stats/telemetry-light.svg#gh-light-mode-only" width="100%" style="max-width:1060px;" alt="Telemetry dashboard: 1,767 contributions in the last 12 months, current streak 6 days, longest streak 14 days. Languages: HTML 42%, TypeScript 37%, JavaScript 18%, Python 3%. Metrics: 0 stars, 609 commits, 288 pull requests, 0 issues." />
   </a>
   <a href="./assets/stats/telemetry-dark.svg#gh-dark-mode-only">
-    <img src="./assets/stats/telemetry-dark.svg#gh-dark-mode-only" width="100%" style="max-width:1060px;" alt="Telemetry dashboard: 1,763 contributions in the last 12 months, current streak 6 days, longest streak 14 days. Languages: HTML 42%, TypeScript 37%, JavaScript 18%, Python 3%. Metrics: 0 stars, 609 commits, 287 pull requests, 0 issues." />
+    <img src="./assets/stats/telemetry-dark.svg#gh-dark-mode-only" width="100%" style="max-width:1060px;" alt="Telemetry dashboard: 1,767 contributions in the last 12 months, current streak 6 days, longest streak 14 days. Languages: HTML 42%, TypeScript 37%, JavaScript 18%, Python 3%. Metrics: 0 stars, 609 commits, 288 pull requests, 0 issues." />
   </a>
 </div>
 
@@ -244,15 +246,15 @@
 
 <!-- ACTIVITY-MATRIX:START -->
 <details open>
-<summary><b>📅 2026</b> — <i>1,697 contributions · 173 active days · peak 62/day</i></summary>
+<summary><b>📅 2026</b> — <i>1,701 contributions · 173 active days · peak 62/day</i></summary>
 <br>
 
 <div align="center">
   <a href="./assets/stats/activity-2026-light.svg#gh-light-mode-only">
-    <img src="./assets/stats/activity-2026-light.svg#gh-light-mode-only" width="100%" style="max-width:1060px;" alt="Activity matrix for 2026: 1,697 contributions across 173 active days, peak 62 per day, longest streak 14 days." />
+    <img src="./assets/stats/activity-2026-light.svg#gh-light-mode-only" width="100%" style="max-width:1060px;" alt="Activity matrix for 2026: 1,701 contributions across 173 active days, peak 62 per day, longest streak 14 days." />
   </a>
   <a href="./assets/stats/activity-2026-dark.svg#gh-dark-mode-only">
-    <img src="./assets/stats/activity-2026-dark.svg#gh-dark-mode-only" width="100%" style="max-width:1060px;" alt="Activity matrix for 2026: 1,697 contributions across 173 active days, peak 62 per day, longest streak 14 days." />
+    <img src="./assets/stats/activity-2026-dark.svg#gh-dark-mode-only" width="100%" style="max-width:1060px;" alt="Activity matrix for 2026: 1,701 contributions across 173 active days, peak 62 per day, longest streak 14 days." />
   </a>
 </div>
 

@@ -135,20 +135,46 @@ async function searchCount(type) {
   return data.total_count || 0;
 }
 
+async function fetchRepoViews(repos) {
+  let count = 0;
+  let uniques = 0;
+  let topRepo = null;
+  let topCount = 0;
+  for (const repo of repos) {
+    if (repo.fork) continue;
+    try {
+      const data = await restJson(`${REST_API}/repos/${repo.full_name}/traffic/views`);
+      const c = data.count || 0;
+      const u = data.uniques || 0;
+      count += c;
+      uniques += u;
+      if (c > topCount) {
+        topCount = c;
+        topRepo = repo.name;
+      }
+    } catch {
+      // private repos may not expose traffic — skip
+    }
+  }
+  return { count, uniques, topRepo };
+}
+
 async function computeAccountStats(repos) {
   const stars = repos.reduce((s, r) => s + (r.stargazers_count || 0), 0);
+  const forks = repos.reduce((s, r) => s + (r.forks_count || 0), 0);
   const publicOwnCount = repos.filter((r) => !r.fork).length;
   const topRepos = repos
     .filter((r) => !r.fork)
     .sort((a, b) => (b.stargazers_count || 0) - (a.stargazers_count || 0))
     .slice(0, 3)
     .map((r) => ({ name: r.name, stars: r.stargazers_count || 0, language: r.language || null }));
-  const [commitsOwn, prs, issues] = await Promise.all([
+  const [commitsOwn, prs, issues, views] = await Promise.all([
     fetchOwnCommits(repos),
     searchCount('pr'),
     searchCount('issue'),
+    fetchRepoViews(repos),
   ]);
-  return { stars, commitsOwn, prs, issues, topRepos, publicOwnCount };
+  return { stars, forks, commitsOwn, prs, issues, views, topRepos, publicOwnCount };
 }
 
 // ---------------------------------------------------------------------------
@@ -682,19 +708,21 @@ function renderTelemetry(data, p) {
     ['PULL REQS', fmtCompact(accountStats.prs)],
     ['STARS', fmtCompact(accountStats.stars)],
     ['ISSUES', fmtCompact(accountStats.issues)],
+    ['VIEWS · 14D', fmtCompact(accountStats.views.count)],
+    ['FORKS', fmtCompact(accountStats.forks)],
   ];
-  const tileW = 148;
+  const tileW = 104;
   const tileH = 57;
-  const colX = [mx + 20, mx + 184];
+  const colX = [mx + 14, mx + 126, mx + 238];
   const rowY = [my + 44, my + 111];
   tiles.forEach((t, i) => {
-    const tx = colX[i % 2];
-    const ty = rowY[Math.floor(i / 2)];
+    const tx = colX[i % 3];
+    const ty = rowY[Math.floor(i / 3)];
     parts.push(
       `<rect x="${tx}" y="${ty}" width="${tileW}" height="${tileH}" rx="10" fill="${p.panelInner}" stroke="${p.panelStroke}" stroke-width="0.75"/>`,
-      `<rect x="${tx + 12}" y="${ty + 14}" width="3.5" height="29" rx="1.75" fill="url(#${gid})"/>`,
-      `<text x="${tx + 24}" y="${ty + 32}" font-family="${p.font}" font-size="20" font-weight="800" fill="${p.text}">${t[1]}</text>`,
-      `<text x="${tx + 24}" y="${ty + 46}" font-family="${p.font}" font-size="8.5" font-weight="600" letter-spacing="1.2" fill="${p.subtext}">${t[0]}</text>`,
+      `<rect x="${tx + 10}" y="${ty + 14}" width="3.5" height="29" rx="1.75" fill="url(#${gid})"/>`,
+      `<text x="${tx + 20}" y="${ty + 32}" font-family="${p.font}" font-size="19" font-weight="800" fill="${p.text}">${t[1]}</text>`,
+      `<text x="${tx + 20}" y="${ty + 46}" font-family="${p.font}" font-size="7.5" font-weight="600" letter-spacing="1" fill="${p.subtext}">${t[0]}</text>`,
     );
   });
 
@@ -773,7 +801,7 @@ function renderTelemetry(data, p) {
 
   const body = parts.join('\n  ');
   const langSummary = langs.map((l) => `${l.name} ${l.pct}%`).join(', ');
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Telemetry: ${stats.total.toLocaleString('en-US')} contributions in the last 12 months, current streak ${stats.currentStreak} days, longest streak ${stats.longestStreak} days. Languages: ${esc(langSummary)}. Stars ${fmtCompact(accountStats.stars)}, commits ${fmtCompact(accountStats.commitsOwn)}, pull requests ${fmtCompact(accountStats.prs)}, issues ${fmtCompact(accountStats.issues)}.">
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Telemetry: ${stats.total.toLocaleString('en-US')} contributions in the last 12 months, current streak ${stats.currentStreak} days, longest streak ${stats.longestStreak} days. Languages: ${esc(langSummary)}. Stars ${fmtCompact(accountStats.stars)}, commits ${fmtCompact(accountStats.commitsOwn)}, pull requests ${fmtCompact(accountStats.prs)}, issues ${fmtCompact(accountStats.issues)}, repo views in 14 days ${fmtCompact(accountStats.views.count)}, forks ${fmtCompact(accountStats.forks)}.">
   <defs>
     <clipPath id="outerClip"><rect width="${W}" height="${H}" rx="16"/></clipPath>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
