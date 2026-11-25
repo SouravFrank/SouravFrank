@@ -1,0 +1,68 @@
+name: Delete merged branch
+
+on:
+  pull_request:
+    types: [closed]
+
+permissions:
+  contents: write
+  pull-requests: read
+
+jobs:
+  delete-branch:
+    if: >-
+      github.event.pull_request.merged == true &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete merged PR head branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          BRANCH: ${{ github.event.pull_request.head.ref }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          node -e '
+          (async () => {
+            const { GH_TOKEN, REPO, BRANCH, DEFAULT_BRANCH } = process.env;
+            if (!BRANCH || BRANCH === DEFAULT_BRANCH) {
+              console.log(`Skipping protected/default branch "${BRANCH}".`);
+              return;
+            }
+
+            const headers = {
+              authorization: `Bearer ${GH_TOKEN}`,
+              accept: "application/vnd.github+json",
+              "user-agent": "delete-merged-branch-action",
+            };
+
+            // Do not delete if another open PR still uses this branch as base or head.
+            const prsRes = await fetch(`https://api.github.com/repos/${REPO}/pulls?state=open&per_page=100`, { headers });
+            if (!prsRes.ok) throw new Error(`Failed to list open PRs: HTTP ${prsRes.status}`);
+            const openPrs = await prsRes.json();
+            const inUse = openPrs.some(
+              (pr) => pr.base?.ref === BRANCH || (pr.head?.repo?.full_name === REPO && pr.head?.ref === BRANCH),
+            );
+            if (inUse) {
+              console.log(`Branch "${BRANCH}" is still referenced by an open PR; skipping.`);
+              return;
+            }
+
+            const encodedRef = BRANCH.split("/").map(encodeURIComponent).join("/");
+            const delRes = await fetch(`https://api.github.com/repos/${REPO}/git/refs/heads/${encodedRef}`, {
+              method: "DELETE",
+              headers,
+            });
+
+            if (delRes.status === 204) {
+              console.log(`Deleted merged branch "${BRANCH}".`);
+            } else if (delRes.status === 404 || delRes.status === 422) {
+              console.log(`Branch "${BRANCH}" already deleted (HTTP ${delRes.status}).`);
+            } else {
+              throw new Error(`Failed to delete "${BRANCH}": HTTP ${delRes.status} ${await delRes.text()}`);
+            }
+          })().catch((err) => {
+            console.error(err);
+            process.exit(1);
+          });
+          '
