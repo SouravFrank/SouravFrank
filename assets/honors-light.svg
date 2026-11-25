@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600" role="img" aria-label="Honors: Employee of the Year Award, Fareportal, 2024; Ownership and Accountability Award, Fareportal, 2024; Fast Execution Award, Fareportal, 2023; Fast Execution Award, Fareportal, 2022; Passion For Customers Award, Fareportal, 2021; Technical Excellence Award, TCS, 2020; Technical Finesse Award, Narula Institute of Technology, 2019">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f6f7ff"/><stop offset="100%" stop-color="#e9edfb"/>
+    </linearGradient>
+    <linearGradient id="hgrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b3bd6"/><stop offset="100%" stop-color="#61DAFB"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="600" fill="url(#bg)"/>
+  <line x1="28" y1="118" x2="28" y2="576" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
+  <line x1="108" y1="118" x2="108" y2="576" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
+  <line x1="188" y1="118" x2="188" y2="576" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
+  <line x1="268" y1="118" x2="268" y2="576" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
+  <line x1="348" y1="118" x2="348" y2="576" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
+  <line x1="428" y1="118" x2="428" y2="576" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
+  <line x1="508" y1="118" x2="508" y2="576" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
+  <line x1="588" y1="118" x2="588" y2="576" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
+  <line x1="668" y1="118" x2="668" y2="576" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
+  <line x1="748" y1="118" x2="748" y2="576" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
+  <line x1="828" y1="118" x2="828" y2="576" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
+  <line x1="908" y1="118" x2="908" y2="576" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
+  <line x1="28" y1="118" x2="972" y2="118" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
+  <line x1="28" y1="178" x2="972" y2="178" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
+  <line x1="28" y1="238" x2="972" y2="238" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
+  <line x1="28" y1="298" x2="972" y2="298" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
+  <line x1="28" y1="358" x2="972" y2="358" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
+  <line x1="28" y1="418" x2="972" y2="418" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
+  <line x1="28" y1="478" x2="972" y2="478" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
+  <line x1="28" y1="538" x2="972" y2="538" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
+  <text x="70" y="88" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="34" font-weight="800" fill="#1b2240">🏆</text>
+  <text x="132" y="66" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="26" font-weight="800" letter-spacing="5" fill="#1b2240">HALL OF FAME</text>
+  <text x="134" y="88" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="12" fill="#5a6a96">Honors &amp; Accolades · 2019 – 2024</text>
+  <line x1="28" y1="112" x2="972" y2="112" stroke="url(#hgrad)" stroke-width="2" opacity="0.8"/>
+  <rect x="88" y="126" width="58" height="26" rx="13" fill="rgba(201,151,31,0.14)" stroke="#c9971f" stroke-width="1.2"/>
+  <text x="117" y="144" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#c9971f">2024</text>
+  <g transform="translate(180 142) rotate(45)"><rect x="-11" y="-11" width="22" height="22" rx="5" fill="#c9971f" opacity="0.95"/><rect x="-5" y="-5" width="10" height="10" rx="2.5" fill="rgba(255,255,255,0.78)"/></g>
+  <text x="212" y="146" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#1b2240">Employee of the Year Award</text>
+  <text x="212" y="166" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11.5" fill="#5a6a96">Fareportal · Q4 2024</text>
+  <polygon points="820.0,126.0 823.0,135.0 832.0,135.0 825.0,141.0 827.0,147.0 820.0,142.0 813.0,147.0 815.0,141.0 808.0,135.0 817.0,135.0 820.0,126.0" fill="#c9971f"/><polygon points="846.0,126.0 849.0,135.0 858.0,135.0 851.0,141.0 853.0,147.0 846.0,142.0 839.0,147.0 841.0,141.0 834.0,135.0 843.0,135.0 846.0,126.0" fill="#c9971f"/><polygon points="872.0,126.0 875.0,135.0 884.0,135.0 877.0,141.0 879.0,147.0 872.0,142.0 865.0,147.0 867.0,141.0 860.0,135.0 869.0,135.0 872.0,126.0" fill="#c9971f"/>
+  <line x1="88" y1="180" x2="912" y2="180" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
+  <rect x="88" y="188" width="58" height="26" rx="13" fill="rgba(124,138,160,0.14)" stroke="#7c8aa0" stroke-width="1.2"/>
+  <text x="117" y="206" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#7c8aa0">2024</text>
+  <g transform="translate(180 204) rotate(45)"><rect x="-11" y="-11" width="22" height="22" rx="5" fill="#7c8aa0" opacity="0.95"/><rect x="-5" y="-5" width="10" height="10" rx="2.5" fill="rgba(255,255,255,0.78)"/></g>
+  <text x="212" y="208" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#1b2240">Ownership and Accountability Award</text>
+  <text x="212" y="228" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11.5" fill="#5a6a96">Fareportal · Q1 2024</text>
+  <polygon points="820.0,188.0 823.0,197.0 832.0,197.0 825.0,203.0 827.0,209.0 820.0,204.0 813.0,209.0 815.0,203.0 808.0,197.0 817.0,197.0 820.0,188.0" fill="#7c8aa0"/><polygon points="846.0,188.0 849.0,197.0 858.0,197.0 851.0,203.0 853.0,209.0 846.0,204.0 839.0,209.0 841.0,203.0 834.0,197.0 843.0,197.0 846.0,188.0" fill="#7c8aa0"/><polygon points="872.0,188.0 875.0,197.0 884.0,197.0 877.0,203.0 879.0,209.0 872.0,204.0 865.0,209.0 867.0,203.0 860.0,197.0 869.0,197.0 872.0,188.0" fill="rgba(20,30,80,0.07)"/>
+  <line x1="88" y1="242" x2="912" y2="242" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
+  <rect x="88" y="250" width="58" height="26" rx="13" fill="rgba(192,127,74,0.14)" stroke="#c07f4a" stroke-width="1.2"/>
+  <text x="117" y="268" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#c07f4a">2023</text>
+  <g transform="translate(180 266) rotate(45)"><rect x="-11" y="-11" width="22" height="22" rx="5" fill="#c07f4a" opacity="0.95"/><rect x="-5" y="-5" width="10" height="10" rx="2.5" fill="rgba(255,255,255,0.78)"/></g>
+  <text x="212" y="270" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#1b2240">Fast Execution Award</text>
+  <text x="212" y="290" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11.5" fill="#5a6a96">Fareportal · Q2 2023</text>
+  <polygon points="820.0,250.0 823.0,259.0 832.0,259.0 825.0,265.0 827.0,271.0 820.0,266.0 813.0,271.0 815.0,265.0 808.0,259.0 817.0,259.0 820.0,250.0" fill="#c07f4a"/><polygon points="846.0,250.0 849.0,259.0 858.0,259.0 851.0,265.0 853.0,271.0 846.0,266.0 839.0,271.0 841.0,265.0 834.0,259.0 843.0,259.0 846.0,250.0" fill="rgba(20,30,80,0.07)"/><polygon points="872.0,250.0 875.0,259.0 884.0,259.0 877.0,265.0 879.0,271.0 872.0,266.0 865.0,271.0 867.0,265.0 860.0,259.0 869.0,259.0 872.0,250.0" fill="rgba(20,30,80,0.07)"/>
+  <line x1="88" y1="304" x2="912" y2="304" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
+  <rect x="88" y="312" width="58" height="26" rx="13" fill="rgba(192,127,74,0.14)" stroke="#c07f4a" stroke-width="1.2"/>
+  <text x="117" y="330" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#c07f4a">2022</text>
+  <g transform="translate(180 328) rotate(45)"><rect x="-11" y="-11" width="22" height="22" rx="5" fill="#c07f4a" opacity="0.95"/><rect x="-5" y="-5" width="10" height="10" rx="2.5" fill="rgba(255,255,255,0.78)"/></g>
+  <text x="212" y="332" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#1b2240">Fast Execution Award</text>
+  <text x="212" y="352" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11.5" fill="#5a6a96">Fareportal · Q2 2022</text>
+  <polygon points="820.0,312.0 823.0,321.0 832.0,321.0 825.0,327.0 827.0,333.0 820.0,328.0 813.0,333.0 815.0,327.0 808.0,321.0 817.0,321.0 820.0,312.0" fill="#c07f4a"/><polygon points="846.0,312.0 849.0,321.0 858.0,321.0 851.0,327.0 853.0,333.0 846.0,328.0 839.0,333.0 841.0,327.0 834.0,321.0 843.0,321.0 846.0,312.0" fill="rgba(20,30,80,0.07)"/><polygon points="872.0,312.0 875.0,321.0 884.0,321.0 877.0,327.0 879.0,333.0 872.0,328.0 865.0,333.0 867.0,327.0 860.0,321.0 869.0,321.0 872.0,312.0" fill="rgba(20,30,80,0.07)"/>
+  <line x1="88" y1="366" x2="912" y2="366" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
+  <rect x="88" y="374" width="58" height="26" rx="13" fill="rgba(124,138,160,0.14)" stroke="#7c8aa0" stroke-width="1.2"/>
+  <text x="117" y="392" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#7c8aa0">2021</text>
+  <g transform="translate(180 390) rotate(45)"><rect x="-11" y="-11" width="22" height="22" rx="5" fill="#7c8aa0" opacity="0.95"/><rect x="-5" y="-5" width="10" height="10" rx="2.5" fill="rgba(255,255,255,0.78)"/></g>
+  <text x="212" y="394" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#1b2240">Passion For Customers Award</text>
+  <text x="212" y="414" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11.5" fill="#5a6a96">Fareportal · Q4 2021</text>
+  <polygon points="820.0,374.0 823.0,383.0 832.0,383.0 825.0,389.0 827.0,395.0 820.0,390.0 813.0,395.0 815.0,389.0 808.0,383.0 817.0,383.0 820.0,374.0" fill="#7c8aa0"/><polygon points="846.0,374.0 849.0,383.0 858.0,383.0 851.0,389.0 853.0,395.0 846.0,390.0 839.0,395.0 841.0,389.0 834.0,383.0 843.0,383.0 846.0,374.0" fill="#7c8aa0"/><polygon points="872.0,374.0 875.0,383.0 884.0,383.0 877.0,389.0 879.0,395.0 872.0,390.0 865.0,395.0 867.0,389.0 860.0,383.0 869.0,383.0 872.0,374.0" fill="rgba(20,30,80,0.07)"/>
+  <line x1="88" y1="428" x2="912" y2="428" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
+  <rect x="88" y="436" width="58" height="26" rx="13" fill="rgba(201,151,31,0.14)" stroke="#c9971f" stroke-width="1.2"/>
+  <text x="117" y="454" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#c9971f">2020</text>
+  <g transform="translate(180 452) rotate(45)"><rect x="-11" y="-11" width="22" height="22" rx="5" fill="#c9971f" opacity="0.95"/><rect x="-5" y="-5" width="10" height="10" rx="2.5" fill="rgba(255,255,255,0.78)"/></g>
+  <text x="212" y="456" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#1b2240">Technical Excellence Award</text>
+  <text x="212" y="476" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11.5" fill="#5a6a96">TCS · June 2020</text>
+  <polygon points="820.0,436.0 823.0,445.0 832.0,445.0 825.0,451.0 827.0,457.0 820.0,452.0 813.0,457.0 815.0,451.0 808.0,445.0 817.0,445.0 820.0,436.0" fill="#c9971f"/><polygon points="846.0,436.0 849.0,445.0 858.0,445.0 851.0,451.0 853.0,457.0 846.0,452.0 839.0,457.0 841.0,451.0 834.0,445.0 843.0,445.0 846.0,436.0" fill="#c9971f"/><polygon points="872.0,436.0 875.0,445.0 884.0,445.0 877.0,451.0 879.0,457.0 872.0,452.0 865.0,457.0 867.0,451.0 860.0,445.0 869.0,445.0 872.0,436.0" fill="#c9971f"/>
+  <line x1="88" y1="490" x2="912" y2="490" stroke="rgba(20,30,80,0.07)" stroke-width="1"/>
+  <rect x="88" y="498" width="58" height="26" rx="13" fill="rgba(192,127,74,0.14)" stroke="#c07f4a" stroke-width="1.2"/>
+  <text x="117" y="516" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#c07f4a">2019</text>
+  <g transform="translate(180 514) rotate(45)"><rect x="-11" y="-11" width="22" height="22" rx="5" fill="#c07f4a" opacity="0.95"/><rect x="-5" y="-5" width="10" height="10" rx="2.5" fill="rgba(255,255,255,0.78)"/></g>
+  <text x="212" y="518" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#1b2240">Technical Finesse Award</text>
+  <text x="212" y="538" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="11.5" fill="#5a6a96">Narula Institute of Technology · 2019</text>
+  <polygon points="820.0,498.0 823.0,507.0 832.0,507.0 825.0,513.0 827.0,519.0 820.0,514.0 813.0,519.0 815.0,513.0 808.0,507.0 817.0,507.0 820.0,498.0" fill="#c07f4a"/><polygon points="846.0,498.0 849.0,507.0 858.0,507.0 851.0,513.0 853.0,519.0 846.0,514.0 839.0,519.0 841.0,513.0 834.0,507.0 843.0,507.0 846.0,498.0" fill="rgba(20,30,80,0.07)"/><polygon points="872.0,498.0 875.0,507.0 884.0,507.0 877.0,513.0 879.0,519.0 872.0,514.0 865.0,519.0 867.0,513.0 860.0,507.0 869.0,507.0 872.0,498.0" fill="rgba(20,30,80,0.07)"/>
+  <polygon points="950.0,65.0 951.3,68.7 955.0,70.0 951.3,71.3 950.0,75.0 948.7,71.3 945.0,70.0 948.7,68.7" fill="#61DAFB" opacity="0.8"/><polygon points="50.0,556.0 51.1,558.9 54.0,560.0 51.1,561.1 50.0,564.0 48.9,561.1 46.0,560.0 48.9,558.9" fill="#61DAFB" opacity="0.8"/><polygon points="958.0,534.0 959.6,538.4 964.0,540.0 959.6,541.6 958.0,546.0 956.4,541.6 952.0,540.0 956.4,538.4" fill="#61DAFB" opacity="0.8"/>
+</svg>
