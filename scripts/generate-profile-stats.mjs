@@ -159,6 +159,23 @@ async function fetchRepoViews(repos) {
   return { count, uniques, topRepo };
 }
 
+/** Parse the live hit count out of the komarev counter badge SVG. */
+async function fetchKomarevHits() {
+  try {
+    const res = await fetch(`https://komarev.com/ghpvc/?username=${LOGIN}`, {
+      headers: { 'user-agent': 'profile-stats-generator' },
+    });
+    if (!res.ok) return null;
+    const svg = await res.text();
+    const m = svg.match(/PROFILE VIEWS:\s*([\d,]+)/i);
+    if (m) return Number(m[1].replace(/,/g, ''));
+    const n = svg.match(/>([\d,]+)</);
+    return n ? Number(n[1].replace(/,/g, '')) : null;
+  } catch {
+    return null;
+  }
+}
+
 async function computeAccountStats(repos) {
   const stars = repos.reduce((s, r) => s + (r.stargazers_count || 0), 0);
   const forks = repos.reduce((s, r) => s + (r.forks_count || 0), 0);
@@ -976,23 +993,38 @@ function updateReadme(teleData, yearEntries) {
 // Widget: official repo views badge (top of README, beside komarev)
 // ---------------------------------------------------------------------------
 
-function renderViewsBadge(views, p) {
-  const W = 360;
-  const H = 28;
-  const labelW = 208;
-  const countX = labelW + (W - labelW) / 2;
-  const title = `${views.count} repo views in the last 14 days · ${views.uniques} unique visitors${views.topRepo ? ` · top repo: ${views.topRepo}` : ''}`;
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(title)}">
+function renderViewsStatusCard(hits, views, p) {
+  const W = 1000;
+  const H = 92;
+  const gid = 'sg';
+  const pieces = [];
+
+  pieces.push(`<rect width="${W}" height="${H}" rx="16" fill="${p.panel}" stroke="${p.panelStroke}" stroke-width="1"/>`);
+  pieces.push(`<path d="M8 8 v-8 h8 M${W - 8} 8 v-8 h-8 M8 ${H - 8} v8 h8 M${W - 8} ${H - 8} v8 h-8" fill="none" stroke="${p.accentTo}" stroke-width="1.5" opacity="0.7"/>`);
+  pieces.push(`<line x1="500" y1="16" x2="500" y2="${H - 16}" stroke="${p.panelStroke}" stroke-width="1"/>`);
+  pieces.push(`<rect x="40" y="${H - 3}" width="920" height="3" rx="1.5" fill="url(#${gid})"/>`);
+
+  // left: third-party all-time hits
+  pieces.push(`<circle cx="126" cy="27" r="3.5" fill="${p.accentTo}"/><circle cx="126" cy="27" r="7" fill="none" stroke="${p.accentTo}" stroke-width="1" opacity="0.5"/>`);
+  pieces.push(`<text x="142" y="31" font-family="${p.font}" font-size="9.5" font-weight="700" letter-spacing="1.6" fill="${p.subtext}">PROFILE VIEWS · ALL-TIME</text>`);
+  pieces.push(`<text x="250" y="66" text-anchor="middle" font-family="${p.font}" font-size="34" font-weight="800" fill="${p.text}">${hits == null ? '—' : fmtCompact(hits)}</text>`);
+  pieces.push(`<text x="250" y="82" text-anchor="middle" font-family="${p.font}" font-size="9" fill="${p.faint}">third-party counter · every badge load</text>`);
+
+  // right: official 14-day repo traffic
+  pieces.push(`<text x="742" y="31" font-family="${p.font}" font-size="9.5" font-weight="700" letter-spacing="1.6" fill="${p.subtext}">REPO VIEWS · 14 DAYS</text>`);
+  pieces.push(`<text x="750" y="66" text-anchor="middle" font-family="${p.font}" font-size="34" font-weight="800" fill="${p.text}">${fmtCompact(views.count)}</text>`);
+  const sub = `${fmtCompact(views.uniques)} unique${views.topRepo ? ` · top: ${views.topRepo}` : ''}`;
+  pieces.push(`<text x="750" y="82" text-anchor="middle" font-family="${p.font}" font-size="9" fill="${p.faint}">${esc(sub)}</text>`);
+
+  const body = pieces.join('\n  ');
+  const hitsLabel = hits == null ? 'n/a' : fmtCompact(hits);
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Profile views status: ${hitsLabel} all-time hits from third-party counter, ${fmtCompact(views.count)} official repo views in the last 14 days (${fmtCompact(views.uniques)} unique).">
   <defs>
-    <linearGradient id="vgrad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="${gid}" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="${p.accentFrom}"/><stop offset="100%" stop-color="${p.accentTo}"/>
     </linearGradient>
   </defs>
-  <rect width="${W}" height="${H}" rx="6" fill="#0e0ba2"/>
-  <path d="M${labelW} 0 h${W - labelW} a6 6 0 0 1 6 6 v16 a6 6 0 0 1 -6 6 h-${W - labelW} z" fill="url(#vgrad)"/>
-  <text x="${labelW / 2}" y="18" text-anchor="middle" font-family="${p.font}" font-size="10.5" font-weight="700" letter-spacing="1.2" fill="#ffffff">REPO VIEWS · 14D</text>
-  <text x="${countX}" y="19" text-anchor="middle" font-family="${p.font}" font-size="15" font-weight="800" fill="#ffffff">${fmtCompact(views.count)}</text>
-  <title>${esc(title)}</title>
+  ${body}
 </svg>
 `;
 }
@@ -1029,12 +1061,13 @@ async function main() {
   const repos = await fetchRepos();
   const langs = languageBreakdown(repos);
   const accountStats = await computeAccountStats(repos);
+  const hits = await fetchKomarevHits();
 
   mkdirSync(OUT_DIR, { recursive: true });
   const teleData = { weeks, stats, accountStats, langs, year: currentYear };
   const outputs = [
     ['telemetry', renderTelemetry(teleData, FUT_PALETTES.light), renderTelemetry(teleData, FUT_PALETTES.dark)],
-    ['views-official', renderViewsBadge(accountStats.views, FUT_PALETTES.light), renderViewsBadge(accountStats.views, FUT_PALETTES.dark)],
+    ['views-status', renderViewsStatusCard(hits, accountStats.views, FUT_PALETTES.light), renderViewsStatusCard(hits, accountStats.views, FUT_PALETTES.dark)],
     ...yearEntries.map((entry) => [
       `activity-${entry.year}`,
       renderActivityMatrix(entry, FUT_PALETTES.light),
@@ -1062,6 +1095,8 @@ async function main() {
     commitsOwn: accountStats.commitsOwn,
     prs: accountStats.prs,
     issues: accountStats.issues,
+    hits,
+    views: accountStats.views,
     topRepos: accountStats.topRepos,
   }, null, 2));
 }

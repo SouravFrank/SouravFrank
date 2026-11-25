@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="92" viewBox="0 0 1000 92" role="img" aria-label="Profile views status: 555 all-time hits from third-party counter, 4 official repo views in the last 14 days (3 unique).">
+  <defs>
+    <linearGradient id="sg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563eb"/><stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="92" rx="16" fill="rgba(255,255,255,0.88)" stroke="rgba(59,59,214,0.16)" stroke-width="1"/>
+  <path d="M8 8 v-8 h8 M992 8 v-8 h-8 M8 84 v8 h8 M992 84 v8 h-8" fill="none" stroke="#7c3aed" stroke-width="1.5" opacity="0.7"/>
+  <line x1="500" y1="16" x2="500" y2="76" stroke="rgba(59,59,214,0.16)" stroke-width="1"/>
+  <rect x="40" y="89" width="920" height="3" rx="1.5" fill="url(#sg)"/>
+  <circle cx="126" cy="27" r="3.5" fill="#7c3aed"/><circle cx="126" cy="27" r="7" fill="none" stroke="#7c3aed" stroke-width="1" opacity="0.5"/>
+  <text x="142" y="31" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.6" fill="#475569">PROFILE VIEWS · ALL-TIME</text>
+  <text x="250" y="66" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="34" font-weight="800" fill="#0f172a">555</text>
+  <text x="250" y="82" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="9" fill="#64748b">third-party counter · every badge load</text>
+  <text x="742" y="31" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.6" fill="#475569">REPO VIEWS · 14 DAYS</text>
+  <text x="750" y="66" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="34" font-weight="800" fill="#0f172a">4</text>
+  <text x="750" y="82" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="9" fill="#64748b">3 unique · top: Wishnet-Usage-Tracker</text>
+</svg>
