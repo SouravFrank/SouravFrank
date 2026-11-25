@@ -227,31 +227,10 @@
 ## 📊 `Telemetry_Data` (GitHub Stats)
 
 <div align="center">
-  <img height="165" src="https://github-readme-stats-eight-theta.vercel.app/api?username=souravfrank&show_icons=true&theme=tokyonight&locale=en&hide_border=true" alt="GitHub Stats" />
-</div>
-
-<br />
-
-<div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/stats/top-languages-dark.svg">
-    <img src="./assets/stats/top-languages-light.svg" width="48%" style="min-width:300px;" alt="Top programming languages by repository size: HTML, TypeScript, JavaScript, Python" />
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/stats/telemetry-dark.svg">
+    <img src="./assets/stats/telemetry-light.svg" width="100%" style="max-width:1060px;" alt="Telemetry dashboard: 1,756 contributions in the last 12 months, current streak 6 days, longest streak 14 days. Languages: HTML 42%, TypeScript 37%, JavaScript 18%, Python 3%. Metrics: 0 stars, 609 commits, 287 pull requests, 0 issues." />
   </picture>
-  &nbsp;
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/stats/streak-stats-dark.svg">
-    <img src="./assets/stats/streak-stats-light.svg" width="48%" style="min-width:300px;" alt="Current streak 6 days, longest streak 14 days, 1,751 contributions in the last 12 months" />
-  </picture>
-</div>
-
-<br />
-
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/stats/contribution-graph-dark.svg">
-    <img src="./assets/stats/contribution-graph-light.svg" width="100%" style="max-width:860px;" alt="GitHub contribution heatmap — last 12 months, redrawn nightly by a GitHub Action" />
-  </picture>
-  <br><sub>All stats widgets above are self-contained — redrawn every night by a GitHub Action, no third-party services.</sub>
 </div>
 
 <br />
