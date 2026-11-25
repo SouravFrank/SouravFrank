@@ -240,7 +240,11 @@
 <br />
 
 <div align="center">
-  <img src="https://ghchart.rshah.org/61DAFB/souravfrank" alt="Contribution Calendar" style="max-width:100%;" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/stats/contribution-graph-dark.svg">
+    <img src="./assets/stats/contribution-graph-light.svg" width="100%" style="max-width:860px;" alt="GitHub contribution heatmap — last 12 months, redrawn nightly by a GitHub Action" />
+  </picture>
+  <br><sub>Self-contained — redrawn every night by a GitHub Action, no third-party services.</sub>
 </div>
 
 <br />
