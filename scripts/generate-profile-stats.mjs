@@ -708,21 +708,19 @@ function renderTelemetry(data, p) {
     ['PULL REQS', fmtCompact(accountStats.prs)],
     ['STARS', fmtCompact(accountStats.stars)],
     ['ISSUES', fmtCompact(accountStats.issues)],
-    ['VIEWS · 14D', fmtCompact(accountStats.views.count)],
-    ['FORKS', fmtCompact(accountStats.forks)],
   ];
-  const tileW = 104;
+  const tileW = 148;
   const tileH = 57;
-  const colX = [mx + 14, mx + 126, mx + 238];
+  const colX = [mx + 20, mx + 184];
   const rowY = [my + 44, my + 111];
   tiles.forEach((t, i) => {
-    const tx = colX[i % 3];
-    const ty = rowY[Math.floor(i / 3)];
+    const tx = colX[i % 2];
+    const ty = rowY[Math.floor(i / 2)];
     parts.push(
       `<rect x="${tx}" y="${ty}" width="${tileW}" height="${tileH}" rx="10" fill="${p.panelInner}" stroke="${p.panelStroke}" stroke-width="0.75"/>`,
-      `<rect x="${tx + 10}" y="${ty + 14}" width="3.5" height="29" rx="1.75" fill="url(#${gid})"/>`,
-      `<text x="${tx + 20}" y="${ty + 32}" font-family="${p.font}" font-size="19" font-weight="800" fill="${p.text}">${t[1]}</text>`,
-      `<text x="${tx + 20}" y="${ty + 46}" font-family="${p.font}" font-size="7.5" font-weight="600" letter-spacing="1" fill="${p.subtext}">${t[0]}</text>`,
+      `<rect x="${tx + 12}" y="${ty + 14}" width="3.5" height="29" rx="1.75" fill="url(#${gid})"/>`,
+      `<text x="${tx + 24}" y="${ty + 32}" font-family="${p.font}" font-size="20" font-weight="800" fill="${p.text}">${t[1]}</text>`,
+      `<text x="${tx + 24}" y="${ty + 46}" font-family="${p.font}" font-size="8.5" font-weight="600" letter-spacing="1.2" fill="${p.subtext}">${t[0]}</text>`,
     );
   });
 
@@ -801,7 +799,7 @@ function renderTelemetry(data, p) {
 
   const body = parts.join('\n  ');
   const langSummary = langs.map((l) => `${l.name} ${l.pct}%`).join(', ');
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Telemetry: ${stats.total.toLocaleString('en-US')} contributions in the last 12 months, current streak ${stats.currentStreak} days, longest streak ${stats.longestStreak} days. Languages: ${esc(langSummary)}. Stars ${fmtCompact(accountStats.stars)}, commits ${fmtCompact(accountStats.commitsOwn)}, pull requests ${fmtCompact(accountStats.prs)}, issues ${fmtCompact(accountStats.issues)}, repo views in 14 days ${fmtCompact(accountStats.views.count)}, forks ${fmtCompact(accountStats.forks)}.">
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Telemetry: ${stats.total.toLocaleString('en-US')} contributions in the last 12 months, current streak ${stats.currentStreak} days, longest streak ${stats.longestStreak} days. Languages: ${esc(langSummary)}. Stars ${fmtCompact(accountStats.stars)}, commits ${fmtCompact(accountStats.commitsOwn)}, pull requests ${fmtCompact(accountStats.prs)}, issues ${fmtCompact(accountStats.issues)}.">
   <defs>
     <clipPath id="outerClip"><rect width="${W}" height="${H}" rx="16"/></clipPath>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -975,6 +973,31 @@ function updateReadme(teleData, yearEntries) {
 }
 
 // ---------------------------------------------------------------------------
+// Widget: official repo views badge (top of README, beside komarev)
+// ---------------------------------------------------------------------------
+
+function renderViewsBadge(views, p) {
+  const W = 360;
+  const H = 28;
+  const labelW = 208;
+  const countX = labelW + (W - labelW) / 2;
+  const title = `${views.count} repo views in the last 14 days · ${views.uniques} unique visitors${views.topRepo ? ` · top repo: ${views.topRepo}` : ''}`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(title)}">
+  <defs>
+    <linearGradient id="vgrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="${p.accentFrom}"/><stop offset="100%" stop-color="${p.accentTo}"/>
+    </linearGradient>
+  </defs>
+  <rect width="${W}" height="${H}" rx="6" fill="#0e0ba2"/>
+  <path d="M${labelW} 0 h${W - labelW} a6 6 0 0 1 6 6 v16 a6 6 0 0 1 -6 6 h-${W - labelW} z" fill="url(#vgrad)"/>
+  <text x="${labelW / 2}" y="18" text-anchor="middle" font-family="${p.font}" font-size="10.5" font-weight="700" letter-spacing="1.2" fill="#ffffff">REPO VIEWS · 14D</text>
+  <text x="${countX}" y="19" text-anchor="middle" font-family="${p.font}" font-size="15" font-weight="800" fill="#ffffff">${fmtCompact(views.count)}</text>
+  <title>${esc(title)}</title>
+</svg>
+`;
+}
+
+// ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
 
@@ -1011,6 +1034,7 @@ async function main() {
   const teleData = { weeks, stats, accountStats, langs, year: currentYear };
   const outputs = [
     ['telemetry', renderTelemetry(teleData, FUT_PALETTES.light), renderTelemetry(teleData, FUT_PALETTES.dark)],
+    ['views-official', renderViewsBadge(accountStats.views, FUT_PALETTES.light), renderViewsBadge(accountStats.views, FUT_PALETTES.dark)],
     ...yearEntries.map((entry) => [
       `activity-${entry.year}`,
       renderActivityMatrix(entry, FUT_PALETTES.light),
