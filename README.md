@@ -243,7 +243,7 @@
   &nbsp;
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/stats/streak-stats-dark.svg">
-    <img src="./assets/stats/streak-stats-light.svg" width="48%" style="min-width:300px;" alt="Current streak 6 days, longest streak 14 days, 1,751 contributions in the last 12 months" />
+    <img src="./assets/stats/streak-stats-light.svg" width="48%" style="min-width:300px;" alt="Current streak 6 days, longest streak 14 days" />
   </picture>
 </div>
 
@@ -252,9 +252,8 @@
 <div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/stats/contribution-graph-dark.svg">
-    <img src="./assets/stats/contribution-graph-light.svg" width="100%" style="max-width:860px;" alt="GitHub contribution heatmap — last 12 months, redrawn nightly by a GitHub Action" />
+    <img src="./assets/stats/contribution-graph-light.svg" width="100%" style="max-width:860px;" alt="GitHub contribution heatmap — last 12 months" />
   </picture>
-  <br><sub>All stats widgets above are self-contained — redrawn every night by a GitHub Action, no third-party services.</sub>
 </div>
 
 <br />

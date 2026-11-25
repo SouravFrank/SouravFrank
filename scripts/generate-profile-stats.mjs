@@ -347,8 +347,8 @@ function renderGraph(weeks, stats, p) {
   });
   legend += '<text x="' + (legendX + 34 + 4 * 16 + 2) + '" y="' + (height - 14) + '" font-family="' + p.font + '" font-size="10" fill="' + p.subtext + '">More</text>';
 
-  const sub = `${stats.total.toLocaleString('en-US')} contributions · streak ${stats.currentStreak} days · longest ${stats.longestStreak} days`;
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-label="${stats.total.toLocaleString('en-US')} contributions in the last 12 months, current streak ${stats.currentStreak} days, longest streak ${stats.longestStreak} days">
+  const sub = `last 12 months · ${stats.total.toLocaleString('en-US')} contributions`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-label="Contributions heatmap for the last 12 months (${stats.total.toLocaleString('en-US')} total)">
   <rect width="${width}" height="${height}" rx="14" fill="${p.card}" stroke="${p.border}" stroke-width="1"/>
   <text x="24" y="34" font-family="${p.font}" font-size="16" font-weight="650" fill="${p.text}">Contributions</text>
   <text x="24" y="52" font-family="${p.font}" font-size="11" fill="${p.subtext}">${esc(sub)}</text>
@@ -418,14 +418,11 @@ function renderStreak(stats, p) {
   // stat rows
   const statRows = [
     ['Longest streak', `${stats.longestStreak} days`],
-    ['Contributions · 12 mo', stats.total.toLocaleString('en-US')],
-    ['Contributions · this year', stats.yearTotal.toLocaleString('en-US')],
-    ['Contributions · last 30 days', stats.last30.toLocaleString('en-US')],
   ];
   const sx = 200;
   let rows = '';
   statRows.forEach(([label, value], i) => {
-    const y = 92 + i * 44;
+    const y = 128 + i * 44;
     rows += `
     <text x="${sx}" y="${y}" font-family="${p.font}" font-size="12" fill="${p.subtext}">${label}</text>
     <text x="${sx}" y="${y + 20}" font-family="${p.font}" font-size="18" font-weight="650" fill="${p.text}">${value}</text>`;
