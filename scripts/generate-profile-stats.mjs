@@ -85,7 +85,7 @@ async function fetchCalendar(from, to) {
 async function fetchRepos() {
   const repos = [];
   let page = 1;
-  for (;;) {
+  for (; ;) {
     const batch = await restJson(`${REST_API}/users/${LOGIN}/repos?per_page=100&sort=updated&page=${page}`);
     repos.push(...batch);
     if (batch.length < 100) break;
@@ -554,6 +554,7 @@ const FUT_PALETTES = {
     track: 'rgba(15,23,42,0.07)',
     barTrack: 'rgba(15,23,42,0.09)',
     heat: ['#e2e8f0', '#bfdbfe', '#60a5fa', '#2563eb', '#4f46e5'],
+    heatText: [null, '#1e3a8a', '#0f172a', '#ffffff', '#ffffff'],
     font: "'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif",
   },
   dark: {
@@ -576,13 +577,14 @@ const FUT_PALETTES = {
     track: 'rgba(148,163,184,0.10)',
     barTrack: 'rgba(148,163,184,0.14)',
     heat: ['#0f1a33', '#0e3a66', '#0c66ad', '#0ea5e9', '#38f2ff'],
+    heatText: [null, '#dbeafe', '#ffffff', '#061224', '#04101e'],
     font: "'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif",
   },
 };
 
 function renderTelemetry(data, p) {
   const W = 1060;
-  const H = 564;
+  const H = 652;
   const { weeks, stats, accountStats, langs, year } = data;
   const gid = 'tgrad';
   const parts = [];
@@ -591,7 +593,7 @@ function renderTelemetry(data, p) {
   parts.push(`<g clip-path="url(#outerClip)">`);
   parts.push(`<rect width="${W}" height="${H}" fill="url(#bg)"/>`);
   parts.push(`<circle cx="140" cy="80" r="280" fill="url(#orbA)"/>`);
-  parts.push(`<circle cx="940" cy="480" r="300" fill="url(#orbB)"/>`);
+  parts.push(`<circle cx="940" cy="560" r="300" fill="url(#orbB)"/>`);
   for (let x = 28; x <= 1032; x += 64) {
     parts.push(`<line x1="${x}" y1="84" x2="${x}" y2="${H - 18}" stroke="${p.hairline}" stroke-width="1"/>`);
   }
@@ -620,31 +622,40 @@ function renderTelemetry(data, p) {
     return s;
   };
 
-  // Row 1 Left: ACTIVITY MATRIX (720 x 176)
+  // Row 1: Full-width ACTIVITY MATRIX (1004 x 208) with daily numbers in every active cell
   const ax = 28;
   const ay = 100;
-  const aw = 720;
-  const ah = 176;
+  const aw = 1004;
+  const ah = 208;
   parts.push(hudPanel(ax, ay, aw, ah, 'ACTIVITY MATRIX'));
 
   // Heatmap legend in top-right of Activity Matrix card
-  parts.push(`<text x="614" y="${ay + 25}" text-anchor="end" font-family="${p.font}" font-size="9" fill="${p.faint}">Less</text>`);
+  parts.push(`<text x="890" y="${ay + 25}" text-anchor="end" font-family="${p.font}" font-size="9" fill="${p.faint}">Less</text>`);
   p.heat.forEach((c, i) => {
-    parts.push(`<rect x="${622 + i * 14}" y="${ay + 17}" width="10" height="10" rx="2" fill="${c}"/>`);
+    parts.push(`<rect x="${898 + i * 16}" y="${ay + 16}" width="11" height="11" rx="2.5" fill="${c}"/>`);
   });
-  parts.push(`<text x="696" y="${ay + 25}" font-family="${p.font}" font-size="9" fill="${p.faint}">More</text>`);
+  parts.push(`<text x="984" y="${ay + 25}" font-family="${p.font}" font-size="9" fill="${p.faint}">More</text>`);
 
-  const CELL = 10;
+  const CELL = 16;
   const GAP = 2;
   const STEP = CELL + GAP;
-  const X0 = 76;
+  const X0 = 62;
   const Y0 = 152;
   let cells = '';
   weeks.forEach((week, wi) => {
     week.contributionDays.forEach((day, di) => {
-      const lvl = level(day.contributionCount);
+      const count = day.contributionCount;
+      const lvl = level(count);
       const fill = p.heat[lvl];
-      cells += `<rect x="${X0 + wi * STEP}" y="${Y0 + di * STEP}" width="${CELL}" height="${CELL}" rx="2" fill="${fill}"><title>${day.date}: ${day.contributionCount}</title></rect>`;
+      const cx = X0 + wi * STEP;
+      const cy = Y0 + di * STEP;
+      cells += `<rect x="${cx}" y="${cy}" width="${CELL}" height="${CELL}" rx="3" fill="${fill}"><title>${day.date}: ${count}</title></rect>`;
+      if (count > 0) {
+        const label = String(count);
+        const fz = label.length >= 3 ? '6.2' : label.length === 2 ? '7.5' : '8.8';
+        const dy = label.length >= 3 ? 2.2 : label.length === 2 ? 2.7 : 3.1;
+        cells += `<text x="${cx + CELL / 2}" y="${cy + CELL / 2 + dy}" text-anchor="middle" font-family="${p.font}" font-size="${fz}" font-weight="700" fill="${p.heatText[lvl]}">${label}</text>`;
+      }
     });
   });
 
@@ -656,63 +667,25 @@ function renderTelemetry(data, p) {
     if (d.getUTCMonth() !== prevMonth) {
       prevMonth = d.getUTCMonth();
       const mx = X0 + wi * STEP + 1;
-      if (mx - lastMonthX >= 28) {
-        months += `<text x="${mx}" y="${Y0 - 9}" font-family="${p.font}" font-size="9" fill="${p.faint}">${MONTHS[prevMonth]}</text>`;
-        lastMonthX = mx;
+        if (mx - lastMonthX >= 36) {
+          months += `<text x="${mx}" y="${Y0 - 8}" font-family="${p.font}" font-size="9.5" fill="${p.faint}">${MONTHS[prevMonth]}</text>`;
+          lastMonthX = mx;
+        }
       }
-    }
-  });
+    });
   let wd = '';
   [0, 3, 5].forEach((di) => {
-    wd += `<text x="${X0 - 8}" y="${Y0 + di * STEP + 8}" text-anchor="end" font-family="${p.font}" font-size="9" fill="${p.faint}">${WEEKDAYS[di]}</text>`;
+    wd += `<text x="${X0 - 7}" y="${Y0 + di * STEP + 11}" text-anchor="end" font-family="${p.font}" font-size="8.5" fill="${p.faint}">${WEEKDAYS[di]}</text>`;
   });
   parts.push(months, wd, cells);
   parts.push(
-    `<text x="${ax + 20}" y="${ay + ah - 16}" font-family="${p.font}" font-size="9" letter-spacing="0.8" fill="${p.faint}">${stats.activeDays} ACTIVE DAYS · PEAK ${stats.peakDay}/DAY · AVG ${stats.dailyAvg}/DAY</text>`,
-    `<text x="${ax + aw - 20}" y="${ay + ah - 16}" text-anchor="end" font-family="${p.font}" font-size="9" font-weight="600" letter-spacing="0.8" fill="${p.subtext}">${year}: ${stats.yearTotal.toLocaleString('en-US')}  ·  30D: ${stats.last30.toLocaleString('en-US')}</text>`,
-  );
-
-  // Row 1 Right: STREAK (268 x 176)
-  const RX = 764;
-  const RW = 268;
-  const spy = 100;
-  const sph = 176;
-  parts.push(hudPanel(RX, spy, RW, sph, 'STREAK', 'CADENCE'));
-  const rc = { x: RX + 52, y: spy + 66, r: 24 };
-  const C = 2 * Math.PI * rc.r;
-  const frac = stats.longestStreak > 0 ? Math.min(1, stats.currentStreak / stats.longestStreak) : 0;
-  const dash = stats.currentStreak > 0 ? Math.max(4, frac * C) : 0;
-  parts.push(
-    `<circle cx="${rc.x}" cy="${rc.y}" r="${rc.r}" fill="none" stroke="${p.track}" stroke-width="6"/>`,
-    `<circle cx="${rc.x}" cy="${rc.y}" r="${rc.r}" fill="none" stroke="url(#${gid})" stroke-width="6" stroke-linecap="round" stroke-dasharray="${dash.toFixed(1)} ${C.toFixed(1)}" transform="rotate(-90 ${rc.x} ${rc.y})"/>`,
-    `<text x="${rc.x}" y="${rc.y + 7}" text-anchor="middle" font-family="${p.font}" font-size="21" font-weight="800" fill="${p.text}">${stats.currentStreak}</text>`,
-    `<text x="${rc.x}" y="${spy + 107}" text-anchor="middle" font-family="${p.font}" font-size="8.5" font-weight="600" letter-spacing="1.2" fill="${p.faint}">CURRENT</text>`,
-  );
-  const sepX = RX + 104;
-  parts.push(`<line x1="${sepX}" y1="${spy + 38}" x2="${sepX}" y2="${spy + 110}" stroke="${p.panelStroke}" stroke-width="1"/>`);
-  parts.push(
-    `<text x="${sepX + 20}" y="${spy + 48}" font-family="${p.font}" font-size="8.5" font-weight="600" letter-spacing="1.3" fill="${p.faint}">LONGEST</text>`,
-    `<text x="${sepX + 20}" y="${spy + 79}" font-family="${p.font}" font-size="26" font-weight="800" fill="${p.text}">${stats.longestStreak}d</text>`,
-    `<text x="${sepX + 20}" y="${spy + 107}" font-family="${p.font}" font-size="8.5" font-weight="600" letter-spacing="1.2" fill="${p.faint}">BEST RUN</text>`,
-    `<line x1="${RX + 20}" y1="${spy + 120}" x2="${RX + RW - 20}" y2="${spy + 120}" stroke="${p.panelStroke}" stroke-width="0.8" opacity="0.7"/>`,
-  );
-  const spX = RX + 20;
-  const spBaseY = spy + 158;
-  const max30 = Math.max(...stats.last30Days, 1);
-  let spark = '';
-  stats.last30Days.forEach((cv, i) => {
-    const bh = cv > 0 ? Math.max(3, Math.round((cv / max30) * 24)) : 2;
-    spark += `<rect x="${spX + i * 5.5}" y="${spBaseY - bh}" width="4" height="${bh}" rx="1.5" fill="${cv > 0 ? 'url(#' + gid + ')' : p.track}"/>`;
-  });
-  parts.push(
-    spark,
-    `<text x="${RX + RW - 20}" y="${spy + 144}" text-anchor="end" font-family="${p.font}" font-size="8" font-weight="600" letter-spacing="1" fill="${p.faint}">LAST 30D</text>`,
-    `<text x="${RX + RW - 20}" y="${spy + 158}" text-anchor="end" font-family="${p.font}" font-size="11" font-weight="700" fill="${p.text}">${stats.last30}</text>`,
+    `<text x="${ax + 20}" y="${ay + ah - 14}" font-family="${p.font}" font-size="9" letter-spacing="0.8" fill="${p.faint}">${stats.activeDays} ACTIVE DAYS · PEAK ${stats.peakDay}/DAY · AVG ${stats.dailyAvg}/DAY</text>`,
+    `<text x="${ax + aw - 20}" y="${ay + ah - 14}" text-anchor="end" font-family="${p.font}" font-size="9" font-weight="600" letter-spacing="0.8" fill="${p.subtext}">${year}: ${stats.yearTotal.toLocaleString('en-US')}  ·  30D: ${stats.last30.toLocaleString('en-US')}</text>`,
   );
 
   // Row 2 Left: MONTHLY VELOCITY (352 x 178)
   const vx = 28;
-  const vy = 292;
+  const vy = 324;
   const vw = 352;
   const vh = 178;
   const monthsData = stats.monthlyTotals;
@@ -746,7 +719,7 @@ function renderTelemetry(data, p) {
 
   // Row 2 Middle: METRICS (352 x 178)
   const mx = 396;
-  const my = 292;
+  const my = 324;
   const mw = 352;
   const mh = 178;
   parts.push(hudPanel(mx, my, mw, mh, 'METRICS', 'PUBLIC PROFILE'));
@@ -772,9 +745,11 @@ function renderTelemetry(data, p) {
   });
 
   // Row 2 Right: LANGUAGES (268 x 178)
-  const lpy = 292;
+  const lpx = 764;
+  const lpw = 268;
+  const lpy = 324;
   const lph = 178;
-  parts.push(hudPanel(RX, lpy, RW, lph, 'LANGUAGES', 'BY REPO SIZE'));
+  parts.push(hudPanel(lpx, lpy, lpw, lph, 'LANGUAGES', 'BY REPO SIZE'));
   const maxKb = Math.max(...langs.map((l) => l.kb), 1);
   const langBarW = 94;
   langs.slice(0, 4).forEach((l, i) => {
@@ -782,27 +757,63 @@ function renderTelemetry(data, p) {
     const bwL = Math.max(6, Math.round((l.kb / maxKb) * langBarW));
     const lc = langColor(l.name);
     parts.push(
-      `<circle cx="${RX + 24}" cy="${y - 3}" r="4" fill="${lc}"/>`,
-      `<text x="${RX + 36}" y="${y}" font-family="${p.font}" font-size="11" font-weight="600" fill="${p.text}">${esc(truncate(l.name, 11))}</text>`,
-      `<rect x="${RX + 112}" y="${y - 6}" width="${langBarW}" height="6" rx="3" fill="${p.barTrack}"/>`,
-      `<rect x="${RX + 112}" y="${y - 6}" width="${bwL}" height="6" rx="3" fill="${lc}"/>`,
-      `<text x="${RX + RW - 20}" y="${y}" text-anchor="end" font-family="${p.font}" font-size="11" font-weight="700" fill="${p.subtext}">${l.pct}%</text>`,
+      `<circle cx="${lpx + 24}" cy="${y - 3}" r="4" fill="${lc}"/>`,
+      `<text x="${lpx + 36}" y="${y}" font-family="${p.font}" font-size="11" font-weight="600" fill="${p.text}">${esc(truncate(l.name, 11))}</text>`,
+      `<rect x="${lpx + 112}" y="${y - 6}" width="${langBarW}" height="6" rx="3" fill="${p.barTrack}"/>`,
+      `<rect x="${lpx + 112}" y="${y - 6}" width="${bwL}" height="6" rx="3" fill="${lc}"/>`,
+      `<text x="${lpx + lpw - 20}" y="${y}" text-anchor="end" font-family="${p.font}" font-size="11" font-weight="700" fill="${p.subtext}">${l.pct}%</text>`,
     );
   });
 
-  // Row 3 Footer: TOP PUBLIC REPOS (1004 x 56)
-  const fy = 486;
-  const fh = 56;
-  parts.push(hudPanel(28, fy, 1004, fh, 'TOP PUBLIC REPOS', `${accountStats.publicOwnCount || accountStats.topRepos.length} REPOS`));
+  // Row 3 Left: STREAK & CADENCE (494 x 112)
+  const sx = 28;
+  const sy = 518;
+  const sw = 494;
+  const sh = 112;
+  parts.push(hudPanel(sx, sy, sw, sh, 'STREAK & CADENCE', `LAST 30D: ${stats.last30}`));
+  const rc = { x: sx + 48, y: sy + 68, r: 22 };
+  const C = 2 * Math.PI * rc.r;
+  const frac = stats.longestStreak > 0 ? Math.min(1, stats.currentStreak / stats.longestStreak) : 0;
+  const dash = stats.currentStreak > 0 ? Math.max(4, frac * C) : 0;
+  parts.push(
+    `<circle cx="${rc.x}" cy="${rc.y}" r="${rc.r}" fill="none" stroke="${p.track}" stroke-width="5.5"/>`,
+    `<circle cx="${rc.x}" cy="${rc.y}" r="${rc.r}" fill="none" stroke="url(#${gid})" stroke-width="5.5" stroke-linecap="round" stroke-dasharray="${dash.toFixed(1)} ${C.toFixed(1)}" transform="rotate(-90 ${rc.x} ${rc.y})"/>`,
+    `<text x="${rc.x}" y="${rc.y + 6.5}" text-anchor="middle" font-family="${p.font}" font-size="18" font-weight="800" fill="${p.text}">${stats.currentStreak}</text>`,
+    `<text x="${sx + 84}" y="${sy + 62}" font-family="${p.font}" font-size="8.5" font-weight="600" letter-spacing="1.2" fill="${p.faint}">CURRENT</text>`,
+    `<text x="${sx + 84}" y="${sy + 82}" font-family="${p.font}" font-size="15" font-weight="800" fill="${p.text}">${stats.currentStreak}d</text>`,
+    `<line x1="${sx + 150}" y1="${sy + 44}" x2="${sx + 150}" y2="${sy + 94}" stroke="${p.panelStroke}" stroke-width="1"/>`,
+    `<text x="${sx + 170}" y="${sy + 62}" font-family="${p.font}" font-size="8.5" font-weight="600" letter-spacing="1.2" fill="${p.faint}">LONGEST</text>`,
+    `<text x="${sx + 170}" y="${sy + 84}" font-family="${p.font}" font-size="21" font-weight="800" fill="${p.text}">${stats.longestStreak}d</text>`,
+    `<line x1="${sx + 244}" y1="${sy + 44}" x2="${sx + 244}" y2="${sy + 94}" stroke="${p.panelStroke}" stroke-width="1"/>`,
+  );
+  const spX = sx + 262;
+  const spBaseY = sy + 92;
+  const max30 = Math.max(...stats.last30Days, 1);
+  let spark = '';
+  stats.last30Days.forEach((cv, i) => {
+    const bh = cv > 0 ? Math.max(3, Math.round((cv / max30) * 34)) : 2;
+    spark += `<rect x="${spX + i * 7.1}" y="${spBaseY - bh}" width="5" height="${bh}" rx="1.5" fill="${cv > 0 ? 'url(#' + gid + ')' : p.track}"/>`;
+  });
+  parts.push(
+    spark,
+    `<text x="${spX}" y="${sy + 52}" font-family="${p.font}" font-size="8" font-weight="600" letter-spacing="1" fill="${p.faint}">30-DAY ACTIVITY SPARKLINE</text>`,
+  );
+
+  // Row 3 Right: TOP PUBLIC REPOS (494 x 112)
+  const fx = 538;
+  const fy = 518;
+  const fw = 494;
+  const fh = 112;
+  parts.push(hudPanel(fx, fy, fw, fh, 'TOP PUBLIC REPOS', `${accountStats.publicOwnCount || accountStats.topRepos.length} REPOS`));
   accountStats.topRepos.forEach((r, i) => {
-    const rx = 48 + (i % 3) * 334;
-    const ry = fy + 43;
-    const langDot = r.language ? `<circle cx="${rx + 23}" cy="${ry - 4}" r="3.5" fill="${langColor(r.language)}"/>` : '';
-    const nameX = r.language ? rx + 33 : rx + 22;
+    const ry = fy + 53 + i * 21;
+    const langDot = r.language ? `<circle cx="${fx + 46}" cy="${ry - 3.5}" r="3.5" fill="${langColor(r.language)}"/>` : '';
+    const nameX = r.language ? fx + 58 : fx + 46;
     parts.push(
-      `<text x="${rx}" y="${ry}" font-family="${p.font}" font-size="10" font-weight="700" fill="${p.faint}">${String(i + 1).padStart(2, '0')}</text>`,
+      `<text x="${fx + 20}" y="${ry}" font-family="${p.font}" font-size="10" font-weight="700" fill="${p.faint}">${String(i + 1).padStart(2, '0')}</text>`,
       langDot,
-      `<text x="${nameX}" y="${ry}" font-family="${p.font}" font-size="12" font-weight="600" fill="${p.text}">${esc(truncate(r.name, 22))} <tspan fill="${p.starColor}">★ ${fmtCompact(r.stars)}</tspan></text>`,
+      `<text x="${nameX}" y="${ry}" font-family="${p.font}" font-size="11.5" font-weight="600" fill="${p.text}">${esc(truncate(r.name, 34))}</text>`,
+      `<text x="${fx + fw - 20}" y="${ry}" text-anchor="end" font-family="${p.font}" font-size="11.5" font-weight="700" fill="${p.starColor}">★ ${fmtCompact(r.stars)}</text>`,
     );
   });
 

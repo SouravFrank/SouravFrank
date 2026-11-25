@@ -233,10 +233,10 @@
 
 <div align="center">
   <a href="./assets/stats/telemetry-light.svg#gh-light-mode-only">
-    <img src="./assets/stats/telemetry-light.svg#gh-light-mode-only" width="100%" style="max-width:1060px;" alt="Telemetry dashboard: 1,760 contributions in the last 12 months, current streak 6 days, longest streak 14 days. Languages: HTML 42%, TypeScript 37%, JavaScript 18%, Python 3%. Metrics: 0 stars, 609 commits, 287 pull requests, 0 issues." />
+    <img src="./assets/stats/telemetry-light.svg#gh-light-mode-only" width="100%" style="max-width:1060px;" alt="Telemetry dashboard: 1,761 contributions in the last 12 months, current streak 6 days, longest streak 14 days. Languages: HTML 42%, TypeScript 37%, JavaScript 18%, Python 3%. Metrics: 0 stars, 609 commits, 287 pull requests, 0 issues." />
   </a>
   <a href="./assets/stats/telemetry-dark.svg#gh-dark-mode-only">
-    <img src="./assets/stats/telemetry-dark.svg#gh-dark-mode-only" width="100%" style="max-width:1060px;" alt="Telemetry dashboard: 1,760 contributions in the last 12 months, current streak 6 days, longest streak 14 days. Languages: HTML 42%, TypeScript 37%, JavaScript 18%, Python 3%. Metrics: 0 stars, 609 commits, 287 pull requests, 0 issues." />
+    <img src="./assets/stats/telemetry-dark.svg#gh-dark-mode-only" width="100%" style="max-width:1060px;" alt="Telemetry dashboard: 1,761 contributions in the last 12 months, current streak 6 days, longest streak 14 days. Languages: HTML 42%, TypeScript 37%, JavaScript 18%, Python 3%. Metrics: 0 stars, 609 commits, 287 pull requests, 0 issues." />
   </a>
 </div>
 
