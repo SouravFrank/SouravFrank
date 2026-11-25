@@ -1,0 +1,35 @@
+name: Nightly profile stats
+
+on:
+  schedule:
+    # Run every night at 00:17 UTC (~28 min/day of free Actions quota)
+    - cron: '17 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate contribution stat SVGs
+        run: node scripts/generate-profile-stats.mjs
+        env:
+          GH_LOGIN: souravfrank
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Commit updated stats (if changed)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/stats
+          if git diff --cached --quiet; then
+            echo "No changes — stats are up to date."
+          else
+            git commit -m "chore(profile): refresh self-contained contribution stats"
+            git push
+          fi
