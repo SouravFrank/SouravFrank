@@ -255,10 +255,10 @@
 
 <div align="center">
   <a href="./assets/stats/telemetry-light.svg#gh-light-mode-only">
-    <img src="./assets/stats/telemetry-light.svg#gh-light-mode-only" width="100%" style="max-width:1060px;" alt="Telemetry dashboard: 1,775 contributions in the last 12 months, current streak 6 days, longest streak 14 days. Languages: HTML 42%, TypeScript 37%, JavaScript 18%, Python 3%. Metrics: 0 stars, 609 commits, 290 pull requests, 0 issues." />
+    <img src="./assets/stats/telemetry-light.svg#gh-light-mode-only" width="100%" style="max-width:1060px;" alt="Telemetry dashboard: 1,778 contributions in the last 12 months, current streak 7 days, longest streak 14 days. Languages: HTML 42%, TypeScript 37%, JavaScript 18%, Python 3%. Metrics: 0 stars, 626 commits, 47 pull requests, 0 issues." />
   </a>
   <a href="./assets/stats/telemetry-dark.svg#gh-dark-mode-only">
-    <img src="./assets/stats/telemetry-dark.svg#gh-dark-mode-only" width="100%" style="max-width:1060px;" alt="Telemetry dashboard: 1,775 contributions in the last 12 months, current streak 6 days, longest streak 14 days. Languages: HTML 42%, TypeScript 37%, JavaScript 18%, Python 3%. Metrics: 0 stars, 609 commits, 290 pull requests, 0 issues." />
+    <img src="./assets/stats/telemetry-dark.svg#gh-dark-mode-only" width="100%" style="max-width:1060px;" alt="Telemetry dashboard: 1,778 contributions in the last 12 months, current streak 7 days, longest streak 14 days. Languages: HTML 42%, TypeScript 37%, JavaScript 18%, Python 3%. Metrics: 0 stars, 626 commits, 47 pull requests, 0 issues." />
   </a>
 </div>
 
@@ -281,15 +281,15 @@
 
 <!-- ACTIVITY-MATRIX:START -->
 <details open>
-<summary><b>2026 · Current Year</b> — <i>1,709 contributions · 173 active days · 62 peak/day</i></summary>
+<summary><b>2026 · Current Year</b> — <i>1,712 contributions · 174 active days · 62 peak/day</i></summary>
 <br>
 
 <div align="center">
   <a href="./assets/stats/activity-2026-light.svg#gh-light-mode-only">
-    <img src="./assets/stats/activity-2026-light.svg#gh-light-mode-only" width="100%" style="max-width:1060px;" alt="Activity matrix for 2026: 1,709 contributions across 173 active days, peak 62 per day, longest streak 14 days." />
+    <img src="./assets/stats/activity-2026-light.svg#gh-light-mode-only" width="100%" style="max-width:1060px;" alt="Activity matrix for 2026: 1,712 contributions across 174 active days, peak 62 per day, longest streak 14 days." />
   </a>
   <a href="./assets/stats/activity-2026-dark.svg#gh-dark-mode-only">
-    <img src="./assets/stats/activity-2026-dark.svg#gh-dark-mode-only" width="100%" style="max-width:1060px;" alt="Activity matrix for 2026: 1,709 contributions across 173 active days, peak 62 per day, longest streak 14 days." />
+    <img src="./assets/stats/activity-2026-dark.svg#gh-dark-mode-only" width="100%" style="max-width:1060px;" alt="Activity matrix for 2026: 1,712 contributions across 174 active days, peak 62 per day, longest streak 14 days." />
   </a>
 </div>
 
@@ -311,15 +311,15 @@
 </details>
 
 <details>
-<summary><b>2024</b> — <i>136 contributions · 28 active days · 16 peak/day</i></summary>
+<summary><b>2024</b> — <i>136 contributions · 29 active days · 16 peak/day</i></summary>
 <br>
 
 <div align="center">
   <a href="./assets/stats/activity-2024-light.svg#gh-light-mode-only">
-    <img src="./assets/stats/activity-2024-light.svg#gh-light-mode-only" width="100%" style="max-width:1060px;" alt="Activity matrix for 2024: 136 contributions across 28 active days, peak 16 per day, longest streak 5 days." />
+    <img src="./assets/stats/activity-2024-light.svg#gh-light-mode-only" width="100%" style="max-width:1060px;" alt="Activity matrix for 2024: 136 contributions across 29 active days, peak 16 per day, longest streak 5 days." />
   </a>
   <a href="./assets/stats/activity-2024-dark.svg#gh-dark-mode-only">
-    <img src="./assets/stats/activity-2024-dark.svg#gh-dark-mode-only" width="100%" style="max-width:1060px;" alt="Activity matrix for 2024: 136 contributions across 28 active days, peak 16 per day, longest streak 5 days." />
+    <img src="./assets/stats/activity-2024-dark.svg#gh-dark-mode-only" width="100%" style="max-width:1060px;" alt="Activity matrix for 2024: 136 contributions across 29 active days, peak 16 per day, longest streak 5 days." />
   </a>
 </div>
 
@@ -371,15 +371,15 @@
 </details>
 
 <details>
-<summary><b>2020</b> — <i>23 contributions · 12 active days · 3 peak/day</i></summary>
+<summary><b>2020</b> — <i>23 contributions · 14 active days · 3 peak/day</i></summary>
 <br>
 
 <div align="center">
   <a href="./assets/stats/activity-2020-light.svg#gh-light-mode-only">
-    <img src="./assets/stats/activity-2020-light.svg#gh-light-mode-only" width="100%" style="max-width:1060px;" alt="Activity matrix for 2020: 23 contributions across 12 active days, peak 3 per day, longest streak 3 days." />
+    <img src="./assets/stats/activity-2020-light.svg#gh-light-mode-only" width="100%" style="max-width:1060px;" alt="Activity matrix for 2020: 23 contributions across 14 active days, peak 3 per day, longest streak 3 days." />
   </a>
   <a href="./assets/stats/activity-2020-dark.svg#gh-dark-mode-only">
-    <img src="./assets/stats/activity-2020-dark.svg#gh-dark-mode-only" width="100%" style="max-width:1060px;" alt="Activity matrix for 2020: 23 contributions across 12 active days, peak 3 per day, longest streak 3 days." />
+    <img src="./assets/stats/activity-2020-dark.svg#gh-dark-mode-only" width="100%" style="max-width:1060px;" alt="Activity matrix for 2020: 23 contributions across 14 active days, peak 3 per day, longest streak 3 days." />
   </a>
 </div>
 
